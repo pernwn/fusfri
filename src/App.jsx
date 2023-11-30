@@ -1,39 +1,28 @@
+import { ThemeProvider, useTheme } from "@emotion/react"
+import { CssBaseline } from "@mui/material";
 
-import { Box, CssBaseline, Typography} from '@mui/material'
-import { useTheme } from '@mui/material/styles';
-import { ThemeProvider } from '@emotion/react';
-import { Route, Routes } from 'react-router-dom';
+import { myTheme } from "./components/theme";
+import { Navigate, Route, Routes } from "react-router-dom";
 
-import './App.css'
-
-import Homepage from './pages/homepage';
-import Nav from './components/nav';
-
-import customTheme from "./components/theme.jsx";
-
-
+import HomePage from "./pages/homepage";
+import Nav from "./components/nav";
 
 function App() {
-const outerTheme = useTheme();
+  const outerTheme = useTheme();
   return (
-    <ThemeProvider theme={customTheme(outerTheme)}>
+    <ThemeProvider theme={myTheme(outerTheme)}>
       <CssBaseline enableColorScheme />
 
-      <Typography variant='h1'>Hello</Typography>
-      
-      <Box>
-        <Nav />
-        <Routes>
-          <Route path="/" element={<Homepage />} />
+      <Nav/>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
 
-          <Route path="*" element={<Navigate to="/" />} /* Denne fører til 404 */ />
-
-        </Routes>
-
-      </Box>
-
+        <Route path="*" element={<Navigate to="/" />} /* 404 */ />
+      </Routes>
 
     </ThemeProvider>
+
+
 
   )
 }

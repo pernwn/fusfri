@@ -1,6 +1,7 @@
-import { createTheme } from "@mui/material/styles";
+import { createTheme } from "@mui/material";
 
-export const myTheme = (outerTheme) =>
+
+export const myTheme = (outerTheme) => 
     createTheme({
         mode: outerTheme,
         palette: {
@@ -46,7 +47,6 @@ export const myTheme = (outerTheme) =>
         shape: {
             borderRadius: 4,
         },
-    });
-
+    })
 
 
