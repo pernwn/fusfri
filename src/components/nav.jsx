@@ -7,6 +7,7 @@ export default function Nav() {
             <nav>
                 <ButtonGroup>
                     <OutlinedBtn name="home" page="/" />
+                    <OutlinedBtn name="Friskole" page="/friskole" />
                 </ButtonGroup>
             </nav>
         </header>

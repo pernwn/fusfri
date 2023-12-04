@@ -6,6 +6,7 @@ import { Navigate, Route, Routes } from "react-router-dom";
 
 import HomePage from "./pages/homepage";
 import Nav from "./components/nav";
+import Friskole from "./pages/friskole";
 
 function App() {
   const outerTheme = useTheme();
@@ -16,6 +17,8 @@ function App() {
       <Nav/>
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/friskole" element={<Friskole />} />
+
 
         <Route path="*" element={<Navigate to="/" />} /* 404 */ />
       </Routes>
