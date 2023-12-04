@@ -1,13 +1,13 @@
 import { ButtonGroup } from "@mui/material";
-import { OutlinedBtn } from "./buttons";
+import { FilledBtn, OutlinedBtn } from "./buttons";
 
 export default function Nav() {
     return (
         <header>
             <nav>
                 <ButtonGroup>
-                    <OutlinedBtn name="home" page="/" />
-                    <OutlinedBtn name="Friskole" page="/friskole" />
+                    <FilledBtn name="Hjem" page="/" />
+                    <FilledBtn name="Friskole" page="/friskole" />
                 </ButtonGroup>
             </nav>
         </header>
