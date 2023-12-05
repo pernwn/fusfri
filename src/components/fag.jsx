@@ -16,7 +16,7 @@ const WordPressFag = () => {
         console.error('Error fetching data:', error);
       }
     };
-
+ 
     fetchFags();
   }, []);
 
