@@ -24,10 +24,10 @@ export default function Nav() {
             <img src={logo} className={`logo ${isScrolled && 'logo-scrolled'}`} alt="Fussingø-Egnens Logo" />
             
                 <Nav className={`nav-container ${isScrolled && 'nav-scrolled'}`}>
-                    <FilledBtn name="Hjem" page="/" />
-                    <FilledBtn name="Information" page="/information" />
-                    <FilledBtn name="Om Fusfri" page="/omFus" />
-                    <FilledBtn name="Kontakt" page="/kontakt" />
+                    <OutlinedBtn name="Hjem" page="/" />
+                    <OutlinedBtn name="Information" page="/information" />
+                    <OutlinedBtn name="Om Fusfri" page="/omFus" />
+                    <OutlinedBtn name="Kontakt" page="/kontakt" />
 
                     <OutlinedBtn name="Friskole" page="/friskole" />
                 </Nav>
