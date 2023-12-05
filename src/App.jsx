@@ -19,7 +19,8 @@ function App() {
   const outerTheme = useTheme();
   const [isScrolled, setScrolled] = useState(false);
   
-  const handleScroll = () => window.scrollY > 50 ? setScrolled(true) : setScrolled(false);
+  const handleScroll = () => window.scrollY > 150 ? setScrolled(true) : setScrolled(false);
+  
   const handleClick = () => {
     window.scrollTo(0,0);
   } 
@@ -45,8 +46,7 @@ function App() {
         <Route path="*" element={<Navigate to="/" />} /* 404 */ />
       </Routes>
 
-      <Box sx={{ mr: 5 }} className={`action-btn-container ${isScrolled && 'action-btn-scrolled'}`} >
-
+      <Box sx={{ mr: 5 }} className={`action-btn-container ${isScrolled && 'action-btn-scrolled'}`} style={{ bottom: '1.5rem', position: 'fixed', right: '1.5rem', zIndex: 1000 }} >
         <Fab variant="extended" aria-label="contact">
           <PhoneIcon sx={{ mr: 1 }} color="secondary" />
           <Typography variant="button" sx={{ color: myTheme => myTheme.palette.secondary.main, fontWeight: "bold" }} >Kontakt</Typography>

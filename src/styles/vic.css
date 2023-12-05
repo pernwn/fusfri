@@ -70,6 +70,16 @@ header{
 
 }
 
+.action-btn-container{
+    visibility: hidden;
+    position:fixed;
+
+    transition: ease 2s;
+}
+
+.action-btn-container{
+    visibility: visible;
+}
 
 
 
