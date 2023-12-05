@@ -1,7 +1,10 @@
 
 import parse from "html-react-parser";
+import '../App.css'
 
-export default function Content({post}){
+
+
+export default function Content({ post }) {
     let image = "https://www.wordpress.vicw.dk/wp-json/wp/v2/posts";
 
     if (post._embedded && post._embedded["wp:featuredmedia"]) {
@@ -11,10 +14,11 @@ export default function Content({post}){
     return (
         <article>
 
-            <h2>{parse(post.title.rendered)}</h2>
+            {parse(post.title.rendered)}
             {parse(post.content.rendered)}
-            <img src={image} alt={post.title.rendered} />
-            
+
+            <img src={image} alt={post.title.rendered} className="pic" />
+
         </article>
     );
 }
