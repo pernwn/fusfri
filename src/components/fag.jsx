@@ -6,7 +6,7 @@ const WordPressFag = () => {
   useEffect(() => {
     const fetchFags = async () => {
       try {
-        const response = await fetch('https://wordpress.vicw.dk/?cat=3"');
+        const response = await fetch('https://www.wordpress.vicw.dk/wp-json/wp/v2/posts/?cat=3"');
         if (!response.ok) {
           throw new Error('Network response was not ok.');
         }
