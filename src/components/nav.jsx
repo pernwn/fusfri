@@ -7,7 +7,11 @@ export default function Nav() {
             <nav>
                 <ButtonGroup>
                     <FilledBtn name="Hjem" page="/" />
-                    <FilledBtn name="Friskole" page="/friskole" />
+                    <FilledBtn name="Information" page="/information" />
+                    <FilledBtn name="Om Fusfri" page="/omFus" />
+                    <FilledBtn name="Kontakt" page="/kontakt" />
+
+                    <OutlinedBtn name="Friskole" page="/friskole" />
                 </ButtonGroup>
             </nav>
         </header>

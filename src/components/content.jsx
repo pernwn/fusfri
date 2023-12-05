@@ -17,7 +17,7 @@ export default function Content({ post }) {
             {parse(post.title.rendered)}
             {parse(post.content.rendered)}
 
-            <img src={image} alt={post.title.rendered} className="pic" />
+            <img src={image} alt={post.title.rendered}/>
 
         </article>
     );
