@@ -19,13 +19,15 @@ import { useEffect, useState } from "react";
 
 function App() {
   const outerTheme = useTheme();
+  
   const [isScrolled, setScrolled] = useState(false);
   
-  const handleScroll = () => window.scrollY > 150 ? setScrolled(true) : setScrolled(false);
+ // const handleScroll = () => window.scrollY > 150 ? setScrolled(true) : setScrolled(false); 
+ // handlescroll er også en faktor til noget infinite load eller langsom loading
   
-  const handleClick = () => {
-    window.scrollTo(0,0);
-  } 
+ // const handleClick = () => {
+ //   window.scrollTo(0,0);
+ // } 
  
   useEffect(() => {
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -48,15 +50,15 @@ function App() {
         <Route path="*" element={<Navigate to="/" />} /* 404 */ />
       </Routes>
 
-      <Box sx={{ mr: 5 }} className={`action-btn-container ${isScrolled && 'action-btn-scrolled'}`}  >
+       <Box sx={{ mr: 5 }} className={`action-btn-container ${isScrolled && 'action-btn-scrolled'}`}  > 
         <Fab variant="extended" aria-label="contact">
           <PhoneIcon sx={{ mr: 1 }} color="secondary" />
           <Typography variant="button" sx={{ color: myTheme => myTheme.palette.secondary.main, fontWeight: "bold" }} >Kontakt</Typography>
         </Fab>
 
-        <Fab size="small" color="secondary" aria-label="up" onClick={handleClick}>
+      {/*   <Fab size="small" color="secondary" aria-label="up" onClick={handleClick}>
           <UpIcon />
-        </Fab>
+        </Fab>*/}
 
       </Box>
 
