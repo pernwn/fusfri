@@ -4,7 +4,7 @@ import WordPressFag from "../components/fag";
 
 export default function Friskole() {
     return( 
-        <ThemeProvider>
+        <>
             <Typography variant="h1">Hej</Typography>
 
             <WordPressFag/>
@@ -12,6 +12,6 @@ export default function Friskole() {
 
 
             
-        </ThemeProvider>
+        </>
     )
 }

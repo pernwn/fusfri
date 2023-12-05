@@ -1,0 +1,94 @@
+/* STYLING AF HEADER*/
+
+/* header container */
+header{
+    /* use flexbox layout */
+    display: flex;
+    /* distribute space between items */
+    justify-content: space-between;
+    /* vertically align items to the center */
+    align-items: center;
+
+    /* set padding around container */
+    padding:0 5em;
+}
+
+
+
+/* Define nav container styling */
+.nav-container{
+    /* Set nav container height */
+    height:5em;
+
+    /* Apply padding and position nav */
+    padding-top:2.5em;
+
+    /* Apply smooth transition */
+    transition: ease 1s;
+}
+
+
+
+/* Hide navbar padding when scrolling */
+.nav-scrolled {
+    padding-top: 0;
+    height: 2em;
+}
+
+.logo {
+    width:15%;
+    transition: ease 1s;
+}
+
+.logo-scrolled{
+    width:10%;
+}
+
+.header-container{
+    /* light grey background */
+    background-color: #eef6f7;
+
+    /* 25px shadow on the bottom */
+    box-shadow: 0 -15px 25px grey;
+
+    /* fixed position with z-index */
+    position:fixed;
+    z-index: 5;
+
+    /* full width and height */
+    width:100%;
+    height:10em;
+
+    /* rounded bottom */
+    border-radius: 0 0 2em 2em;
+
+    /* smooth transition */
+    transition: ease 1s;
+}
+.header-scrolled{
+    height:6em;
+
+}
+
+
+
+
+/*MAIN STYLES*/
+.kontakt-os{
+    background-color: red;
+}
+
+
+
+
+
+img{
+    border-radius: 2em;
+}
+
+.hero{
+    padding:10%;
+}
+
+
+

@@ -13,12 +13,12 @@ export default function Content({ post }) {
 
     return (
         <article>
-
             {parse(post.title.rendered)}
             {parse(post.content.rendered)}
 
-            <img src={image} alt={post.title.rendered}/>
-
+          
         </article>
     );
+
+    /*  <img src={image} alt={post.title.rendered}/> */
 }
