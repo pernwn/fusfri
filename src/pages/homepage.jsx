@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 
 import Content from "../components/content";
 
+import '../App.css'
 
 export default function HomePage() {
   const [posts, setPosts] = useState([]);
@@ -22,8 +23,12 @@ export default function HomePage() {
   }, []); //Udtryk for dependencies – hvis ikke den er med, så går useEffect amok og vil stå og hente dataen i uendelighed. Stopper useEffect() når den har kørt 1 gang
 
   return (
-    <Box>
-      <section className="page">
+    <Box 
+      sx={{
+        width:"100%",
+      }}
+    >
+      <section className="hero">
       {posts.map(post => (
                 <Content key={post.id} post={post} />
             ))}
