@@ -20,6 +20,7 @@ export default function Nav() {
 
 
     const handleScroll = () => window.scrollY > 150 ? setScrolled(true) : setScrolled(false);
+    
     useEffect(() => {
         window.addEventListener('scroll', handleScroll, { passive: true });
         return () => {

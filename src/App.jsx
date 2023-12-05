@@ -12,7 +12,9 @@ import Friskole from "./pages/friskole";
 import UpIcon from '@mui/icons-material/KeyboardArrowUp';
 import PhoneIcon from '@mui/icons-material/Phone';
 
+import './styles/vic.css'
 import './App.css'
+
 import { useEffect, useState } from "react";
 
 function App() {
@@ -46,7 +48,7 @@ function App() {
         <Route path="*" element={<Navigate to="/" />} /* 404 */ />
       </Routes>
 
-      <Box sx={{ mr: 5 }} className={`action-btn-container ${isScrolled && 'action-btn-scrolled'}`} style={{ bottom: '1.5rem', position: 'fixed', right: '1.5rem', zIndex: 1000 }} >
+      <Box sx={{ mr: 5 }} className={`action-btn-container ${isScrolled && 'action-btn-scrolled'}`}  >
         <Fab variant="extended" aria-label="contact">
           <PhoneIcon sx={{ mr: 1 }} color="secondary" />
           <Typography variant="button" sx={{ color: myTheme => myTheme.palette.secondary.main, fontWeight: "bold" }} >Kontakt</Typography>
