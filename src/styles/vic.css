@@ -73,14 +73,17 @@ header{
 .action-btn-container{
     visibility: hidden;
     position:fixed;
+    z-index: 6;
+
+    margin: 42em 74em;
+
 
     transition: ease 2s;
 }
 
-.action-btn-container{
-    visibility: visible;
+.action-btn-scrolled{
+   visibility: visible;
 }
-
 
 
 /*MAIN STYLES*/
