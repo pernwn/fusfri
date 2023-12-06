@@ -68,6 +68,7 @@ creating a different look for the scrolled state. */
             <header className={`header-container ${isScrolled && 'header-scrolled'}`}>
                 <img src={logo} className={`logo ${isScrolled && 'logo-scrolled'}`} alt="Fussingø-Egnens Logo" />
                 <OutlinedBtn name="Friskole" page="/friskole" />
+                <OutlinedBtn name="Kalender" page="/information" />
 
 
                 <Box
@@ -83,9 +84,8 @@ creating a different look for the scrolled state. */
                     <Box className={`btn-container ${isScrolled && 'btn-scrolled'}`}>
                         <FilledBtn name="Hjem" page="/" mr="1em" />
                 
-                            {/*TODO: KIG PÅ DETTE !!!!! ikke færdig */}
+                            {/*TODO: KIG PÅ DETTE !!!!! ikke færdig ––– prøv denne https://www.robinwieruch.de/react-dropdown/ */}
                             <List
-                                
                                 component="nav"
                             >
                                 
