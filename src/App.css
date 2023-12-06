@@ -1,20 +1,18 @@
-main{
-    position:relative;
-    top:12em;
+main {
+  position: relative;
+  top: 12em;
 }
 
-.action-btn-container{
-    display: none;
+.action-btn-container {
+  display: none;
 }
 
-.action-btn-scrolled{
-    display:flex;
-    justify-content: space-evenly;
-    align-items: center;
+.action-btn-scrolled {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 
-    float:inline-end;
+  float: inline-end;
 
-
-
-    width:15em;
+  width: 15em;
 }
