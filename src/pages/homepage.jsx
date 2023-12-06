@@ -7,6 +7,7 @@ import Content from "../components/content";
 //Individuel styling som udgangspunkt – sammensætter alt til sidst 
 import '../styles/vic.css'
 
+
 export default function HomePage() {
   const [posts, setPosts] = useState([]);
 
@@ -36,6 +37,8 @@ export default function HomePage() {
             <Content key={post.id} post={post} />
           ))}
         </section>
+
+
       </Box>
 
       <Box>
