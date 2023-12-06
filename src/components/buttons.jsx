@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom"
 
 export const FilledBtn = (props) => {
     return (
-        <Button variant="contained" endIcon={props.icon}
+        <Button variant="contained" endIcon={props.icon} onClick={props.event}
             component={NavLink}
             to={props.page}
 

@@ -3,8 +3,8 @@ import "../App.css";
 
 export default function Calendar() {
   return (
-    <>
+    <main>
       <CalendarComponent />
-    </>
+    </main>
   );
 }
