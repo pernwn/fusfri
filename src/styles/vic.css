@@ -34,12 +34,9 @@ header {
     height: 12em;
 }
 
-
-
-
 .btn-container {
-    display:flex;
-    width:100%;
+    display: flex;
+    width: 100%;
 
     padding: 1.5em 0;
 
@@ -48,7 +45,6 @@ header {
 
 .btn-scrolled {
     padding: 1em 0;
-
 }
 
 .logo {
@@ -59,7 +55,6 @@ header {
 .logo-scrolled {
     width: 12%;
 }
-
 
 .header-container {
     /* light grey background */
@@ -94,7 +89,6 @@ header {
 
     margin: 42em 74em;
 
-
     transition: ease 2s;
 }
 
@@ -103,7 +97,7 @@ header {
 }
 
 .search-container {
-    display:flex;
+    display: flex;
     height: 4ch;
 
     transition: ease 1s;
@@ -113,22 +107,29 @@ header {
     height: 3ch;
 }
 
-.searchContainer{
+.searchContainer {
     display: flex;
     justify-content: space-evenly;
     align-items: center;
 
-    width:100%;
-
-
+    width: 100%;
 }
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
 /*MAIN STYLES*/
-
-
 
 img {
     border-radius: 2em;
