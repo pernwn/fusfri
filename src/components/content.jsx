@@ -14,7 +14,7 @@ export default function Content({ post }) {
     return (
         <article>
             
-            <span className="kontakt">{parse(post.title.rendered)}</span>
+            <span className="titel">{parse(post.title.rendered)}</span>
             {parse(post.content.rendered)}
 
           

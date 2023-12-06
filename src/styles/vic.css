@@ -41,7 +41,7 @@ header {
     display:flex;
     width:100%;
 
-    padding: 2em 0;
+    padding: 1.5em 0;
 
     transition: ease 1s;
 }
@@ -134,6 +134,6 @@ img {
     border-radius: 2em;
 }
 
-.kontakt {
-    background-color: aqua;
+.titel {
+    display: none;
 }
