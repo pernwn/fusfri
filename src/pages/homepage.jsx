@@ -13,12 +13,13 @@ export default function HomePage() {
 
   useEffect(() => {
     async function getPosts() {
-      const url = "https://www.wordpress.vicw.dk/wp-json/wp/v2/posts?_embed&categories=4";
-      const response = await fetch(url);
+      const response = await fetch("https://www.wordpress.vicw.dk/wp-json/wp/v2/posts?_embed&categories=4");
       const data = await response.json();
       setPosts(data); //opdaterer variablen der hedder "posts"
 
     }
+
+
 
 //    await getPosts(); 
 // der skal et eller andet await på her ellers så kalder den efter posts forevigt. Dan kan forklare det bedre lol

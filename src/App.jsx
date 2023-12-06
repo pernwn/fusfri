@@ -12,7 +12,7 @@ import Friskole from "./pages/friskole";
 import UpIcon from '@mui/icons-material/KeyboardArrowUp';
 import PhoneIcon from '@mui/icons-material/Phone';
 
-import './styles/vic.css'
+
 import './App.css'
 
 import { useEffect, useState } from "react";
@@ -22,12 +22,12 @@ function App() {
   
   const [isScrolled, setScrolled] = useState(false);
   
- // const handleScroll = () => window.scrollY > 150 ? setScrolled(true) : setScrolled(false); 
+ const handleScroll = () => window.scrollY > 150 ? setScrolled(true) : setScrolled(false); 
  // handlescroll er også en faktor til noget infinite load eller langsom loading
   
- // const handleClick = () => {
- //   window.scrollTo(0,0);
- // } 
+ const handleClick = () => {
+ window.scrollTo(0,0);
+ } 
  
   useEffect(() => {
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -56,9 +56,9 @@ function App() {
           <Typography variant="button" sx={{ color: myTheme => myTheme.palette.secondary.main, fontWeight: "bold" }} >Kontakt</Typography>
         </Fab>
 
-      {/*   <Fab size="small" color="secondary" aria-label="up" onClick={handleClick}>
+        <Fab size="small" color="secondary" aria-label="up" onClick={handleClick}>
           <UpIcon />
-        </Fab>*/}
+        </Fab>
 
       </Box>
 
