@@ -1,4 +1,5 @@
-import { useState, useEffect } from 'react';
+import { Card } from '@mui/material';
+import React, { useState, useEffect } from 'react';
 
 const WordPressFag = () => {
   const [fags, setFags] = useState([]);
@@ -6,7 +7,7 @@ const WordPressFag = () => {
   useEffect(() => {
     const fetchFags = async () => {
       try {
-        const response = await fetch('https://www.wordpress.vicw.dk/wp-json/wp/v2/posts/?cat=3"');
+        const response = await fetch('https://www.wordpress.vicw.dk/wp-json/wp/v2/posts?_embed&categories=3');
         if (!response.ok) {
           throw new Error('Network response was not ok.');
         }
@@ -21,15 +22,19 @@ const WordPressFag = () => {
   }, []);
 
   return (
-    <div>
+    <Card
+    sx={{
+        width: "100%",
+        padding: 20,
+      }}
+    >
       {fags.map(fag => (
         <div key={fag.id} className="mui-card">
-          <p>{fag.question}</p>
-          <p>{fag.answer}</p>
-          {/* Additional content if needed */}
+          <h2>{fag.title.rendered}</h2>
+          <div dangerouslySetInnerHTML={{ __html: fag.content.rendered }} />
         </div>
       ))}
-    </div>
+    </Card>
   );
 };
 
