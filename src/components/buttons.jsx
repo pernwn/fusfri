@@ -1,5 +1,6 @@
 import { Button, Typography } from "@mui/material"
 import { NavLink } from "react-router-dom"
+import { myTheme } from "./theme"
 
 export const FilledBtn = (props) => {
     return (
@@ -8,8 +9,8 @@ export const FilledBtn = (props) => {
             to={props.page}
 
             sx={{
-
                 width: `${props.w}`,
+                marginRight: `${props.mr}`,
             }}
         >
             <Typography variant="button">{props.name}</Typography>
@@ -28,6 +29,21 @@ export const OutlinedBtn = (props) => {
             }}
         >
             <Typography variant="button">{props.name}</Typography>
+        </Button>
+    )
+}
+
+export const LinkBtn = (props) => {
+    return (
+        <Button variant="outlined"
+            component={NavLink}
+            to={props.page}
+
+            sx={{
+                width: `${props.w}`,
+            }}
+        >
+            <Typography variant="caption">{props.name}</Typography>
         </Button>
     )
 }

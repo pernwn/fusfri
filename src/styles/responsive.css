@@ -1,0 +1,25 @@
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 480px) {
+    /* Styles for screens 320px to 480px here */
+}
+
+/* Tablets, iPads (portrait and landscape) ----------- */
+@media only screen
+and (min-device-width: 768px)
+and (max-device-width: 1024px) {
+    /* Styles for screens 768px to 1024px here */
+}
+
+/* Desktops and laptops ----------- */
+@media only screen
+and (min-width: 1224px) {
+    /* Styles for screens 1224px and larger here */
+}
+
+/* Large screens ----------- */
+@media only screen
+and (min-width: 1824px) {
+    /* Styles for screens 1824px and larger here */
+}
