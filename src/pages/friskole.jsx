@@ -7,7 +7,11 @@ export default function Friskole() {
         <>
             <Typography variant="h1">Hej</Typography>
 
-            <WordPressFag/>
+            <WordPressFag
+            info=""
+            >
+
+            </WordPressFag>
 
 
 
