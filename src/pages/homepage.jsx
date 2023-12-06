@@ -20,8 +20,7 @@ export default function HomePage() {
 
     }
 
-//    await getPosts(); 
-// der skal et eller andet await på her ellers så kalder den efter posts forevigt. Dan kan forklare det bedre lol
+    getPosts();
 
 
 
@@ -35,9 +34,9 @@ export default function HomePage() {
         }}
       >
         <section className="hero">
-         {posts.map(post => (
+          {posts.map(post => (
             <Content key={post.id} post={post} />
-          ))} 
+          ))}
         </section>
       </Box>
 
