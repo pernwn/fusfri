@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import "../App.css";
+import { Typography } from "@mui/material";
 
 const CalendarComponent = () => {
   useEffect(() => {
@@ -58,7 +59,7 @@ const CalendarComponent = () => {
 
   return (
     <div>
-      <h1>Your Calendar Events</h1>
+      <Typography variant="h2">Your Calendar Events</Typography>
       <ul id="events-list"></ul>
     </div>
   );
