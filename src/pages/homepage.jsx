@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 import Content from "../components/content";
 
-//Individuel styling som udgangspunkt – sammensætter alt til sidst
+//Individuel styling som udgangspunkt – sammensætter alt til sidst 
 import '../styles/vic.css'
 
 export default function HomePage() {
@@ -13,14 +13,14 @@ export default function HomePage() {
 
   useEffect(() => {
     async function getPosts() {
-      const response = await fetch("https://www.wordpress.vicw.dk/wp-json/wp/v2/posts?_embed&categories=4");
+      const url = "https://www.wordpress.vicw.dk/wp-json/wp/v2/posts?_embed&categories=4";
+      const response = await fetch(url);
       const data = await response.json();
       setPosts(data); //opdaterer variablen der hedder "posts"
 
     }
 
-//    await getPosts(); 
-// der skal et eller andet await på her ellers så kalder den efter posts forevigt. Dan kan forklare det bedre lol
+    getPosts();
 
 
 
@@ -34,9 +34,9 @@ export default function HomePage() {
         }}
       >
         <section className="hero">
-         {posts.map(post => (
+          {posts.map(post => (
             <Content key={post.id} post={post} />
-          ))} 
+          ))}
         </section>
       </Box>
 
@@ -45,7 +45,7 @@ export default function HomePage() {
               sx={{
                 width:"25%",
                 padding:"2em"
-
+                  
               }}
             >
               <Typography variant="h3" gutterBottom>Kontakt os</Typography>

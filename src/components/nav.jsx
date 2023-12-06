@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import '../styles/vic.css'
 
 import logo from "../assets/logo/fusfri-logo.png"
+import { ButtonGroup } from "@mui/material";
 
 export default function Nav() {
     /*This code defines a functional component Nav that displays a navigation bar for a website. 
@@ -20,7 +21,6 @@ export default function Nav() {
 
 
     const handleScroll = () => window.scrollY > 150 ? setScrolled(true) : setScrolled(false);
-    
     useEffect(() => {
         window.addEventListener('scroll', handleScroll, { passive: true });
         return () => {
@@ -32,14 +32,14 @@ export default function Nav() {
         <header className={`header-container ${isScrolled && 'header-scrolled'}`}>
             <img src={logo} className={`logo ${isScrolled && 'logo-scrolled'}`} alt="Fussingø-Egnens Logo" />
 
-            <Nav className={`nav-container ${isScrolled && 'nav-scrolled'}`}>
+            <ButtonGroup className={`nav-container ${isScrolled && 'nav-scrolled'}`}>
                 <OutlinedBtn name="Hjem" page="/" />
                 <OutlinedBtn name="Information" page="/information" />
                 <OutlinedBtn name="Om Fusfri" page="/omFus" />
                 <OutlinedBtn name="Kontakt" page="/kontakt" />
 
                 <OutlinedBtn name="Friskole" page="/friskole" />
-            </Nav>
+            </ButtonGroup>
 
         </header>
     )
