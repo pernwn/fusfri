@@ -2,19 +2,3 @@ main{
     position:relative;
     top:5em;
 }
-
-.action-btn-container{
-    display: none;
-}
-
-.action-btn-scrolled{
-    display:flex;
-    justify-content: space-evenly;
-    align-items: center;
-
-    float:inline-end;
-
-
-
-    width:15em;
-}
