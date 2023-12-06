@@ -1,10 +1,10 @@
 import { Button, Typography } from "@mui/material"
 import { NavLink } from "react-router-dom"
-import { myTheme } from "./theme"
+
 
 export const FilledBtn = (props) => {
     return (
-        <Button variant="contained"
+        <Button variant="contained" endIcon={props.icon}
             component={NavLink}
             to={props.page}
 

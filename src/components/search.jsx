@@ -15,7 +15,7 @@ const Search = styled('div')(({ theme }) => ({
     marginLeft: 0,
     width: '100%',
     [theme.breakpoints.up('sm')]: {
-        marginLeft: theme.spacing(2),
+        marginLeft: theme.spacing(1),
         width: 'auto',
     },
 }));
@@ -37,7 +37,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
         padding: theme.spacing(1, 1, 1, 0),
         // vertical padding + font size from searchIcon
         paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-        width:'25ch',
+        width:'34ch',
 
         /*transition: theme.transitions.create('width'),
         [theme.breakpoints.up('sm')]: {
@@ -65,7 +65,7 @@ export default function SearchInput() {
 
     return (
         <div className="searchContainer">
-            <LinkBtn name="Forældreintra" page="*" w="fit-content" className={`btn-container ${isScrolled && 'btn-scrolled'}`} />
+            <LinkBtn name="Forældre intra" page="*" w="fit-content" className={`btn-container ${isScrolled && 'btn-scrolled'}`} />
 
             <Search className={`search-container ${isScrolled && 'search-scrolled'}`}>
                 <SearchIconWrapper>

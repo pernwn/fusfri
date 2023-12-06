@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 //IKONER FRA MUI
 import UpIcon from '@mui/icons-material/KeyboardArrowUp';
 import PhoneIcon from '@mui/icons-material/Phone';
+import ExpandMoreRoundedIcon from '@mui/icons-material/ExpandMoreRounded';
 
 //Individuel styling som udgangspunkt – sammensætter alt til sidst 
 import '../styles/vic.css'
@@ -13,10 +14,6 @@ import logo from "../assets/logo/fusfri-logo.png"
 import { Box, ButtonGroup, Fab, Fade, Typography} from "@mui/material";
 import { Link } from "react-router-dom";
 import Search from "./search";
-
-
-
-
 
 
 
@@ -63,12 +60,10 @@ export default function Nav() {
                     <Search/>
 
                     <Box className={`btn-container ${isScrolled && 'btn-scrolled'}`}>
-                        <FilledBtn name="Hjem" page="/" mr="1em"/>
-                        <FilledBtn name="Information" page="/information" mr="1em"/>
-                        <FilledBtn name="Om Fusfri" page="/omFus" mr="1em"/>
-                        <FilledBtn name="Kontakt" page="/kontakt" mr="1em"/>
-
-                        
+                        <FilledBtn name="Hjem" page="/" mr="1em" />
+                        <FilledBtn name="Information" page="/information" mr="1em" icon={<ExpandMoreRoundedIcon />}/>
+                        <FilledBtn name="Om Fusfri" page="/omFus" mr="1em" icon={<ExpandMoreRoundedIcon />}/>
+                        <FilledBtn name="Kontakt" page="/kontakt" mr="1em" icon={<ExpandMoreRoundedIcon />}/> 
                     </Box>
 
 

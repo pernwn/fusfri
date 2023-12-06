@@ -39,12 +39,14 @@ header {
     width: 100%;
 
     padding: 1.5em 0;
+    height: 5em;
 
     transition: ease 1s;
 }
 
 .btn-scrolled {
     padding: 1em 0;
+    height: 3.5em;
 }
 
 .logo {
