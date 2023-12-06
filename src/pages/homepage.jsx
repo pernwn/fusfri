@@ -22,8 +22,6 @@ export default function HomePage() {
 
     getPosts();
 
-
-
   }, []); //Udtryk for dependencies – hvis ikke den er med, så går useEffect amok og vil stå og hente dataen i uendelighed. Stopper useEffect() når den har kørt 1 gang
 
   return (

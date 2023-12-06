@@ -1,7 +1,7 @@
 /* STYLING AF HEADER*/
 
 /* header container */
-header{
+header {
     /* use flexbox layout */
     display: flex;
     /* distribute space between items */
@@ -10,41 +10,58 @@ header{
     align-items: center;
 
     /* set padding around container */
-    padding:0 5em;
+    padding: 0 5em;
+
 }
 
-
-
 /* Define nav container styling */
-.nav-container{
+.nav-container {
+    display: flex;
+
     /* Set nav container height */
-    height:5em;
+    height: 10em;
 
     /* Apply padding and position nav */
-    padding-top:2.5em;
+    padding-top: 2rem;
 
     /* Apply smooth transition */
     transition: ease 1s;
 }
 
-
-
 /* Hide navbar padding when scrolling */
 .nav-scrolled {
-    padding-top: 0;
-    height: 2em;
+    padding-top: 3em;
+    height: 12em;
 }
 
-.logo {
-    width:15%;
+
+
+
+.btn-container {
+    display:flex;
+    width:100%;
+
+    padding: 2em 0;
+
     transition: ease 1s;
 }
 
-.logo-scrolled{
-    width:10%;
+.btn-scrolled {
+    padding: 1em 0;
+
 }
 
-.header-container{
+.logo {
+    width: 15%;
+    transition: ease 1s;
+}
+
+.logo-scrolled {
+    width: 12%;
+}
+
+
+.header-container {
     /* light grey background */
     background-color: #eef6f7;
 
@@ -52,12 +69,12 @@ header{
     box-shadow: 0 -15px 25px grey;
 
     /* fixed position with z-index */
-    position:fixed;
+    position: fixed;
     z-index: 5;
 
     /* full width and height */
-    width:100%;
-    height:10em;
+    width: 100%;
+    height: 10em;
 
     /* rounded bottom */
     border-radius: 0 0 2em 2em;
@@ -65,13 +82,14 @@ header{
     /* smooth transition */
     transition: ease 1s;
 }
-.header-scrolled{
-    height:6em;
+
+.header-scrolled {
+    height: 8em;
 }
 
-.action-btn-container{
+.action-btn-container {
     visibility: hidden;
-    position:fixed;
+    position: fixed;
     z-index: 6;
 
     margin: 42em 74em;
@@ -80,29 +98,42 @@ header{
     transition: ease 2s;
 }
 
-.action-btn-scrolled{
-   visibility: visible;
+.action-btn-scrolled {
+    visibility: visible;
+}
+
+.search-container {
+    display:flex;
+    height: 4ch;
+
+    transition: ease 1s;
+}
+
+.search-scrolled {
+    height: 3ch;
+}
+
+.searchContainer{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    width:100%;
+
+
 }
 
 
 
 
 /*MAIN STYLES*/
-.kontakt-os{
-    background-color: red;
-}
 
 
 
-
-
-img{
+img {
     border-radius: 2em;
 }
 
-
-
-
-
-
-
+.kontakt {
+    background-color: aqua;
+}
