@@ -9,6 +9,7 @@ import Nav from "./components/nav";
 import Friskole from "./pages/friskole";
 
 import './App.css'
+import Kontakt from "./pages/kontakt";
 
 
 function App() {
@@ -20,8 +21,9 @@ function App() {
 
       <Nav />
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route index element={<HomePage />} />
         <Route path="/friskole" element={<Friskole />} />
+        <Route path="/kontakt" element={<Kontakt />} />
 
 
         <Route path="*" element={<Navigate to="/" />} /* 404 */ />

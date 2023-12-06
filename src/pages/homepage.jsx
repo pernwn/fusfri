@@ -28,12 +28,12 @@ export default function HomePage() {
 
   return (
     <Container component="main">
-      <Box
-        sx={{
-          width: "100%",
-        }}
-      >
-        <section className="hero">
+
+      <iframe width="100%" height="600vh" src="https://www.youtube.com/embed/JYYtjlpkpeM?si=4Y6eEt39IDBrTJQw?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" style={{borderRadius:"1.5em"}}></iframe>
+
+
+      <Box>
+        <section>
           {posts.map(post => (
             <Content key={post.id} post={post} />
           ))}
