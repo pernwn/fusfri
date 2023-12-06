@@ -77,7 +77,7 @@ header{
     transition: ease 2s;
 }
 
-.action-btn-scrolled{
+.action-btn-container{
     visibility: visible;
 }
 
