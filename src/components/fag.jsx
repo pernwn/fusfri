@@ -1,40 +1,35 @@
-import { Card } from '@mui/material';
+import { Card, Stack, Typography } from '@mui/material';
 import React, { useState, useEffect } from 'react';
 
-const WordPressFag = () => {
-  const [fags, setFags] = useState([]);
+const WordPressFag = ({ postId }) => {
+  const [post, setPost] = useState(null);
 
   useEffect(() => {
-    const fetchFags = async () => {
+    const fetchPost = async () => {
       try {
-        const response = await fetch('https://www.wordpress.vicw.dk/wp-json/wp/v2/posts?_embed&categories=3');
+        const response = await fetch(`https://www.wordpress.vicw.dk/wp-json/wp/v2/posts/${postId}?_embed`);
         if (!response.ok) {
           throw new Error('Network response was not ok.');
         }
         const data = await response.json();
-        setFags(data);
+        setPost(data);
       } catch (error) {
         console.error('Error fetching data:', error);
       }
     };
  
-    fetchFags();
-  }, []);
+    fetchPost();
+  }, [postId]);
 
   return (
-    <Card
-    sx={{
-        width: "100%",
-        padding: 20,
-      }}
-    >
-      {fags.map(fag => (
-        <div key={fag.id} className="mui-card">
-          <h2>{fag.title.rendered}</h2>
-          <div dangerouslySetInnerHTML={{ __html: fag.content.rendered }} />
-        </div>
-      ))}
-    </Card>
+    <Stack>
+      {post && (
+        <Card className="mui-card">
+          <Typography variant="h2">{post.title.rendered}</Typography>
+          <div dangerouslySetInnerHTML={{ __html: post.content.rendered }} />
+        </Card>
+      )}
+    </Stack>
   );
 };
 
