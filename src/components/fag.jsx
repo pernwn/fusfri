@@ -22,7 +22,14 @@ const WordPressFag = ({ postId }) => {
   }, [postId]);
 
   return (
-    <Stack>
+    <Stack
+    sx={
+      {
+      overflow: 'auto',
+      direction: 'row',
+  }
+  }
+    >
       {post && (
         <Card className="mui-card">
           <Typography variant="h2">{post.title.rendered}</Typography>
