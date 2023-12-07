@@ -12,15 +12,13 @@ import HomeIcon from '@mui/icons-material/Home';
 import '../styles/vic.css'
 
 import logo from "../assets/logo/fusfri-logo.png"
-import { Box, Button, ButtonGroup, Collapse, Fab, Fade, List, ListItemButton, ListItemIcon, ListItemText, ListSubheader, Typography } from "@mui/material";
+import { Box, Button, ButtonGroup, Collapse, Divider, Fab, Fade, List, ListItemButton, ListItemIcon, ListItemText, ListSubheader, Typography} from "@mui/material";
 import { Link, NavLink } from "react-router-dom";
 import Search from "./search";
 import { FilledBtn } from "./buttons";
 import { DropBtn, DropdownBtn } from "./dropdown";
-import { ExpandLessRounded, ExpandMoreRounded } from "@mui/icons-material";
+import { ExpandLessRounded, ExpandMoreRounded, SafetyDividerRounded } from "@mui/icons-material";
 import { Test } from "./test";
-
-
 
 
 
@@ -90,7 +88,7 @@ creating a different look for the scrolled state. */
                     <Search />
 
                     <Box className={`btn-container ${isScrolled && 'btn-scrolled'}`} sx={{ display: "flex", alignItems: "center" }}>
-                        <Link to="/"><HomeIcon sx={{ mr: ".5em", fontSize: "35pt" }} /></Link>
+
 
                         <DropBtn
                             name="Information"
@@ -101,8 +99,13 @@ creating a different look for the scrolled state. */
                                 <Button></Button>,
                             ]}
                         />
-
-                        <Test name="information"/>
+                        <FilledBtn name="hjem" page="/" mr="2em" icon={<HomeIcon/>} />
+                       {/*TODO: FIKSSSS*/}
+                        <Divider orientation="vertical" />
+                    
+                        <Test name="information" mr="1em"/>
+                        <Test name="Om Fusfri" mr="1em"/>
+                        <Test name="Kontakt" mr="1em"/>
                     
                         {/*TODO: KIG PÅ DETTE !!!!! ikke færdig ––– prøv denne https://www.robinwieruch.de/react-dropdown/  <FilledBtn name="Hjem" page="/" mr="1em" />
                         <List

@@ -41,9 +41,14 @@ export const Test = (props) => {
 
   return (
     <Fragment>
-      <ButtonGroup variant="contained" ref={anchorRef} aria-label="split button">
-        <Button onClick={handleToggle} endIcon={open ? <ExpandLessRounded/> : <ExpandMoreRounded/>}>{props.name}</Button>
-      </ButtonGroup>
+
+        <Button variant='contained' ref={anchorRef} onClick={handleToggle} endIcon={open ? <ExpandLessRounded/> : <ExpandMoreRounded/>}             
+            sx={{
+                width: `${props.w}`,
+                marginRight: `${props.mr}`,
+            }}> 
+        {props.name}</Button>
+
       <Popper
         sx={{
           zIndex: 1,
