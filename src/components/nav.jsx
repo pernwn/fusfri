@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import UpIcon from '@mui/icons-material/KeyboardArrowUp';
 import PhoneIcon from '@mui/icons-material/Phone';
 import ExpandMoreRoundedIcon from '@mui/icons-material/ExpandMoreRounded';
-
+import HomeIcon from '@mui/icons-material/Home';
 
 //Individuel styling som udgangspunkt – sammensætter alt til sidst 
 import '../styles/vic.css'
@@ -16,7 +16,9 @@ import { Box, ButtonGroup, Collapse, Fab, Fade, List, ListItemButton, ListItemIc
 import { Link } from "react-router-dom";
 import Search from "./search";
 
-import { ExpandLess, ExpandMore } from "@mui/icons-material";
+
+import { DropdownBtn } from "./dropdown";
+import Drop from "./test";
 
 /*
 const DropdownMenu = styled((props) => {
@@ -67,9 +69,8 @@ creating a different look for the scrolled state. */
         <>
             <header className={`header-container ${isScrolled && 'header-scrolled'}`}>
                 <img src={logo} className={`logo ${isScrolled && 'logo-scrolled'}`} alt="Fussingø-Egnens Logo" />
-                <OutlinedBtn name="Friskole" page="/friskole" />
-                <OutlinedBtn name="Kalender" page="/information" />
 
+                <Drop/>
 
                 <Box
                     component="nav" className={`nav-container ${isScrolled && 'nav-scrolled'}`}
@@ -81,38 +82,55 @@ creating a different look for the scrolled state. */
                 >
                     <Search />
 
-                    <Box className={`btn-container ${isScrolled && 'btn-scrolled'}`}>
-                        <FilledBtn name="Hjem" page="/" mr="1em" />
-                
-                            {/*TODO: KIG PÅ DETTE !!!!! ikke færdig ––– prøv denne https://www.robinwieruch.de/react-dropdown/ */}
-                            <List
-                                component="nav"
-                            >
-                                
-                                <FilledBtn name="Information" mr="1em" event={handleOpen}>
-                                    {open ? <ExpandLess /> : <ExpandMore />}
-                                </FilledBtn>
- 
-                                <Collapse in={open} timeout="auto" unmountOnExit>
-                                    <List component="div" disablePadding sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper', boxShadow:'0 8px 20px grey' }}>
-                                        <ListItemButton sx={{ pl: 2 }}>
-                                            <ListItemText primary="Praktisk" />
-                                        </ListItemButton>
+                    <Box className={`btn-container ${isScrolled && 'btn-scrolled'}`} sx={{display:"flex", alignItems:"center"}}>
+                        <HomeIcon sx={{mr:".5em", fontSize:"35pt"}} />
+                       
+                        <DropdownBtn name="Information" mr="1em"/>
+                        <DropdownBtn name="Om Fusfri" mr="1em"/>
+                        <DropdownBtn name="Kontakt" mr="1em"/>
 
-                                        <ListItemButton sx={{ pl: 2 }}>
-                                            <ListItemText primary="Året på Fusfri" />
-                                        </ListItemButton>
+                        {/*TODO: KIG PÅ DETTE !!!!! ikke færdig ––– prøv denne https://www.robinwieruch.de/react-dropdown/  <FilledBtn name="Hjem" page="/" mr="1em" />
+                        <List
+                            component="nav"
+                        >
 
-                                    </List>
-                                </Collapse>
-                            </List>
+                            <FilledBtn name="Information" mr="1em" event={handleOpen} icon={open ? <ExpandLess /> : <ExpandMore />} />
+                            <Collapse in={open} timeout="auto" unmountOnExit>
+                                <List component="div" disablePadding sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper', boxShadow: '0 8px 20px grey' }}>
+                                    <ListItemButton sx={{ pl: 2 }}>
+                                        <ListItemText primary="Praktisk" />
+                                    </ListItemButton>
 
-       
+                                    <ListItemButton sx={{ pl: 2 }}>
+                                        <ListItemText primary="Året på Fusfri" />
+                                    </ListItemButton>
 
-           
+                                    <ListItemButton sx={{ pl: 2 }}>
+                                        <ListItemText primary="Dagtilbud" />
+                                    </ListItemButton>
 
-                        <FilledBtn name="Om Fusfri" page="/omFus" mr="1em" icon={<ExpandMoreRoundedIcon />} />
+                                    <ListItemButton sx={{ pl: 2 }}>
+                                        <ListItemText primary="Faciliteter" />
+                                    </ListItemButton>
+
+                                    <ListItemButton sx={{ pl: 2 }}>
+                                        <ListItemText primary="Forældreinfo." />
+                                    </ListItemButton>
+
+                                </List>
+                            </Collapse>
+                        </List>
+
+                                                <FilledBtn name="Om Fusfri" page="/omFus" mr="1em" icon={<ExpandMoreRoundedIcon />} />
                         <FilledBtn name="Kontakt" page="/kontakt" mr="1em" icon={<ExpandMoreRoundedIcon />} />
+
+
+*/}
+
+
+
+
+
 
 
                     </Box>
@@ -123,6 +141,8 @@ creating a different look for the scrolled state. */
 
 
             </header>
+
+
 
             <Fade in={isScrolled}>
                 <Box sx={{ mr: 5 }} className={`action-btn-container ${isScrolled && 'action-btn-scrolled'}`}  >
