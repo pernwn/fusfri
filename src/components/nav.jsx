@@ -13,7 +13,7 @@ import '../styles/vic.css'
 
 import logo from "../assets/logo/fusfri-logo.png"
 import { Box, Button, ButtonGroup, Collapse, Fab, Fade, List, ListItemButton, ListItemIcon, ListItemText, ListSubheader, Typography } from "@mui/material";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Search from "./search";
 import { FilledBtn } from "./buttons";
 import { DropBtn, DropdownBtn } from "./dropdown";
@@ -90,8 +90,7 @@ creating a different look for the scrolled state. */
                     <Search />
 
                     <Box className={`btn-container ${isScrolled && 'btn-scrolled'}`} sx={{ display: "flex", alignItems: "center" }}>
-                        <HomeIcon sx={{ mr: ".5em", fontSize: "35pt" }} />
-
+                        <Link to="/"><HomeIcon sx={{ mr: ".5em", fontSize: "35pt" }} /></Link>
 
                         <DropBtn
                             name="Information"
