@@ -91,12 +91,12 @@ header {
 
     margin: 42em 74em;
 
-    transition: ease 2s;
+    transition: ease 2s;                                                                    
 }
 
 .action-btn-scrolled {
     visibility: visible;
-}
+}                                                                                           
 
 .search-container {
     display: flex;

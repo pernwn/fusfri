@@ -1,5 +1,5 @@
 
-import { FilledBtn, LinkBtn, OutlinedBtn } from "./buttons";
+
 import { useEffect, useState } from "react";
 
 //IKONER FRA MUI
@@ -12,13 +12,17 @@ import HomeIcon from '@mui/icons-material/Home';
 import '../styles/vic.css'
 
 import logo from "../assets/logo/fusfri-logo.png"
-import { Box, ButtonGroup, Collapse, Fab, Fade, List, ListItemButton, ListItemIcon, ListItemText, ListSubheader, Typography } from "@mui/material";
+import { Box, Button, ButtonGroup, Collapse, Fab, Fade, List, ListItemButton, ListItemIcon, ListItemText, ListSubheader, Typography } from "@mui/material";
 import { Link } from "react-router-dom";
 import Search from "./search";
+import { FilledBtn } from "./buttons";
+import { DropBtn, DropdownBtn } from "./dropdown";
+import { ExpandLessRounded, ExpandMoreRounded } from "@mui/icons-material";
+import { Test } from "./test";
 
 
-import { DropdownBtn } from "./dropdown";
-import Drop from "./test";
+
+
 
 /*
 const DropdownMenu = styled((props) => {
@@ -58,6 +62,11 @@ creating a different look for the scrolled state. */
         window.scrollTo(0, 0);
     }
 
+    const handleMenuTwo = () => {
+        // do something
+        setOpen(false);
+      };
+
     const [open, setOpen] = useState(false);
 
     const handleOpen = () => {
@@ -70,8 +79,6 @@ creating a different look for the scrolled state. */
             <header className={`header-container ${isScrolled && 'header-scrolled'}`}>
                 <img src={logo} className={`logo ${isScrolled && 'logo-scrolled'}`} alt="Fussingø-Egnens Logo" />
 
-                <Drop/>
-
                 <Box
                     component="nav" className={`nav-container ${isScrolled && 'nav-scrolled'}`}
                     sx={{
@@ -82,13 +89,22 @@ creating a different look for the scrolled state. */
                 >
                     <Search />
 
-                    <Box className={`btn-container ${isScrolled && 'btn-scrolled'}`} sx={{display:"flex", alignItems:"center"}}>
-                        <HomeIcon sx={{mr:".5em", fontSize:"35pt"}} />
-                       
-                        <DropdownBtn name="Information" mr="1em"/>
-                        <DropdownBtn name="Om Fusfri" mr="1em"/>
-                        <DropdownBtn name="Kontakt" mr="1em"/>
+                    <Box className={`btn-container ${isScrolled && 'btn-scrolled'}`} sx={{ display: "flex", alignItems: "center" }}>
+                        <HomeIcon sx={{ mr: ".5em", fontSize: "35pt" }} />
 
+
+                        <DropBtn
+                            name="Information"
+                            open={open}
+                            trigger={<Button onClick={handleOpen} endIcon={open ? <ExpandLessRounded /> : <ExpandMoreRounded />}><Typography variant="button">Information</Typography></Button>}
+                            menu={[
+                                <Button onClick={handleMenuTwo}>Hej</Button>,
+                                <Button></Button>,
+                            ]}
+                        />
+
+                        <Test name="information"/>
+                    
                         {/*TODO: KIG PÅ DETTE !!!!! ikke færdig ––– prøv denne https://www.robinwieruch.de/react-dropdown/  <FilledBtn name="Hjem" page="/" mr="1em" />
                         <List
                             component="nav"
@@ -120,12 +136,15 @@ creating a different look for the scrolled state. */
                                 </List>
                             </Collapse>
                         </List>
-
                                                 <FilledBtn name="Om Fusfri" page="/omFus" mr="1em" icon={<ExpandMoreRoundedIcon />} />
                         <FilledBtn name="Kontakt" page="/kontakt" mr="1em" icon={<ExpandMoreRoundedIcon />} />
 
 
+
+
 */}
+
+
 
 
 

@@ -1,42 +1,85 @@
 
 import Button from '@mui/material/Button';
-import AddCircleOutlinedIcon from '@mui/icons-material/AddCircleOutlined';
-import EditIcon from '@mui/icons-material/Edit';
-import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
-import { Dropdown, DropdownMenuItem } from './dropdownNy';
+import ButtonGroup from '@mui/material/ButtonGroup';
+import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
+import ClickAwayListener from '@mui/material/ClickAwayListener';
+import Grow from '@mui/material/Grow';
+import Paper from '@mui/material/Paper';
+import Popper from '@mui/material/Popper';
+import MenuItem from '@mui/material/MenuItem';
+import MenuList from '@mui/material/MenuList';
+import { Fragment, useRef, useState } from 'react';
+import { ExpandLessRounded } from '@mui/icons-material';
+import ExpandMoreRounded from '@mui/icons-material/ExpandMoreRounded';
+
+const options = ['Praktisk', 'Året på Fusfri', 'Dagtilbud', 'Faciliteter', 'Forældreinfo.'];
+
+//const options = []
+
+export const Test = (props) => {
+  const [open, setOpen] = useState(false);
+  const anchorRef = useRef(null);
+  const [selectedIndex, setSelectedIndex] = useState(1);
 
 
-const Drop = () => {
-  const handleCreate = () => {
-    console.log('create something');
+  const handleMenuItemClick = (event, index) => {
+    setSelectedIndex(index);
+    setOpen(false);
   };
 
-  const handleEdit = () => {
-    console.log('edit something');
+  const handleToggle = () => {
+    setOpen((prevOpen) => !prevOpen);
   };
 
-  const handleDelete = () => {
-    console.log('delete something');
+  const handleClose = (event) => {
+    if (anchorRef.current && anchorRef.current.contains(event.target)) {
+      return;
+    }
+
+    setOpen(false);
   };
 
   return (
-    <Dropdown
-      keepOpen
-      open={open}
-      trigger={<Button>Dropdown</Button>}
-      menu={[
-        <DropdownMenuItem onClick={handleCreate}>
-          Create <AddCircleOutlinedIcon />
-        </DropdownMenuItem>,
-        <DropdownMenuItem onClick={handleEdit}>
-          Edit <EditIcon />
-        </DropdownMenuItem>,
-        <DropdownMenuItem onClick={handleDelete}>
-          Delete <DeleteForeverIcon />
-        </DropdownMenuItem>,
-      ]}
-    />
+    <Fragment>
+      <ButtonGroup variant="contained" ref={anchorRef} aria-label="split button">
+        <Button onClick={handleToggle} endIcon={open ? <ExpandLessRounded/> : <ExpandMoreRounded/>}>{props.name}</Button>
+      </ButtonGroup>
+      <Popper
+        sx={{
+          zIndex: 1,
+        }}
+        open={open}
+        anchorEl={anchorRef.current}
+        role={undefined}
+        transition
+        disablePortal
+      >
+        {({ TransitionProps, placement }) => (
+          <Grow
+            {...TransitionProps}
+            style={{
+              transformOrigin:
+                placement === 'bottom' ? 'center top' : 'center bottom',
+            }}
+          >
+            <Paper>
+              <ClickAwayListener onClickAway={handleClose}>
+                <MenuList id="split-button-menu" autoFocusItem>
+                  {options.map((option, index) => (
+                    <MenuItem
+                      key={option}
+                
+                      onClick={(event) => handleMenuItemClick(event, index)}
+                    >
+                      {option}
+                    </MenuItem>
+                  ))}
+                </MenuList>
+              </ClickAwayListener>
+            </Paper>
+          </Grow>
+        )}
+      </Popper>
+    </Fragment>
   );
-};
-
-export default Drop;
+}

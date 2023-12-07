@@ -65,7 +65,7 @@ export default function SearchInput() {
 
     return (
         <div className="searchContainer">
-            <LinkBtn name="Forældre intra" page="*" w="fit-content" className={`btn-container ${isScrolled && 'btn-scrolled'}`} />
+            
 
             <Search className={`search-container ${isScrolled && 'search-scrolled'}`}>
                 <SearchIconWrapper>
@@ -76,6 +76,8 @@ export default function SearchInput() {
                     inputProps={{ 'aria-label': 'search' }}
                 />
             </Search>
+
+            <LinkBtn name="Forældre intra" page="*" w="fit-content" className={`btn-container ${isScrolled && 'btn-scrolled'}`} />
         </div>
     )
 }

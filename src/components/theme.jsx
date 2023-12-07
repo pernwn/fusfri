@@ -45,7 +45,7 @@ export const myTheme = (outerTheme) =>
             },
         },
         shape: {
-            borderRadius: 4,
+            borderRadius: 8,
         },
     })
 

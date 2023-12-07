@@ -3,7 +3,7 @@
 import { Box, Button, Collapse, List, ListItem, ListItemButton, ListItemText, Typography } from "@mui/material";
 import React, { useState } from "react"
 import { FilledBtn } from "./buttons";
-import { ExpandLess, ExpandMore } from "@mui/icons-material";
+import { ExpandLessRounded, ExpandMoreRounded } from "@mui/icons-material";
 import { NavLink } from "react-router-dom";
 
 
@@ -126,7 +126,7 @@ export const DropdownBtn = (props) => {
 
     return (
         <Box>
-            <Button variant="contained" endIcon={open ? <ExpandLess/> : <ExpandMore/>} onClick={handleInformation}
+            <Button variant="contained" endIcon={open ? <ExpandLessRounded /> : <ExpandMoreRounded />} onClick={handleInformation}
                 component={NavLink}
 
                 sx={{
@@ -136,7 +136,28 @@ export const DropdownBtn = (props) => {
             >
                 <Typography variant="button">{props.name}</Typography>
             </Button>
-            
+
+        </Box>
+    )
+}
+
+export const DropBtn = ({ open, trigger, menu }) => {
+    return (
+        <Box>
+            <Collapse in={open} timeout="auto" unmountOnExit>
+                {trigger}
+                {open ? (
+                    <List component="div" disablePadding sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper', boxShadow: '0 8px 20px grey', position: "absolute" }}>
+                        {menu.map((menuItem, index) => (
+                            <ListItemButton key={index}>{menuItem}</ListItemButton>
+                        ))}
+                    </List>
+                ) : null}
+            </Collapse>
+
+
+
+
         </Box>
     )
 }

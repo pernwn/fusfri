@@ -35,10 +35,7 @@ export const OutlinedBtn = (props) => {
 
 export const LinkBtn = (props) => {
     return (
-        <Button variant="outlined"
-            component={NavLink}
-            to={props.page}
-
+        <Button variant="filled"
             sx={{
                 width: `${props.w}`,
             }}
