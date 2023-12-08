@@ -1,66 +1,87 @@
-import React, { useEffect } from "react";
+// Udviklet af Nor
+
+import React, { useEffect, useState } from "react";
 import "../App.css";
-import { Typography } from "@mui/material";
 
 const CalendarComponent = () => {
-  useEffect(() => {
-    const init = async () => {
-      try {
-        // Load the Google API client library
-        await window.gapi.load("client", async () => {
-          console.log("Google API client library loaded");
+  const [events, setEvents] = useState([]);
 
-          // Load the Google Calendar API
-          await window.gapi.client.load("calendar", "v3");
+  const init = async () => {
+    try {
+      // Load the Google API client library
+      await window.gapi.load("client", async () => {
+        console.log("Google API client library loaded");
 
-          console.log("Google Calendar API loaded");
+        // Load the Google Calendar API
+        await window.gapi.client.load("calendar", "v3");
 
-          // Initialize the Google Calendar API
-          await window.gapi.client.init({
-            apiKey: "AIzaSyDoh3L14VpOaZihK9kiB7vxQIicbNn-Lsg", // Replace with your actual API key
-          });
+        console.log("Google Calendar API loaded");
 
-          console.log("Google API client initialized successfully");
-
-          // Make API request to get calendar events
-          const response = await window.gapi.client.calendar.events.list({
-            calendarId: "88bc95f476da329749546fb7eaf2e95a78178e2e0274f8fb6de6efb8e5947e31@group.calendar.google.com",
-            timeMin: new Date().toISOString(),
-            showDeleted: false,
-            singleEvents: true,
-            maxResults: 10,
-            orderBy: "startTime",
-          });
-
-          console.log("API response:", response);
-
-          const events = response.result && response.result.items ? response.result.items : [];
-          console.log("Fetched calendar events:", events);
-
-          displayEvents(events);
+        // Initialize the Google Calendar API
+        await window.gapi.client.init({
+          apiKey: "AIzaSyDoh3L14VpOaZihK9kiB7vxQIicbNn-Lsg",
         });
-      } catch (error) {
-        console.error("Error initializing or fetching calendar events:", error);
-      }
-    };
 
-    const displayEvents = (events) => {
-      const eventsList = document.getElementById("events-list");
+        console.log("Google API client initialized successfully");
 
-      events.forEach((event) => {
-        const li = document.createElement("li");
-        li.appendChild(document.createTextNode(event.summary));
-        eventsList.appendChild(li);
+        const currentYear = new Date().getFullYear();
+
+        // Make API request to get calendar events
+        const response = await window.gapi.client.calendar.events.list({
+          calendarId: "88bc95f476da329749546fb7eaf2e95a78178e2e0274f8fb6de6efb8e5947e31@group.calendar.google.com",
+          timeMax: new Date(`${currentYear}-12-31T23:59:59Z`).toISOString(),
+          showDeleted: false,
+          singleEvents: true,
+          orderBy: "startTime",
+          maxResults: 10,
+        });
+
+        console.log("API response:", response);
+
+        const fetchedEvents = response.result && response.result.items ? response.result.items : [];
+        console.log("Fetched calendar events:", fetchedEvents);
+
+        setEvents(fetchedEvents);
       });
-    };
+    } catch (error) {
+      console.error("Error initializing or fetching calendar events:", error);
+    }
+  };
 
+  useEffect(() => {
     init();
   }, []);
 
+  const displayEvents = (events) => {
+    return events.map((event) => {
+      const startDate = new Date(event.start.dateTime || event.start.date);
+
+      const options = {
+        weekday: "long",
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+        hour: "numeric",
+        minute: "numeric",
+        timeZone: "Europe/Copenhagen",
+      };
+
+      // Formating the date and time
+      const formattedDate = startDate.toLocaleString("en-UK", options);
+
+      return (
+        <li key={event.id}>
+          <strong>{event.summary}</strong>
+          <br />
+          <span>{formattedDate}</span>
+        </li>
+      );
+    });
+  };
+
   return (
     <div>
-      <Typography variant="h2">Your Calendar Events</Typography>
-      <ul id="events-list"></ul>
+      <ul id="events-list">{displayEvents(events)}</ul>
     </div>
   );
 };
