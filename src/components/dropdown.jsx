@@ -120,9 +120,9 @@ export const DropdownBtn = (props) => {
         setOpen(!open);
     }
 
-    const handleMenu = () => {
+    /*const handleMenu = () => {
         console.log("clicked");
-    }
+    }*/
 
     return (
         <Box>

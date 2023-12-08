@@ -138,7 +138,9 @@ export default function Nav() {
                                     <Test name="Om Fusfri" mr="1em" />
                                     <Test name="Kontakt" mr="1em" />
 
-                                    TODO: KIG PÅ DETTE !!!!! ikke færdig ––– prøv denne https://www.robinwieruch.de/react-dropdown/  <FilledBtn name="Hjem" page="/" mr="1em" />
+                                    {/*TODO: KIG PÅ DETTE !!!!! ikke færdig ––– prøv denne https://www.robinwieruch.de/react-dropdown/*/ } 
+                                    
+                                    <FilledBtn name="Hjem" page="/" mr="1em" />
                                     <List
                                         component="nav"
                                     >

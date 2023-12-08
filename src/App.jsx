@@ -25,7 +25,7 @@ function App() {
         <Route index element={<HomePage />} />
         <Route path="/friskole" element={<Friskole />} />
         <Route path="/kontakt" element={<Kontakt />} />
-        <Route path="/aaret" element={<Calendar />} />
+        <Route path="/information" element={<Calendar />} />
 
         <Route path="*" element={<Navigate to="/" />} /* 404 */ />
       </Routes>

@@ -1,5 +1,5 @@
 import { Box, Container, Paper, Typography } from "@mui/material";
-import { FilledBtn, OutlinedBtn } from "../components/buttons";
+import { FilledBtn } from "../components/buttons";
 import { useEffect, useState } from "react";
 
 import Content from "../components/content";
@@ -30,7 +30,7 @@ export default function HomePage() {
                 <FilledBtn name="Friskole" page="/friskole" />
                 <FilledBtn name="Kalender" page="/information" />
 
-      <iframe width="100%" height="600vh" src="https://www.youtube.com/embed/JYYtjlpkpeM?si=4Y6eEt39IDBrTJQw?controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" style={{borderRadius:"1.5em"}}></iframe>
+      <iframe width="100%" height="600vh" src="https://www.youtube.com/embed/JYYtjlpkpeM?si=4Y6eEt39IDBrTJQw?controls=0" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" style={{borderRadius:"1.5em"}}></iframe>
 
 
       <Box>
