@@ -5,13 +5,14 @@ import { myTheme } from "./components/theme";
 import { Navigate, Route, Routes } from "react-router-dom";
 
 import HomePage from "./pages/homepage";
-import Nav from "./components/nav";
+//import Nav from "./components/nav";
 import Friskole from "./pages/friskole";
 
 import "./App.css";
 import Kontakt from "./pages/kontakt";
 
 import Calendar from "./pages/calender";
+import Header from "./components/dropdown/header";
 
 function App() {
   const outerTheme = useTheme();
@@ -20,7 +21,8 @@ function App() {
     <ThemeProvider theme={myTheme(outerTheme)}>
       <CssBaseline enableColorScheme />
 
-      <Nav />
+      <Header/>
+
       <Routes>
         <Route index element={<HomePage />} />
         <Route path="/friskole" element={<Friskole />} />

@@ -1,5 +1,5 @@
 
-import { useEffect, useState } from "react";
+/*import { useEffect, useState } from "react";
 
 //IKONER FRA MUI
 import UpIcon from "@mui/icons-material/KeyboardArrowUp";
@@ -43,7 +43,7 @@ export default function Nav() {
   and an event listener that triggers when the user scrolls. 
   The event listener updates the state isScrolled to true if the user scrolls more than 150 pixels, 
   otherwise false. This state is used to conditionally apply different CSS classes to the navigation bar, 
-  creating a different look for the scrolled state. */
+  creating a different look for the scrolled state. 
 
     // Set scroll state and scroll event handler
     const [isScrolled, setScrolled] = useState(false);
@@ -70,7 +70,7 @@ export default function Nav() {
 
     const handleOpen = () => {
         setOpen(!open);
-    };*/
+    };
 
 
     //TODO: nav active states TODO: dropdown !!!!!!!!!
@@ -127,4 +127,4 @@ export default function Nav() {
 
 
     )
-}
+}*/
