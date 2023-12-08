@@ -147,17 +147,13 @@ export const DropBtn = ({ open, trigger, menu }) => {
             <Collapse in={open} timeout="auto" unmountOnExit>
                 {trigger}
                 {open ? (
-                    <List component="div" disablePadding sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper', boxShadow: '0 8px 20px grey', position: "absolute" }}>
+                    <List component="div" disablePadding sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper', boxShadow: '0 8px 20px grey'}}>
                         {menu.map((menuItem, index) => (
                             <ListItemButton key={index}>{menuItem}</ListItemButton>
                         ))}
                     </List>
                 ) : null}
             </Collapse>
-
-
-
-
         </Box>
     )
 }

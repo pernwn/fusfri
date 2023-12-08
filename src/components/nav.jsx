@@ -33,20 +33,9 @@ import { Link } from "react-router-dom";
 import Search from "./search";
 import { FilledBtn } from "./buttons";
 import { DropBtn } from "./dropdown";
-import { ExpandLess, ExpandLessRounded, ExpandMore, ExpandMoreRounded } from "@mui/icons-material";
+import { ExpandLessRounded, ExpandMoreRounded } from "@mui/icons-material";
 import { Test } from "./test";
 
-/*
-const DropdownMenu = styled((props) => {
-    const { open, ...other } = props;
-    return <ExpandMoreRoundedIcon {...other} />;
-})(({ theme, open }) => ({
-    transform: !open ? 'rotate(0deg)' : 'rotate(180deg)',
-    marginLeft: 'auto',
-    transition: theme.transitions.create('transform', {
-        duration: theme.transitions.duration.shortest,
-    }),
-}));*/
 
 export default function Nav() {
     /*This code defines a functional component Nav that displays a navigation bar for a website. 
@@ -72,7 +61,7 @@ export default function Nav() {
         window.scrollTo(0, 0);
     };
 
-    const handleMenuTwo = () => {
+    /*const handleMenuTwo = () => {
         // do something
         setOpen(false);
     };
@@ -81,90 +70,36 @@ export default function Nav() {
 
     const handleOpen = () => {
         setOpen(!open);
-    };
+    };*/
 
 
     //TODO: nav active states TODO: dropdown !!!!!!!!!
     return (
+        <>
+            <header className={`header-container ${isScrolled && 'header-scrolled'}`}>
+                <img src={logo} className={`logo ${isScrolled && 'logo-scrolled'}`} alt="Fussingø-Egnens Logo" />
 
-        <header className={`header-container ${isScrolled && 'header-scrolled'}`}>
-            <img src={logo} className={`logo ${isScrolled && 'logo-scrolled'}`} alt="Fussingø-Egnens Logo" />
-
-            <Box
-                component="nav"
-                className={`nav-container ${isScrolled && "nav-scrolled"}`}
-                sx={{
-                    display: "flex",
-                    flexDirection: "column",
-                }}
-            >
-                <Search />
-
-                <FilledBtn name="Hjem" page="/" mr="1em" />
-
-                {/*TODO: KIG PÅ DETTE !!!!! ikke færdig ––– prøv denne https://www.robinwieruch.de/react-dropdown/ */}
-                <List component="nav">
-                    <FilledBtn name="Information" mr="1em" event={handleOpen}>
-                        {open ? <ExpandLess /> : <ExpandMore />}
-                    </FilledBtn>
-
-                    <Collapse in={open} timeout="auto" unmountOnExit>
-                        <List
-                            component="div"
-                            disablePadding
-                            sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper", boxShadow: "0 8px 20px grey" }}
-                        >
-
-                            <Box className={`btn-container ${isScrolled && 'btn-scrolled'}`} sx={{ display: "flex", alignItems: "center" }}>
+                <Box
+                    component="nav"
+                    className={`nav-container ${isScrolled && "nav-scrolled"}`}
+                    sx={{
+                        display: "flex",
+                        flexDirection: "column",
+                    }}
+                >
+                    <Search />
 
 
-                                <DropBtn
-                                    name="Information"
-                                    open={open}
-                                    trigger={<Button onClick={handleOpen} endIcon={open ? <ExpandLessRounded /> : <ExpandMoreRounded />}><Typography variant="button">Information</Typography></Button>}
-                                    menu={[
-                                        <ListItemButton key={[]} onClick={handleMenuTwo}>hej</ListItemButton>
+                    <Box className={`btn-container ${isScrolled && 'btn-scrolled'}`} sx={{ display: "flex", alignItems: "center" }}>
+                        <FilledBtn name="Hjem" page="/" mr="1em" />
 
-                                    ]}
-                                />
-                                <FilledBtn name="hjem" page="/" mr="2em" icon={<HomeIcon />} />
-                                {/*TODO: FIKSSSS*/}
-                                <Divider orientation="vertical" />
+                        <Test name="Information" />
 
-                                <Test name="information" mr="1em" />
-                                <Test name="Om Fusfri" mr="1em" />
-                                <Test name="Kontakt" mr="1em" />
+                    </Box>
 
-                                {/*TODO: KIG PÅ DETTE !!!!! ikke færdig ––– prøv denne https://www.robinwieruch.de/react-dropdown/*/}
 
-                                <FilledBtn name="Hjem" page="/" mr="1em" />
-                                <List
-                                    component="nav"
-                                >
-
-                                    <FilledBtn name="Information" mr="1em" event={handleOpen} icon={open ? <ExpandLess /> : <ExpandMore />} />
-                                    <Collapse in={open} timeout="auto" unmountOnExit>
-                                        <List component="div" disablePadding sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper', boxShadow: '0 8px 20px grey' }}>
-                                            <ListItemButton sx={{ pl: 2 }}>
-                                                <ListItemText primary="Praktisk" />
-                                            </ListItemButton>
-
-                                            <ListItemButton sx={{ pl: 2 }}>
-                                                <ListItemText primary="Året på Fusfri" />
-                                            </ListItemButton>
-                                        </List>
-                                    </Collapse>
-                                </List>/
-
-                                <FilledBtn name="Om Fusfri" page="/omFus" mr="1em" icon={<ExpandMoreRoundedIcon />} />
-                                <FilledBtn name="Kontakt" page="/kontakt" mr="1em" icon={<ExpandMoreRoundedIcon />} />
-                            </Box>
-
-                        </List>
-                    </Collapse>
-                </List>
-
-            </Box>
+                </Box>
+            </header>
 
             <Fade in={isScrolled}>
                 <Box sx={{ mr: 5 }} className={`action-btn-container ${isScrolled && "action-btn-scrolled"}`}>
@@ -186,9 +121,9 @@ export default function Nav() {
                 </Box>
             </Fade>
 
-        </header>
 
 
+        </>
 
 
     )

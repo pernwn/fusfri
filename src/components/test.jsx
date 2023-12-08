@@ -13,8 +13,25 @@ import { ExpandLessRounded } from '@mui/icons-material';
 import ExpandMoreRounded from '@mui/icons-material/ExpandMoreRounded';
 
 const options = ['Praktisk', 'Året på Fusfri', 'Dagtilbud', 'Faciliteter', 'Forældreinfo.'];
+/*
+const menuData = [
+  {
+    name:"Hjem"
+  },
 
-//const options = []
+  {
+    name:"Information"
+  },
+
+  {
+    name:"Om Fusfri"
+  },
+
+  {
+    name:"Kontakt"
+  }
+
+]*/
 
 export const Test = (props) => {
   const [open, setOpen] = useState(false);
