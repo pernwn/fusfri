@@ -23,12 +23,6 @@ const WordPressFag = ({ postId }) => {
 
   return (
     <Stack
-    sx={
-      {
-      overflow: 'auto',
-      direction: 'row',
-  }
-  }
     >
       {post && (
         <Card className="mui-card">
