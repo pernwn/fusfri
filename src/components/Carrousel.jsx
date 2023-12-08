@@ -13,13 +13,15 @@ const Carrousel = ({ images }) => {
   };
 
   return (
-    <Slider {...settings}>
-      {images.map((image, index) => (
-        <div key={index}>
-          <img src={image} alt={`slide-${index}`} />
-        </div>
-      ))}
-    </Slider>
+    <div className="carrouselContainer">
+      <Slider {...settings}>
+        {images.map((image, index) => (
+          <div key={index}>
+            <img src={image} alt={`slide-${index}`} />
+          </div>
+        ))}
+      </Slider>
+    </div>
   );
 };
 

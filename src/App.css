@@ -37,6 +37,16 @@ main {
   list-style: none;
 }
 
+.carrouselContainer {
+  padding-top: 130px;
+  padding-bottom: 130px;
+}
+
+.carrouselContainer img {
+  height: 70vh;
+  margin-left: 285px;
+}
+
 .dropdown {
   position: relative;
 }
