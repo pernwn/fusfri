@@ -1,8 +1,9 @@
 import { useState, useEffect, useRef } from "react";
 import Dropdown from "./dropdown";
-import { Button, List } from "@mui/material";
-import { ArrowRight, ArrowRightRounded, ExpandMoreRounded } from "@mui/icons-material";
-import { Link } from "react-router-dom";
+import { List } from "@mui/material";
+import { ArrowRightRounded, ExpandMoreRounded } from "@mui/icons-material";
+
+import { FilledBtn } from "../buttons";
 
 
 const MenuItems = ({ items, depthLevel }) => {
@@ -43,26 +44,37 @@ const MenuItems = ({ items, depthLevel }) => {
         }
     }, [dropdown])
 
+    const [isScrolled, setScrolled] = useState(false);
 
+    const handleScroll = () => (window.scrollY > 150 ? setScrolled(true) : setScrolled(false));
+
+    useEffect(() => {
+        window.addEventListener("scroll", handleScroll, { passive: true });
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
 
     return (
         <List
             className="menu-items"
+
             ref={ref}
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}
             onClick={closeDropdown}
+
         >
             {items.url && items.submenu ? (
                 <>
-                    <Button
+                    <FilledBtn
+                        name={items.title}
                         aria-haspopup="menu"
                         aria-expanded={dropdown ? "true" : "false"}
-                        onClick={() => toggleDropdown()}
-                    >
-                        <Link to={items.url}>{items.title}</Link>
-                        {depthLevel > 0 ? <ArrowRightRounded /> : <ExpandMoreRounded />}
-                    </Button>
+                        event={() => toggleDropdown()}
+                        icon={depthLevel > 0 ? <ArrowRightRounded /> : <ExpandMoreRounded />}
+                        page={items.url}
+                    />
 
 
                     <Dropdown
@@ -73,15 +85,15 @@ const MenuItems = ({ items, depthLevel }) => {
                 </>
             ) : !items.url && items.submenu ? (
                 <>
-                    <Button
+                    <FilledBtn
+                        name={items.title}
                         aria-haspopup="menu"
                         aria-expanded={dropdown ? "true" : "false"}
-                        onClick={() => toggleDropdown()}
-                    >
-                        {items.title}
-                        {depthLevel > 0 ? <ArrowRightRounded /> : <ExpandMoreRounded />}
-                    </Button>
-
+                        event={() => toggleDropdown()}
+                        icon={depthLevel > 0 ? <ArrowRightRounded /> : <ExpandMoreRounded />}
+                        page={items.url}
+                        className={`btn-container ${isScrolled && 'btn-scrolled'}`}
+                    />
 
                     <Dropdown
                         depthLevel={depthLevel}
@@ -91,7 +103,8 @@ const MenuItems = ({ items, depthLevel }) => {
                 </>
 
             ) : (
-                <Link to={items.url}>{items.title}</Link>
+                <FilledBtn page={items.url} name={items.title} />
+    
             )}
         </List>
     );

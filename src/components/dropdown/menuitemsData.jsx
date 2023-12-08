@@ -17,7 +17,7 @@ export const menuItemsData = [
                 submenu: [
                     {
                         title: 'Kalender',
-                        url: 'web-design',
+                        url: 'information',
                     },
                 ]
             },

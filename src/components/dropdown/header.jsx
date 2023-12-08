@@ -43,11 +43,12 @@ creating a different look for the scrolled state. */
         </Link>
 
         <Box
-          component="nav"
-          className={`nav-container ${isScrolled && 'nav-scrolled'}`}
+
+
           sx={{
             display: "flex",
             flexDirection: "column",
+
           }}
         >
 

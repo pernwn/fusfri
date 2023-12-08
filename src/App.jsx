@@ -8,7 +8,7 @@ import HomePage from "./pages/homepage";
 //import Nav from "./components/nav";
 import Friskole from "./pages/friskole";
 
-import "./App.css";
+//import "./App.css";
 import Kontakt from "./pages/kontakt";
 
 import Calendar from "./pages/calender";
@@ -16,6 +16,8 @@ import Header from "./components/dropdown/header";
 
 function App() {
   const outerTheme = useTheme();
+
+  
 
   return (
     <ThemeProvider theme={myTheme(outerTheme)}>

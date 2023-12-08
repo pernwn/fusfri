@@ -37,7 +37,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
         padding: theme.spacing(1, 1, 1, 0),
         // vertical padding + font size from searchIcon
         paddingLeft: `calc(1em + ${theme.spacing(4)})`,
-        width:'34ch',
+        width:'28ch',
 
         /*transition: theme.transitions.create('width'),
         [theme.breakpoints.up('sm')]: {
@@ -77,7 +77,7 @@ export default function SearchInput() {
                 />
             </Search>
 
-            <LinkBtn name="Forældre intra" page="*" w="fit-content" className={`btn-container ${isScrolled && 'btn-scrolled'}`} />
+            <LinkBtn name="Forældreintra" page="*" w="fit-content" className={`btn-container ${isScrolled && 'btn-scrolled'}`} />
         </div>
     )
 }

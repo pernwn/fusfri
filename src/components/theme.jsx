@@ -21,7 +21,7 @@ export const myTheme = (outerTheme) =>
             },
         },
         typography: {
-            fontFamily: 'Ubuntu',
+            fontFamily: 'Varela Round',
             h1: {
                 fontFamily: 'Varela Round',
             },
