@@ -1,10 +1,14 @@
-import { FilledBtn, LinkBtn, OutlinedBtn } from "./buttons";
+
 import { useEffect, useState } from "react";
 
 //IKONER FRA MUI
 import UpIcon from "@mui/icons-material/KeyboardArrowUp";
 import PhoneIcon from "@mui/icons-material/Phone";
 import ExpandMoreRoundedIcon from "@mui/icons-material/ExpandMoreRounded";
+import UpIcon from '@mui/icons-material/KeyboardArrowUp';
+import PhoneIcon from '@mui/icons-material/Phone';
+import ExpandMoreRoundedIcon from '@mui/icons-material/ExpandMoreRounded';
+import HomeIcon from '@mui/icons-material/Home';
 
 //Individuel styling som udgangspunkt – sammensætter alt til sidst
 import "../styles/vic.css";
@@ -24,9 +28,14 @@ import {
   Typography,
 } from "@mui/material";
 import { Link } from "react-router-dom";
+import logo from "../assets/logo/fusfri-logo.png"
+import { Box, Button, ButtonGroup, Collapse, Divider, Fab, Fade, List, ListItemButton, ListItemIcon, ListItemText, ListSubheader, Typography} from "@mui/material";
+import { Link, NavLink } from "react-router-dom";
 import Search from "./search";
-
-import { ExpandLess, ExpandMore } from "@mui/icons-material";
+import { FilledBtn } from "./buttons";
+import { DropBtn, DropdownBtn } from "./dropdown";
+import { ExpandLessRounded, ExpandMoreRounded, SafetyDividerRounded } from "@mui/icons-material";
+import { Test } from "./test";
 
 /*
 const DropdownMenu = styled((props) => {
@@ -64,6 +73,11 @@ creating a different look for the scrolled state. */
     window.scrollTo(0, 0);
   };
 
+    const handleMenuTwo = () => {
+        // do something
+        setOpen(false);
+      };
+
   const [open, setOpen] = useState(false);
 
   const handleOpen = () => {
@@ -77,6 +91,11 @@ creating a different look for the scrolled state. */
         <img src={logo} className={`logo ${isScrolled && "logo-scrolled"}`} alt="Fussingø-Egnens Logo" />
         <OutlinedBtn name="Friskole" page="/friskole" />
         <OutlinedBtn name="Kalender" page="/information" />
+    //TODO: nav active states TODO: dropdown !!!!!!!!!
+    return (
+        <>
+            <header className={`header-container ${isScrolled && 'header-scrolled'}`}>
+                <img src={logo} className={`logo ${isScrolled && 'logo-scrolled'}`} alt="Fussingø-Egnens Logo" />
 
         <Box
           component="nav"
@@ -106,8 +125,39 @@ creating a different look for the scrolled state. */
                   <ListItemButton sx={{ pl: 2 }}>
                     <ListItemText primary="Praktisk" />
                   </ListItemButton>
+                    <Box className={`btn-container ${isScrolled && 'btn-scrolled'}`} sx={{ display: "flex", alignItems: "center" }}>
 
-                  <ListItemButton sx={{ pl: 2 }} component={Link} to="/aaret">
+
+                        <DropBtn
+                            name="Information"
+                            open={open}
+                            trigger={<Button onClick={handleOpen} endIcon={open ? <ExpandLessRounded /> : <ExpandMoreRounded />}><Typography variant="button">Information</Typography></Button>}
+                            menu={[
+                                <Button onClick={handleMenuTwo}>Hej</Button>,
+                                <Button></Button>,
+                            ]}
+                        />
+                        <FilledBtn name="hjem" page="/" mr="2em" icon={<HomeIcon/>} />
+                       {/*TODO: FIKSSSS*/}
+                        <Divider orientation="vertical" />
+                    
+                        <Test name="information" mr="1em"/>
+                        <Test name="Om Fusfri" mr="1em"/>
+                        <Test name="Kontakt" mr="1em"/>
+                    
+                        {/*TODO: KIG PÅ DETTE !!!!! ikke færdig ––– prøv denne https://www.robinwieruch.de/react-dropdown/  <FilledBtn name="Hjem" page="/" mr="1em" />
+                        <List
+                            component="nav"
+                        >
+
+                            <FilledBtn name="Information" mr="1em" event={handleOpen} icon={open ? <ExpandLess /> : <ExpandMore />} />
+                            <Collapse in={open} timeout="auto" unmountOnExit>
+                                <List component="div" disablePadding sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper', boxShadow: '0 8px 20px grey' }}>
+                                    <ListItemButton sx={{ pl: 2 }}>
+                                        <ListItemText primary="Praktisk" />
+                                    </ListItemButton>
+
+                  <ListItemButton sx={{ pl: 2 }}>
                     <ListItemText primary="Året på Fusfri" />
                   </ListItemButton>
                 </List>
