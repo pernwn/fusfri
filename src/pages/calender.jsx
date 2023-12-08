@@ -3,8 +3,12 @@
 import CalendarComponent from "../components/CalendarComponent";
 import "../App.css";
 import { Typography } from "@mui/material";
+import React from "react";
+import Carrousel from "../components/Carrousel";
 
 export default function Calendar() {
+  const images = ["", "", ""];
+
   return (
     <main>
       <div>
@@ -13,6 +17,7 @@ export default function Calendar() {
         </Typography>
       </div>
       <CalendarComponent />
+      <Carrousel images={images} />
     </main>
   );
 }
