@@ -86,113 +86,110 @@ export default function Nav() {
 
     //TODO: nav active states TODO: dropdown !!!!!!!!!
     return (
-        <>
-            <header className={`header-container ${isScrolled && 'header-scrolled'}`}>
-                <img src={logo} className={`logo ${isScrolled && 'logo-scrolled'}`} alt="Fussingø-Egnens Logo" />
 
-                <Box
-                    component="nav"
-                    className={`nav-container ${isScrolled && "nav-scrolled"}`}
-                    sx={{
-                        display: "flex",
-                        flexDirection: "column",
-                    }}
-                >
-                    <Search />
+        <header className={`header-container ${isScrolled && 'header-scrolled'}`}>
+            <img src={logo} className={`logo ${isScrolled && 'logo-scrolled'}`} alt="Fussingø-Egnens Logo" />
 
-                    <FilledBtn name="Hjem" page="/" mr="1em" />
+            <Box
+                component="nav"
+                className={`nav-container ${isScrolled && "nav-scrolled"}`}
+                sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                }}
+            >
+                <Search />
 
-                    {/*TODO: KIG PÅ DETTE !!!!! ikke færdig ––– prøv denne https://www.robinwieruch.de/react-dropdown/ */}
-                    <List component="nav">
-                        <FilledBtn name="Information" mr="1em" event={handleOpen}>
-                            {open ? <ExpandLess /> : <ExpandMore />}
-                        </FilledBtn>
+                <FilledBtn name="Hjem" page="/" mr="1em" />
 
-                        <Collapse in={open} timeout="auto" unmountOnExit>
-                            <List
-                                component="div"
-                                disablePadding
-                                sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper", boxShadow: "0 8px 20px grey" }}
-                            >
-                                <ListItemButton sx={{ pl: 2 }}>
-                                    <ListItemText primary="Praktisk" />
-                                </ListItemButton>
+                {/*TODO: KIG PÅ DETTE !!!!! ikke færdig ––– prøv denne https://www.robinwieruch.de/react-dropdown/ */}
+                <List component="nav">
+                    <FilledBtn name="Information" mr="1em" event={handleOpen}>
+                        {open ? <ExpandLess /> : <ExpandMore />}
+                    </FilledBtn>
 
-                                <Box className={`btn-container ${isScrolled && 'btn-scrolled'}`} sx={{ display: "flex", alignItems: "center" }}>
+                    <Collapse in={open} timeout="auto" unmountOnExit>
+                        <List
+                            component="div"
+                            disablePadding
+                            sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper", boxShadow: "0 8px 20px grey" }}
+                        >
+
+                            <Box className={`btn-container ${isScrolled && 'btn-scrolled'}`} sx={{ display: "flex", alignItems: "center" }}>
 
 
-                                    <DropBtn
-                                        name="Information"
-                                        open={open}
-                                        trigger={<Button onClick={handleOpen} endIcon={open ? <ExpandLessRounded /> : <ExpandMoreRounded />}><Typography variant="button">Information</Typography></Button>}
-                                        menu={[
-                                            <ListItemButton key={[]} onClick={handleMenuTwo}>hej</ListItemButton>
-                                  
-                                        ]}
-                                    />
-                                    <FilledBtn name="hjem" page="/" mr="2em" icon={<HomeIcon />} />
-                                    {/*TODO: FIKSSSS*/}
-                                    <Divider orientation="vertical" />
+                                <DropBtn
+                                    name="Information"
+                                    open={open}
+                                    trigger={<Button onClick={handleOpen} endIcon={open ? <ExpandLessRounded /> : <ExpandMoreRounded />}><Typography variant="button">Information</Typography></Button>}
+                                    menu={[
+                                        <ListItemButton key={[]} onClick={handleMenuTwo}>hej</ListItemButton>
 
-                                    <Test name="information" mr="1em" />
-                                    <Test name="Om Fusfri" mr="1em" />
-                                    <Test name="Kontakt" mr="1em" />
+                                    ]}
+                                />
+                                <FilledBtn name="hjem" page="/" mr="2em" icon={<HomeIcon />} />
+                                {/*TODO: FIKSSSS*/}
+                                <Divider orientation="vertical" />
 
-                                    {/*TODO: KIG PÅ DETTE !!!!! ikke færdig ––– prøv denne https://www.robinwieruch.de/react-dropdown/*/ } 
-                                    
-                                    <FilledBtn name="Hjem" page="/" mr="1em" />
-                                    <List
-                                        component="nav"
-                                    >
+                                <Test name="information" mr="1em" />
+                                <Test name="Om Fusfri" mr="1em" />
+                                <Test name="Kontakt" mr="1em" />
 
-                                        <FilledBtn name="Information" mr="1em" event={handleOpen} icon={open ? <ExpandLess /> : <ExpandMore />} />
-                                        <Collapse in={open} timeout="auto" unmountOnExit>
-                                            <List component="div" disablePadding sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper', boxShadow: '0 8px 20px grey' }}>
-                                                <ListItemButton sx={{ pl: 2 }}>
-                                                    <ListItemText primary="Praktisk" />
-                                                </ListItemButton>
+                                {/*TODO: KIG PÅ DETTE !!!!! ikke færdig ––– prøv denne https://www.robinwieruch.de/react-dropdown/*/}
 
-                                                <ListItemButton sx={{ pl: 2 }}>
-                                                    <ListItemText primary="Året på Fusfri" />
-                                                </ListItemButton>
-                                            </List>
-                                        </Collapse>
-                                    </List>/
+                                <FilledBtn name="Hjem" page="/" mr="1em" />
+                                <List
+                                    component="nav"
+                                >
 
-                                    <FilledBtn name="Om Fusfri" page="/omFus" mr="1em" icon={<ExpandMoreRoundedIcon />} />
-                                    <FilledBtn name="Kontakt" page="/kontakt" mr="1em" icon={<ExpandMoreRoundedIcon />} />
-                                </Box>
+                                    <FilledBtn name="Information" mr="1em" event={handleOpen} icon={open ? <ExpandLess /> : <ExpandMore />} />
+                                    <Collapse in={open} timeout="auto" unmountOnExit>
+                                        <List component="div" disablePadding sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper', boxShadow: '0 8px 20px grey' }}>
+                                            <ListItemButton sx={{ pl: 2 }}>
+                                                <ListItemText primary="Praktisk" />
+                                            </ListItemButton>
 
-                                </List>
-                        </Collapse>
-                                        
+                                            <ListItemButton sx={{ pl: 2 }}>
+                                                <ListItemText primary="Året på Fusfri" />
+                                            </ListItemButton>
+                                        </List>
+                                    </Collapse>
+                                </List>/
+
+                                <FilledBtn name="Om Fusfri" page="/omFus" mr="1em" icon={<ExpandMoreRoundedIcon />} />
+                                <FilledBtn name="Kontakt" page="/kontakt" mr="1em" icon={<ExpandMoreRoundedIcon />} />
+                            </Box>
+
                         </List>
-                        </Box>
+                    </Collapse>
+                </List>
 
-                                <Fade in={isScrolled}>
-                                    <Box sx={{ mr: 5 }} className={`action-btn-container ${isScrolled && "action-btn-scrolled"}`}>
-                                        <Link to="/kontakt">
-                                            <Fab variant="extended" aria-label="contact">
-                                                <PhoneIcon sx={{ mr: 1 }} color="secondary" />
-                                                <Typography
-                                                    variant="button"
-                                                    sx={{ color: (mytheme) => mytheme.palette.secondary.main, fontWeight: "bold" }}
-                                                >
-                                                    Kontakt
-                                                </Typography>
-                                            </Fab>
-                                        </Link>
+            </Box>
 
-                                        <Fab size="small" color="secondary" aria-label="up" onClick={handleClick}>
-                                            <UpIcon />
-                                        </Fab>
-                                    </Box>
-                                </Fade>
+            <Fade in={isScrolled}>
+                <Box sx={{ mr: 5 }} className={`action-btn-container ${isScrolled && "action-btn-scrolled"}`}>
+                    <Link to="/kontakt">
+                        <Fab variant="extended" aria-label="contact">
+                            <PhoneIcon sx={{ mr: 1 }} color="secondary" />
+                            <Typography
+                                variant="button"
+                                sx={{ color: (mytheme) => mytheme.palette.secondary.main, fontWeight: "bold" }}
+                            >
+                                Kontakt
+                            </Typography>
+                        </Fab>
+                    </Link>
 
-                    </header>
-                    
+                    <Fab size="small" color="secondary" aria-label="up" onClick={handleClick}>
+                        <UpIcon />
+                    </Fab>
+                </Box>
+            </Fade>
 
-                    
-</>
+        </header>
+
+
+
+
     )
 }
