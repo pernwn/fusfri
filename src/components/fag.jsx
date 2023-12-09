@@ -1,5 +1,5 @@
 import { Card, Stack, Typography } from '@mui/material';
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 const WordPressFag = ({ postId }) => {
   const [post, setPost] = useState(null);

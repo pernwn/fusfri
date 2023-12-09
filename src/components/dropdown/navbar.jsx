@@ -15,8 +15,10 @@ const Navbar = () => {
             window.removeEventListener("scroll", handleScroll);
         };
     }, []);
-
+        {/*TODO: active states*/}
     return (
+
+
         <Box className={`nav-container ${isScrolled && 'nav-scrolled'}`} >
             <List className={`btn-container ${isScrolled && 'btn-scrolled'}`}>
                 {menuItemsData.map((menu, index) => {
