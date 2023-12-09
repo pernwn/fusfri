@@ -16,6 +16,7 @@ import Header from "./components/dropdown/header";
 
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Footer from "./components/footer";
 
 function App() {
   const outerTheme = useTheme();
@@ -40,6 +41,8 @@ function App() {
 
           <Route path="*" element={<Navigate to="/" />} /* 404 */ />
         </Routes>
+
+        <Footer/>
       </ThemeProvider>
     </>
   );
