@@ -1,4 +1,4 @@
-import { Box, Container, Paper, Typography } from "@mui/material";
+import { Box, Container, Paper, Stack, Typography } from "@mui/material";
 import { FilledBtn } from "../components/buttons";
 import { useEffect, useState } from "react";
 
@@ -6,6 +6,7 @@ import Content from "../components/content";
 
 //Individuel styling som udgangspunkt – sammensætter alt til sidst
 import "../styles/vic.css";
+import SoMe from "../components/SoMe";
 
 export default function HomePage() {
   const [posts, setPosts] = useState([]);
@@ -44,6 +45,12 @@ export default function HomePage() {
         </section>
       </Box>
 
+      <Stack>
+        <Paper>
+  
+        </Paper>
+      </Stack>
+
       <Box>
         <Paper
           sx={{
@@ -61,6 +68,9 @@ export default function HomePage() {
           </Typography>
         </Paper>
       </Box>
+
+
+      <SoMe/>
     </Container>
   );
 }
