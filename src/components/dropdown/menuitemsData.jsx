@@ -5,15 +5,15 @@ export const menuItemsData = [
     },
     {
         title: 'Information',
-        url: '/',
+        url: '',
         submenu: [
             {
                 title: 'Praktisk',
-                url: 'web-design',
+                url: 'praktisk',
             },
             {
                 title: 'Året på Fusfri',
-                url: 'web-dev',
+                url: 'åretpå',
                 submenu: [
                     {
                         title: 'Kalender',
@@ -27,47 +27,47 @@ export const menuItemsData = [
             },
             {
                 title: 'Dagtilbud',
-                url: 'seo',
+                url: '',
                 submenu: [
                     {
                         title: 'Børnehaven',
-                        url: 'web-design',
+                        url: 'børnehave',
                     },
                     {
                         title: 'Vuggestuen',
-                        url: 'web-design',
+                        url: 'vuggestue',
                     },
                 ]
             },
             {
                 title: 'Faciliteter',
-                url: 'seo',
+                url: 'faciliteter',
             },
             {
                 title: 'Forældreinfo.',
-                url: 'seo',
+                url: 'forældreinfo',
             },
         ],
     },
     {
         title: 'Om Fusfri',
-        url: '/',
+        url: '/om',
         submenu: [
             {
                 title: 'Personale',
-                url: 'web-design',
+                url: 'personale',
             },
             {
                 title: 'Værdier',
-                url: 'web-dev',
+                url: 'værdier',
             },
             {
                 title: 'Organisatorisk',
-                url: 'seo',
+                url: 'organisatorisk',
             },
             {
                 title: 'Om os',
-                url: 'seo',
+                url: 'om',
             },
         ],
     },
@@ -77,15 +77,15 @@ export const menuItemsData = [
         submenu: [
             {
                 title: 'Kontakt info.',
-                url: 'web-design',
+                url: 'kontakt-info',
             },
             {
                 title: 'Ledige Stillinger',
-                url: 'web-dev',
+                url: 'ledige-stillinger',
             },
             {
                 title: 'Spørgsmål?',
-                url: 'seo',
+                url: 'spørgsmål',
             },
         ],
     },

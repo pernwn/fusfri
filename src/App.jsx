@@ -30,6 +30,10 @@ function App() {
 
         <Routes>
           <Route index element={<HomePage />} />
+       
+          <Route path="/omFus" element={""} />
+          <Route path="/kontakt" element={""} />
+
           <Route path="/friskole" element={<Friskole />} />
           <Route path="/kontakt" element={<Kontakt />} />
           <Route path="/information" element={<Calendar />} />
