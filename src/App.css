@@ -47,6 +47,37 @@ main {
   margin-left: 45vh;
 }
 
+/* Kontakt side */
+
+.fotoinfo {
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+@media (max-width: 767px) {
+  .fotoinfo img {
+    display: none;
+  }
+}
+
+.infoContainer {
+  background-color: #3e7e8c;
+  height: 350px;
+  width: 525px;
+  border-radius: 30px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.infoContainer > div {
+  margin-top: 70px;
+}
+
 .dropdown {
   position: relative;
 }
