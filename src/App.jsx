@@ -14,26 +14,30 @@ import Kontakt from "./pages/kontakt";
 import Calendar from "./pages/calender";
 import Header from "./components/dropdown/header";
 
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 function App() {
   const outerTheme = useTheme();
 
-  
-
   return (
-    <ThemeProvider theme={myTheme(outerTheme)}>
-      <CssBaseline enableColorScheme />
+    <>
+      <ToastContainer />
+      <ThemeProvider theme={myTheme(outerTheme)}>
+        <CssBaseline enableColorScheme />
 
-      <Header/>
+        <Header />
 
-      <Routes>
-        <Route index element={<HomePage />} />
-        <Route path="/friskole" element={<Friskole />} />
-        <Route path="/kontakt" element={<Kontakt />} />
-        <Route path="/information" element={<Calendar />} />
+        <Routes>
+          <Route index element={<HomePage />} />
+          <Route path="/friskole" element={<Friskole />} />
+          <Route path="/kontakt" element={<Kontakt />} />
+          <Route path="/information" element={<Calendar />} />
 
-        <Route path="*" element={<Navigate to="/" />} /* 404 */ />
-      </Routes>
-    </ThemeProvider>
+          <Route path="*" element={<Navigate to="/" />} /* 404 */ />
+        </Routes>
+      </ThemeProvider>
+    </>
   );
 }
 

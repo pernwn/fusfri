@@ -6,10 +6,10 @@ import { useEffect, useState } from "react";
 import UpIcon from "@mui/icons-material/KeyboardArrowUp";
 import PhoneIcon from "@mui/icons-material/Phone";
 
-import '../../styles/vic.css'
+import "../../styles/vic.css";
 import { Box, Fab, Fade, Typography } from "@mui/material";
-import logo from "../../assets/logo/fusfri-logo.png"
-import Search from "../search"
+import logo from "../../assets/logo/fusfri-logo.png";
+import Search from "../search";
 
 const Header = () => {
   /*This code defines a functional component Nav that displays a navigation bar for a website. 
@@ -22,13 +22,12 @@ creating a different look for the scrolled state. */
   // Set scroll state and scroll event handler
   const [isScrolled, setScrolled] = useState(false);
 
-
-  const handleScroll = () => window.scrollY > 150 ? setScrolled(true) : setScrolled(false);
+  const handleScroll = () => (window.scrollY > 150 ? setScrolled(true) : setScrolled(false));
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => {
-      window.removeEventListener('scroll', handleScroll)
-    }
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   const handleClick = () => {
@@ -37,21 +36,17 @@ creating a different look for the scrolled state. */
 
   return (
     <Box>
-      <header className={`header-container ${isScrolled && 'header-scrolled'}`}>
-        <Link to="/" >
-          <img src={logo} alt="Fussingø-Egnens Friskole logo" className={`logo ${isScrolled && 'logo-scrolled'}`} />
+      <header className={`header-container ${isScrolled && "header-scrolled"}`}>
+        <Link to="/">
+          <img src={logo} alt="Fussingø-Egnens Friskole logo" className={`logo ${isScrolled && "logo-scrolled"}`} />
         </Link>
 
         <Box
-
-
           sx={{
             display: "flex",
             flexDirection: "column",
-
           }}
         >
-
           <Search />
           <Navbar />
 
