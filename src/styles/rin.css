@@ -1,9 +1,15 @@
 .mui-card {
 padding: 2%;
+overflow: hidden;
+height: 700px;
+
 }
 
   .mui-card img {
     max-width: 100%;
     height: fit-content;
     display: block;
+
   }
+
+ 

@@ -26,7 +26,7 @@ const WordPressFag = ({ postId }) => {
     >
       {post && (
         <Card className="mui-card">
-          <Typography variant="h2"
+          <Typography variant="h3"
           sx={{
             alignContent: 'center',
             textAlign: 'center'

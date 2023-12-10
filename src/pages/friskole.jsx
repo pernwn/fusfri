@@ -1,6 +1,7 @@
 import WordPressFag from "../components/fag";
 import { Stack, Typography } from '@mui/material';
 import '../styles/rin.css'
+import '../styles/responsive.css'
 import gif from '../assets/gifgif.gif'
 
 export default function Friskole() {
@@ -17,7 +18,7 @@ export default function Friskole() {
 
             }}
             >
-            <img src={gif}></img>
+            <img src={gif} className="gif-skole" ></img>
             <Typography variant="h1" 
               sx={{
                 textAlign:'center',
@@ -33,7 +34,8 @@ export default function Friskole() {
         </Stack>
             <Stack
                 sx={{
-                    padding: 5,
+                    paddingTop: 5,
+                    paddingBottom:5,
                     overflowX: 'auto', // Enable horizontal scrolling
                     display: 'flex',
                     flexDirection: 'row', // Display items horizontally
@@ -47,7 +49,7 @@ export default function Friskole() {
                             borderRadius: 8,
                             flex: '0 0 auto',
                             maxWidth: 400,
-                            p: 2,
+                            p: 0.4,
 
                         }}
                     >
