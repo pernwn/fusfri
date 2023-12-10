@@ -1,3 +1,4 @@
+//{ Lavet af Victoria }
 
 
 import '../App.css'
@@ -6,6 +7,7 @@ import { Box, Card, Paper, Stack, Typography } from "@mui/material";
 import parse from 'html-react-parser'
 import { useEffect, useState } from 'react';
 
+//TODO: Skal finde ud af bedre måde at hente individuelle – tjek acf og cpt implementering på notion TODO:!!
 
 export default function Content({ postId}){
 

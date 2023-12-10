@@ -1,3 +1,7 @@
+//{ Lavet af Victoria }
+
+
+
 import { useEffect, useRef, useState } from "react";
 import MobileMenuItems from "./mobileMenuItems";
 import { menuItemsData } from "./menuitemsData";
@@ -9,25 +13,25 @@ const MobileNav = () => {
     let ref = useRef();
 
     useEffect(() => {
-        const handler = (event) => {
-            if(showMenu && ref.current && !ref.current.contains(event.target) ){
-                setShowMenu(false);
-            }
+      const handler = (event) => {
+          if (showMenu && ref.current && !ref.current.contains(event.target)) {
+              setShowMenu(false);
+          }
+      };
 
-            addEventListener("mousedown", handler);
-            addEventListener("touchstart", handler);
-            
-            return () => {
-                removeEventListener("mousedown", handler);
-                removeEventListener("touchstart", handler)
-            }
-        }
-    }, [showMenu])
+      addEventListener("mousedown", handler);
+      addEventListener("touchstart", handler);
+
+      return () => {
+          removeEventListener("mousedown", handler);
+          removeEventListener("touchstart", handler)
+      }
+  }, [showMenu])
 
 
     return(
         <nav className="mobile-nav">
-        <button
+        <button //TODO:skal laves til burgerrrr
           className="mobile-nav__menu-button"
           type="button"
           onClick={() => setShowMenu((prev) => !prev)}>

@@ -2,7 +2,7 @@
 
 
 
-import { Box, Container, Paper, Stack, Typography } from "@mui/material";
+import { Container, Paper, Stack } from "@mui/material";
 import { FilledBtn } from "../components/buttons";
 
 
@@ -20,7 +20,7 @@ import Content from "../components/content";
 
 export default function HomePage() {
 
-  const forside = [136];
+  const postIDs = [136];
 
   return (
     <Container component="main">
@@ -39,13 +39,14 @@ export default function HomePage() {
 
 
 {/*TODO: fiks*/}
-      <Stack >
-        {forside.map(postID => (
+      <Stack>
+        {postIDs.map(postID => (
           <Paper key={postID}>
               <Content postId={postID} />
           </Paper>
         ))}
       </Stack>
+
 
 
 

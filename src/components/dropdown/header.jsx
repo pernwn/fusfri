@@ -1,3 +1,7 @@
+//{ Lavet af Victoria }
+
+
+
 import { Link } from "react-router-dom";
 import Navbar from "./navbar";
 import MobileNav from "./mobileNav";

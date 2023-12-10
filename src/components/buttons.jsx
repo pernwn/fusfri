@@ -1,8 +1,11 @@
+//{ Lavet af Victoria }
+
+
 import { Button, Typography } from "@mui/material"
 import { NavLink } from "react-router-dom"
 
 
-export const FilledBtn = (props) => {
+const FilledBtn = (props) => {
     return (
         <Button  endIcon={props.icon} onClick={props.event}
             component={NavLink}
@@ -18,7 +21,7 @@ export const FilledBtn = (props) => {
     )
 }
 
-export const OutlinedBtn = (props) => {
+const OutlinedBtn = (props) => {
     return (
         <Button variant="outlined"
             component={NavLink}
@@ -33,7 +36,7 @@ export const OutlinedBtn = (props) => {
     )
 }
 
-export const LinkBtn = (props) => {
+const LinkBtn = (props) => {
     return (
         <Button variant="filled"
             sx={{
@@ -44,3 +47,5 @@ export const LinkBtn = (props) => {
         </Button>
     )
 }
+
+export {FilledBtn, OutlinedBtn, LinkBtn}

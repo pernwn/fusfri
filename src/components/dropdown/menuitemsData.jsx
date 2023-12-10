@@ -1,3 +1,6 @@
+//{ Lavet af Victoria }
+
+
 export const menuItemsData = [
     {
         title: 'Hjem',
@@ -36,6 +39,10 @@ export const menuItemsData = [
                     {
                         title: 'Vuggestuen',
                         url: 'vuggestue',
+                    },
+                    {
+                        title: 'Fritidsordning',
+                        url: 'fritidsordning',
                     },
                 ]
             },
