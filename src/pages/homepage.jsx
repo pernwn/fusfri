@@ -20,9 +20,7 @@ import Content from "../components/content";
 
 export default function HomePage() {
 
- //Udtryk for dependencies – hvis ikke den er med, så går useEffect amok og vil stå og hente dataen i uendelighed. Stopper useEffect() når den har kørt 1 gang
-
-  const forside = [136]
+  const forside = [136];
 
   return (
     <Container component="main">

@@ -24,12 +24,12 @@ export default function Friskole() {
 
               }}
             > Friskolen</Typography>
-            <div
+            <Stack
              sx={{
                 textAlign:'center',
               }}>
             <Typography variant='h4'>Hos os foregår tingene anderledes end på en folkeskole, prøv at se en hverdag på vores lille skole!</Typography>
-            </div>
+            </Stack>
         </Stack>
             <Stack
                 sx={{
