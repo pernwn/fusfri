@@ -1,7 +1,9 @@
 main {
   position: relative;
-  top: 10em;
   padding:2em;
+  margin-top: 10em;
+
+  
 }
 
 .action-btn-container {

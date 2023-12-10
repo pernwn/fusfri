@@ -23,6 +23,8 @@ header {
     /* fixed position with z-index */
     position: fixed;
     z-index: 5;
+    top:0;
+
 }
 
 .header-container {
@@ -39,6 +41,8 @@ header {
 
     /* rounded bottom */
     border-radius: 0 0 2em 2em;
+
+    
 
     /* smooth transition */
     transition: ease 1s;
