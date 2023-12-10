@@ -26,8 +26,14 @@ const WordPressFag = ({ postId }) => {
     >
       {post && (
         <Card className="mui-card">
-          <Typography variant="h2">{post.title.rendered}</Typography>
-          <div dangerouslySetInnerHTML={{ __html: post.content.rendered }} />
+          <Typography variant="h2"
+          sx={{
+            alignContent: 'center',
+            textAlign: 'center'
+          }} >
+            {post.title.rendered}
+            </Typography>
+          <Typography dangerouslySetInnerHTML={{ __html: post.content.rendered }} />
         </Card>
       )}
     </Stack>
