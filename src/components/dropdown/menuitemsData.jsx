@@ -47,6 +47,10 @@ export const menuItemsData = [
                 title: 'Forældreinfo.',
                 url: 'forældreinfo',
             },
+            {
+                title:'Cookie- og Privatlivspolitik',
+                url:'cookieprivat'
+            },
         ],
     },
     {

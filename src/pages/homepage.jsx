@@ -10,7 +10,8 @@ import { FilledBtn } from "../components/buttons";
 //Individuel styling som udgangspunkt – sammensætter alt til sidst
 import "../styles/vic.css";
 import SoMe from "../components/SoMe";
-import WordPressFag from "../components/fag";
+
+import Content from "../components/content";
 
 
 
@@ -44,7 +45,7 @@ export default function HomePage() {
         
         {postIDs.map(postID => (
           <Paper key={postID}>
-              <WordPressFag postId={postID} />
+              <Content postId={postID} />
           </Paper>
         ))}
       </Stack>

@@ -17,18 +17,22 @@ export const myTheme = (outerTheme) =>
             },
             text: {
                 primary: '#734434',
+                secondary:'#6E8C2E',
             },
         },
         typography: {
             fontFamily: 'Varela Round',
             h1: {
                 fontFamily: 'Varela Round',
+                color:'#6E8C2E',
             },
             h2: {
                 fontFamily: 'Varela Round',
+                color:'#6E8C2E',
             },
             h3: {
                 fontFamily: 'Varela Round',
+                color:'#6E8C2E',
             },
             h4: {
                 fontFamily: 'Varela Round',

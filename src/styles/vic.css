@@ -1,5 +1,36 @@
-/* STYLING AF HEADER*/
+/* STYLING AF FOOTER*/
 
+:root{
+    --primary-main:'#6E8C2E';
+    --secondary-main:'#3D7F8C';
+
+
+}
+
+footer{
+    display: flex;
+    align-items: center;
+
+}
+
+.footerTxt{
+    width:100%;
+}
+
+.f_icon{
+    margin-left: .5em;
+}
+
+a{
+    text-decoration: none;
+    color:var(--primary-main);
+
+}
+
+a:hover{
+    text-decoration: underline;
+
+}
 
 
 

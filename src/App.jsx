@@ -17,6 +17,7 @@ import Header from "./components/dropdown/header";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Footer from "./components/footer";
+import CookiePrivat from "./pages/CookiePrivat";
 
 function App() {
   const outerTheme = useTheme();
@@ -38,6 +39,9 @@ function App() {
           <Route path="/friskole" element={<Friskole />} />
           <Route path="/kontakt" element={<Kontakt />} />
           <Route path="/information" element={<Calendar />} />
+
+
+          <Route path="/cookieprivat" element={<CookiePrivat />} />
 
           <Route path="*" element={<Navigate to="/" />} /* 404 */ />
         </Routes>
