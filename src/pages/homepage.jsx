@@ -22,7 +22,7 @@ export default function HomePage() {
 
  //Udtryk for dependencies – hvis ikke den er med, så går useEffect amok og vil stå og hente dataen i uendelighed. Stopper useEffect() når den har kørt 1 gang
 
-  const postIDs = [136]
+  const forside = [136, 28]
 
   return (
     <Container component="main">
@@ -42,8 +42,7 @@ export default function HomePage() {
 
 {/*TODO: fiks*/}
       <Stack >
-        
-        {postIDs.map(postID => (
+        {forside.map(postID => (
           <Paper key={postID}>
               <Content postId={postID} />
           </Paper>

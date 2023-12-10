@@ -1,7 +1,7 @@
 
 
 import '../App.css'
-import { Card, Paper, Stack, Typography } from "@mui/material";
+import { Box, Card, Paper, Stack, Typography } from "@mui/material";
 
 import parse from 'html-react-parser'
 import { useEffect, useState } from 'react';
@@ -38,10 +38,10 @@ export default function Content({ postId}){
         <Stack
         >
           {posts && (
-            <Paper sx={{p:"5em"}}>
+            <Box sx={{p:"5em"}}>
               <Typography variant="h2">{posts.title.rendered}</Typography>
               <div dangerouslySetInnerHTML={{ __html: posts.content.rendered }} />
-            </Paper>
+            </Box>
           )}
         </Stack>
     );

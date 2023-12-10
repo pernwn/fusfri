@@ -1,17 +1,17 @@
 /* STYLING AF FOOTER*/
 
 :root{
-    --primary-main:'#6E8C2E';
-    --secondary-main:'#3D7F8C';
+    --primary-main:#6E8C2E;
+    --secondary-main:#3D7F8C;
+    --text-main: #734434;
 
 
 }
 
 footer{
     display: flex;
-    position:relative;
+    position: sticky;
     bottom:0;
-    top:0;
 
 }
 
@@ -25,15 +25,28 @@ footer{
 
 a{
     text-decoration: none;
-    color:var(--primary-main);
+    color:var(--text-main);
+
+    transition: ease 1s;
 
 }
 
 a:hover{
     text-decoration: underline;
+    color:var(--primary-main);
 
 }
 
+
+
+.cp_content li{
+    list-style-position: inside;
+    text-indent: 2em;
+}
+
+.cp_content h2{
+    color: var(--primary-main);
+}
 
 
 

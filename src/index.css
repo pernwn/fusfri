@@ -6,8 +6,6 @@
     scroll-behavior: smooth;
 }
 
-
-
 header {
     /* use flexbox layout */
     display: flex;
