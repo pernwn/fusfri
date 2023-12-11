@@ -12,7 +12,7 @@ export default function Friskole() {
             <Stack
                 sx={{
                     flexDirection: 'row',
-                    padding: 10,
+                    padding: 1,
                     backgroundColor: '#ffff',
                     flexWrap: 'wrap',
 
@@ -48,7 +48,7 @@ export default function Friskole() {
                         sx={{
                             borderRadius: 8,
                             flex: '0 0 auto',
-                            p: 0.4,
+                            p: 0.9,
                         /*maxWidth: 400,*/
 
 
