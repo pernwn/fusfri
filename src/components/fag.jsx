@@ -27,7 +27,7 @@ const WordPressFag = ({ postId }) => {
       {post && (
         <Card className="mui-card"
         sx={{
-          maxWidth: 450,
+          maxWidth: 350,
         }}
         >
           <Typography variant="h3"
