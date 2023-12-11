@@ -37,7 +37,7 @@ function App() {
 
 
           <Route path="/friskole" element={<Friskole />} />
-          <Route path="/kontakt" element={<Kontakt />} />
+          <Route path="/kontakt" element={<Kontakt/>} />
           <Route path="/information" element={<Calendar />} />
 
 
