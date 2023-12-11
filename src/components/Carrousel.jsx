@@ -12,6 +12,9 @@ const Carrousel = ({ images }) => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    autoplay: true,
+    speed: 5000,
+    cssEase: "linear",
   };
 
   return (

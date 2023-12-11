@@ -51,8 +51,8 @@ main {
 .fotoinfo {
   display: flex;
   justify-content: space-evenly;
-  padding-top: 100px;
-  padding-bottom: 100px;
+  padding-top: 150px;
+  padding-bottom: 150px;
 }
 
 @media (max-width: 767px) {
@@ -75,6 +75,21 @@ main {
 
 .infoContainer > div {
   margin-top: 70px;
+}
+
+.mediaCards {
+  display: flex;
+  justify-content: space-evenly;
+
+  padding-bottom: 150px;
+}
+
+@media (max-width: 767px) {
+  .mediaCards {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+  }
 }
 
 .dropdown {
