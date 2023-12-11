@@ -25,7 +25,11 @@ const WordPressFag = ({ postId }) => {
     <Stack
     >
       {post && (
-        <Card className="mui-card">
+        <Card className="mui-card"
+        sx={{
+          maxWidth: 450,
+        }}
+        >
           <Typography variant="h3"
           sx={{
             alignContent: 'center',
