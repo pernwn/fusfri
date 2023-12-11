@@ -1,6 +1,7 @@
 //{ Lavet af Victoria }
 
 
+import { Typography } from '@mui/material'
 import '../App.css'
 
 
@@ -13,7 +14,7 @@ export default function Content({post}){
 
     return(
         <article>
-            <h2>{parse(post.title.rendered)}</h2>
+            <Typography variant='h3' gutterBottom>{parse(post.title.rendered)}</Typography>
             {parse(post.content.rendered)}
         
         </article>

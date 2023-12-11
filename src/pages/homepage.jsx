@@ -10,8 +10,11 @@ import { FilledBtn } from "../components/buttons";
 //Individuel styling som udgangspunkt – sammensætter alt til sidst
 import "../styles/vic.css";
 import SoMe from "../components/SoMe";
-
+import { useState } from "react";
+import { useEffect } from "react";
 import Content from "../components/content";
+
+
 
 
 
@@ -20,7 +23,22 @@ import Content from "../components/content";
 
 export default function HomePage() {
 
-  const postIDs = [136];
+
+
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+      async function getData() {
+          const url = "https://www.wordpress.vicw.dk/wp-json/wp/v2/home-page";
+          const response = await fetch(url);
+          const data = await response.json();
+          setPosts(data);
+
+      }
+      getData();
+  }, []);
+
+
 
   return (
     <Container component="main">
@@ -38,11 +56,19 @@ export default function HomePage() {
       ></iframe>
 
 
-{/*TODO: fiks*/}
+{/*TODO: fiks
       <Stack>
         {postIDs.map(postID => (
           <Paper key={postID}>
               <Content postId={postID} />
+          </Paper>
+        ))}
+      </Stack>*/}
+
+      <Stack spacing={4} direction={"column-reverse"}>
+        {posts.map(post => (
+          <Paper key={post.id} sx={{p:"3em", width:"50%"}}>
+            <Content post={post} />
           </Paper>
         ))}
       </Stack>
