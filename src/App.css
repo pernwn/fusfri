@@ -2,11 +2,11 @@ main {
   margin-top: 10em;
 }
 
-.action-btn-container {
+.action-container {
   display: none;
 }
 
-.action-btn-scrolled {
+.action-scrolled {
   display: flex;
   justify-content: space-evenly;
   align-items: center;

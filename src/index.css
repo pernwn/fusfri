@@ -96,7 +96,7 @@ header {
 
 
 
-.action-btn-container {
+.action-container {
     visibility: hidden;
     position: fixed;
     z-index: 6;
@@ -106,7 +106,7 @@ header {
     transition: ease 2s;
 }
 
-.action-btn-scrolled {
+.action-scrolled {
     visibility: visible;
 }
 

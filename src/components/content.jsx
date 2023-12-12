@@ -2,7 +2,7 @@
 
 
 import { Typography } from '@mui/material'
-import '../App.css'
+
 
 
 import parse from 'html-react-parser'
