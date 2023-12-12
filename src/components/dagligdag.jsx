@@ -1,3 +1,5 @@
+// lavet af Rina
+
 import  { useState, useEffect } from 'react';
 import axios from 'axios'; 
 
@@ -32,11 +34,6 @@ const Dagligdag = () => {
     <div className="dagligdag-slider">
       {posts.length > 0 && (
         <div className="slide">
-          <img
-            src={posts[currentSlide].featured_image_url} // Replace with the actual image URL field from WordPress
-            alt={posts[currentSlide].title.rendered} // Replace with the actual title field from WordPress
-            className="background-image"
-          />
           <div className="slide-content">
             {/* Render post content here */}
             <h2>{posts[currentSlide].title.rendered}</h2>
