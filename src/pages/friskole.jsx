@@ -3,6 +3,7 @@ import { Stack, Typography } from '@mui/material';
 import '../styles/rin.css'
 import '../styles/responsive.css'
 import gif from '../assets/gifgif.gif'
+import Dagligdag from "../components/dagligdag";
 
 export default function Friskole() {
     const postIDs = [28, 191, 149, 177, 179, 181, 183, 185, 187, 189];
@@ -32,6 +33,9 @@ export default function Friskole() {
                     <Typography variant='h4'>Hos os foregår tingene anderledes end på en folkeskole, prøv at se en hverdag på vores lille skole!</Typography>
                 </Stack>
             </Stack>
+            <div>
+                <Dagligdag />
+            </div>
             <Stack
                 sx={{
                     paddingTop: 5,
