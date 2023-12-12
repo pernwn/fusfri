@@ -1,0 +1,154 @@
+/* Nors styling */
+/* Calender page */
+.calenderhead {
+    padding-left: 60px;
+  }
+  
+  #events-list {
+    border-radius: 10px;
+    border: 3px;
+    border-color: #6a912d;
+    border-style: solid;
+    margin-right: 60px;
+    margin-left: 60px;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  
+    list-style: none;
+  }
+  
+  .carrouselContainer {
+    padding-top: 130px;
+    padding-bottom: 130px;
+  }
+  
+  .carrouselContainer img {
+    height: 70vh;
+    margin-left: 45vh;
+  }
+  
+  /* Kontakt side */
+  
+  .fotoinfo {
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 150px;
+    padding-bottom: 150px;
+  }
+  
+  @media (max-width: 767px) {
+    .fotoinfo img {
+      display: none;
+    }
+  }
+  
+  .infoContainer {
+    background-color: #3e7e8c;
+    height: 350px;
+    width: 525px;
+    border-radius: 30px;
+  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .infoContainer > div {
+    margin-top: 70px;
+  }
+  
+  .mediaCards {
+    display: flex;
+    justify-content: space-evenly;
+  
+    padding-bottom: 150px;
+  }
+  
+  @media (max-width: 767px) {
+    .mediaCards {
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+    }
+  }
+  
+  .dropdown {
+    position: relative;
+  }
+  
+  .menu {
+    position: absolute;
+  
+    list-style-type: none;
+    margin: 5px 0;
+    padding: 0;
+  
+    border: 1px solid grey;
+    width: 150px;
+  }
+  
+  .menu > li {
+    margin: 0;
+  
+    background-color: white;
+  }
+  
+  .menu > li:hover {
+    background-color: lightgray;
+  }
+  
+  .menu > li > button {
+    width: 100%;
+    height: 100%;
+    text-align: left;
+  
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 5px;
+    margin: 0;
+    font: inherit;
+    cursor: pointer;
+  }
+  
+  .dropdown {
+    position: relative;
+  }
+  
+  .menu {
+    position: absolute;
+  
+    list-style-type: none;
+    margin: 5px 0;
+    padding: 0;
+  
+    border: 1px solid grey;
+    width: 150px;
+  }
+  
+  .menu > li {
+    margin: 0;
+  
+    background-color: white;
+  }
+  
+  .menu > li:hover {
+    background-color: lightgray;
+  }
+  
+  .menu > li > button {
+    width: 100%;
+    height: 100%;
+    text-align: left;
+  
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 5px;
+    margin: 0;
+    font: inherit;
+    cursor: pointer;
+  }
+  
