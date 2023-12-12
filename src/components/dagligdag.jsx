@@ -10,13 +10,13 @@ const Dagligdag = () => {
   useEffect(() => {
     // Fetch posts from WordPress API
     const fetchPosts = async () => {
-        try {
-          const response = await axios.get('https://www.wordpress.vicw.dk/wp-json/wp/v2/posts?categories=22');
-          setPosts(response.data);
-        } catch (error) {
-          console.error('Error fetching posts:', error);
-        }
-      };
+      try {
+        const response = await axios.get('https://www.wordpress.vicw.dk/wp-json/wp/v2/posts?categories=22&_embed');
+        setPosts(response.data);
+      } catch (error) {
+        console.error('Error fetching posts:', error);
+      }
+    };    
       
 
     fetchPosts();
@@ -36,8 +36,17 @@ const Dagligdag = () => {
         <div className="slide">
           <div className="slide-content">
             {/* Render post content here */}
-            <h2>{posts[currentSlide].title.rendered}</h2>
-            <p>{posts[currentSlide].excerpt.rendered}</p>
+            <h2 dangerouslySetInnerHTML={{ __html: posts[currentSlide].title.rendered }} />
+            <div dangerouslySetInnerHTML={{ __html: posts[currentSlide].excerpt.rendered }} />
+            
+            {posts[currentSlide]?._embedded?.['wp:featuredmedia'] && (
+              <img
+              src={posts[currentSlide]._embedded['wp:featuredmedia'][0].source_url}
+              alt={posts[currentSlide].title.rendered}
+              />
+                )}
+
+
             {/* Other post details */}
           </div>
           <div className="arrows">
