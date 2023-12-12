@@ -9,7 +9,7 @@ export default function SoMe() {
         <main>
             <Stack direction="column" spacing={2} sx={{ p: '0 5em', width: "100%" }}>
                 <Typography variant='h2'>Kontakt os</Typography>
-                <Typography variant='body1'>Wassup wassup sign your child over to satan</Typography>
+                <Typography variant='body1'>Wassup wassup sign your child over to satan</Typography> {/* jeg elsker det her, jeg synes vi skal beholde det kh Rina */}
             </Stack>
 
             <Stack spacing={4} direction={"row"} sx={{ display: 'flex', justifyContent: 'center', height: '50em', marginTop: '3em' }}>
