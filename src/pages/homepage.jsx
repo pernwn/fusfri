@@ -12,7 +12,7 @@ import "../styles/vic.css";
 import SoMe from "../components/SoMe";
 import { useState } from "react";
 import { useEffect } from "react";
-import Content from "../components/content";
+import ContentScn from "../components/content-scn";
 
 
 
@@ -68,7 +68,7 @@ export default function HomePage() {
       <Stack spacing={4} direction={"column-reverse"}>
         {posts.map(post => (
           <Paper key={post.id} sx={{p:"3em", width:"50%"}}>
-            <Content post={post} />
+            <ContentScn post={post} />
           </Paper>
         ))}
       </Stack>

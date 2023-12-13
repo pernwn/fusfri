@@ -63,8 +63,11 @@ export default function CookiePrivat() {
 
     
 
-    const [posts, setPosts] = useState([]);
+   
     const [expanded, setExpanded] = useState('panel1');
+    
+    
+    /*const [posts, setPosts] = useState([]);
 
     useEffect(() => {
         async function getData() {
@@ -80,8 +83,14 @@ export default function CookiePrivat() {
 
     if (!posts) {
         return <Typography variant="h5">Loading...</Typography>
-    }
+    }*/
 
+
+
+    
+    const privat = [294]; //privatlivspolitik
+    const cookie = [295]; //cookies
+    
 
 
     const handleChange = (panel) => (event, newExpanded) => {
@@ -101,11 +110,11 @@ export default function CookiePrivat() {
                         <Typography variant="h5">Privatlivspolitik</Typography>
                     </AccordionSummary>
                     <AccordionDetails>
-                        <Stack spacing={12} className="cp_content">
-                            {posts.map(post => (
-
-                                <Content key={post.id} post={post} />
-
+                    <Stack spacing={12} className="cp_content">
+                            {privat.map(postID => (
+                                <Typography key={postID}>
+                                    <Content postId={postID} />
+                                </Typography>
                             ))}
                         </Stack>
                     </AccordionDetails>
@@ -116,9 +125,11 @@ export default function CookiePrivat() {
                         <Typography variant="h5">Cookies</Typography>
                     </AccordionSummary>
                     <AccordionDetails>
-                        <Stack spacing={12} className="cp_content">
-                            {posts.map(post => (
-                                <Content key={post.id} post={post} />
+                    <Stack spacing={12} className="cp_content">
+                            {cookie.map(postID => (
+                                <Typography key={postID}>
+                                    <Content postId={postID} />
+                                </Typography>
                             ))}
                         </Stack>
                     </AccordionDetails>
