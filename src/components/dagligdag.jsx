@@ -1,7 +1,9 @@
-// lavet af Rina
-
-import  { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios'; 
+import { Card, Stack, Typography, Button, IconButton } from '@mui/material';
+import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
+import NavigateNextIcon from '@mui/icons-material/NavigateNext';
+
 
 const Dagligdag = () => {
   const [posts, setPosts] = useState([]);
@@ -17,7 +19,6 @@ const Dagligdag = () => {
         console.error('Error fetching posts:', error);
       }
     };    
-      
 
     fetchPosts();
   }, []);
@@ -30,32 +31,47 @@ const Dagligdag = () => {
     setCurrentSlide((prevSlide) => (prevSlide === 0 ? posts.length - 1 : prevSlide - 1));
   };
 
+  
+
   return (
-    <div className="dagligdag-slider">
+    <Stack className="dagligdag-slider">
       {posts.length > 0 && (
-        <div className="slide">
-          <div className="slide-content">
-            {/* Render post content here */}
-            <h2 dangerouslySetInnerHTML={{ __html: posts[currentSlide].title.rendered }} />
-            <div dangerouslySetInnerHTML={{ __html: posts[currentSlide].excerpt.rendered }} />
+        <Card className="slide">
+                    <div className="arrows">
+            <IconButton onClick={prevSlide} className="arrow left-arrow">
+              <NavigateBeforeIcon 
+              sx={{
+                position: 'static',
+                justifyContent: 'flex-start',
+              }}
+              />
+            </IconButton> 
+            </div>
+            <div className="content">
+            <Typography variant="h4" dangerouslySetInnerHTML={{ __html: posts[currentSlide].title.rendered }} />
+            <Typography variant="body1" dangerouslySetInnerHTML={{ __html: posts[currentSlide].excerpt.rendered }} />
             
             {posts[currentSlide]?._embedded?.['wp:featuredmedia'] && (
               <img
-              src={posts[currentSlide]._embedded['wp:featuredmedia'][0].source_url}
-              alt={posts[currentSlide].title.rendered}
-              />
-                )}
+                src={posts[currentSlide]._embedded['wp:featuredmedia'][0].source_url}
+                alt={posts[currentSlide].title.rendered}
+              />           
+            )}
 
-
-            {/* Other post details */}
           </div>
           <div className="arrows">
-            <button onClick={prevSlide} className="arrow left-arrow">&#8249;</button>
-            <button onClick={nextSlide} className="arrow right-arrow">&#8250;</button>
+            <IconButton onClick={nextSlide} className="arrow right-arrow">
+              <NavigateNextIcon 
+                      sx={{
+                        position: 'static',
+                        justifyContent: 'flex-start',
+                      }}
+              />
+            </IconButton>
           </div>
-        </div>
+        </Card>
       )}
-    </div>
+    </Stack>
   );
 };
 

@@ -2,14 +2,12 @@
 padding: 2%;
 overflow: hidden;
 height: 700px;
-
 }
 
   .mui-card img {
     max-width: 100%;
     height: fit-content;
     display: block;
-
   }
 
  .dagligdag-slider{
@@ -23,21 +21,40 @@ height: 700px;
  .slide {
   display: flex;
   background-color: antiquewhite;
-
-
+  margin-left: 20%;
+  margin-right: 20%;
  }
 
  .slide-content {
-   justify-content: center;
+   justify-content: space-between;  
   align-content: center;
   text-align: center;
+ }
  
+ .slide-content img {
+  width: 100%;
  }
 
- .arrows {
+.arrow {
+  background-color: #eee;
+  padding: 8px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
   justify-content: center;
-  align-content: center;
-  text-align: center;
-  width: 50px;
-  padding: 30px;
- }
+  cursor: pointer;
+}
+
+.content {
+  flex-grow: 1;
+  padding: 16px;
+}
+
+.featured-image {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  margin-top: 16px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}

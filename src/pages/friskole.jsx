@@ -33,9 +33,9 @@ export default function Friskole() {
                     <Typography variant='h4'>Hos os foregår tingene anderledes end på en folkeskole, prøv at se en hverdag på vores lille skole!</Typography>
                 </Stack>
             </Stack>
-            <div>
+            
                 <Dagligdag />
-            </div>
+            
             <Stack
                 sx={{
                     paddingTop: 5,
