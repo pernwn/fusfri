@@ -2,28 +2,12 @@
 
 
 import { Box, Stack, Typography } from '@mui/material'
-
-
-
-//import parse from 'html-react-parser'
 import { useEffect, useState } from 'react';
 
 
 //TODO: Skal finde ud af bedre måde at hente individuelle – tjek acf og cpt implementering på notion TODO:!!
 
 export default function Content({ postId, site }) {
-    /*
-        return(
-        
-            <article>
-                <Typography variant='h3' gutterBottom>{parse(post.title.rendered)}</Typography>
-                {parse(post.content.rendered)}
-            
-            </article>
-    
-            
-        )
-    */
 
     const [post, setPost] = useState(null);
 
@@ -45,11 +29,10 @@ export default function Content({ postId, site }) {
     }, [postId, site]);
 
     return (
-        <Stack
-        >
+        <Stack>
           {post && (
             <Box sx={{p:"2em"}}>
-              <Typography variant="h2" gutterBottom>{post.title.rendered}</Typography>
+              <Typography variant="h3" gutterBottom>{post.title.rendered}</Typography>
               <div dangerouslySetInnerHTML={{ __html: post.content.rendered }} />
             </Box>
           )}

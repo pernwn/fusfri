@@ -2,7 +2,7 @@
 
 
 
-import { Box, Container, Paper, Stack, Typography } from "@mui/material";
+import { Box, Stack} from "@mui/material";
 import { FilledBtn } from "../components/buttons";
 
 
@@ -18,15 +18,15 @@ import Form from "../components/muiForm";
 
 export default function HomePage() {
   const kontakt = [292];
+  const institutioner = [321];
   const url = "home-page";
 
 
   return (
-    <Container component="main" >
+    <main style={{ marginInline:"5em",
+      }}>
       <FilledBtn name="Friskole" page="/friskole" />
       <FilledBtn name="Kalender" page="/information" />
-
-
       <Stack spacing={8} >
         <iframe //hero-video
           width="100%"
@@ -39,38 +39,38 @@ export default function HomePage() {
         ></iframe>
 
         <Stack direction={"row"} spacing={4} className="bgGraphic">
-
+       
             {kontakt.map(postID => (
-              <Box key={postID} >
-                <Content site={url} postId={postID} />
+              <Box key={postID}>
+                <Content site={url} postId={postID}/>
               </Box>
             ))}
 
-              <Form/>
+
+          <Form />
         </Stack>
+
+
+        <Stack>
+          {institutioner.map(postID => (
+            <Box key={postID} >
+              <Content site={url} postId={postID} />
+            </Box>
+          ))}
+
+          <Stack /* TODO: */> 
+            <img src="" alt="" />
+            <img src="" alt="" />
+            <img src="" alt="" />
+          </Stack>
+
+        </Stack>
+
+            <SoMe/>
 
       </Stack>
 
-      <Box /*Her skal være lidt om friskolen, børnehave og vuggestuen (se figma)*/>
-        <Paper
-          sx={{
-            width: "25%",
-            padding: "2em",
-          }}
-        >
-          <Typography variant="h3" gutterBottom>
-            Kontakt os
-          </Typography>
-          <Typography variant="body1">
-            Vi vil meget gerne hjælpe dig med at få mere information om optagelse på Fusfri. Lad os sammen undersøge,
-            hvordan vi kan opfylde dit barns behov. Vi opfordrer forældre til at kontakte os, selvom der måske er ledige
-            pladser, da vi gerne vil sikre, at skolen er det rette match for dit barns behov.
-          </Typography>
-        </Paper>
-      </Box>
 
-
-      <SoMe />
-    </Container>
+    </main>
   );
 }
