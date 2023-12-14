@@ -51,7 +51,7 @@ header {
 
 }
 
-/*
+
 .nav-container {
 
     height: 5em;
@@ -61,14 +61,14 @@ header {
 
 
     transition: ease 1s;
-}*/
+}
 
-/* Hide navbar padding when scrolling 
+/*Hide navbar padding when scrolling */
 .nav-scrolled {
     padding-top: 0;
     height: 2em;
 }
-*/
+
 
 .logo {
     width: 20%;
@@ -180,21 +180,6 @@ img {
     padding: 0.5rem 1.5em;
 }
 
-/*
-.btn-container .menu-items a:hover,
-.btn-container .menu-items button:hover {
-    background-color: #f2f2f2;
-}
-
-.btn-container .arrow::after {
-    content: "";
-    display: inline-block;
-    margin-left: 0.28em;
-    vertical-align: 0.09em;
-    border-top: 0.42em solid;
-    border-right: 0.32em solid transparent;
-    border-left: 0.32em solid transparent;
-}*/
 
 .btn-container .dropdown {
     position: absolute;

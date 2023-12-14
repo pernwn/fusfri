@@ -8,7 +8,7 @@ import { FilledBtn } from "../components/buttons";
 
 
 //Individuel styling som udgangspunkt – sammensætter alt til sidst
-import "../styles/vic.css";
+import '../styles/vic.css'
 import SoMe from "../components/SoMe";
 import Content from "../components/content";
 import Form from "../components/muiForm";
@@ -22,7 +22,7 @@ export default function HomePage() {
 
 
   return (
-    <Container component="main">
+    <Container component="main" >
       <FilledBtn name="Friskole" page="/friskole" />
       <FilledBtn name="Kalender" page="/information" />
 
@@ -38,10 +38,10 @@ export default function HomePage() {
           style={{ borderRadius: "1.5em" }}
         ></iframe>
 
-        <Stack direction={"row"} spacing={4}>
+        <Stack direction={"row"} spacing={4} className="bgGraphic">
 
             {kontakt.map(postID => (
-              <Box key={postID}>
+              <Box key={postID} >
                 <Content site={url} postId={postID} />
               </Box>
             ))}

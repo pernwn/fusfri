@@ -5,6 +5,8 @@
     --secondary-main:#3D7F8C;
     --text-main: #734434;
 
+    --background-default: #D7E8ED,
+
 
 }
 
@@ -45,6 +47,12 @@ a:hover{
 
 .cp_content h2{
     color: var(--primary-main);
+}
+
+.bgGraphic{
+    width:100vh;
+    background-image: linear-gradient(to right, #6e8c2e2f, transparent, transparent);
+
 }
 
 
