@@ -17,6 +17,9 @@ and (max-device-width: 480px) {
        .gif-skole {
         max-width: 100%;
       }
+      .fag-kort{
+        max-width: 100%;
+      }
 }
 
 /* Tablets, iPads (portrait and landscape) ----------- */
