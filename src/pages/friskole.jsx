@@ -37,13 +37,14 @@ export default function Friskole() {
             
                 <Dagligdag />
             
-            <article className="scroll"
-            >
+            <article className="scroll"> 
+            <Typography variant="h2" >Fag</Typography>
                 {postIDs.map(postID => (
                     <div
                         key={postID}
                         className= 'fag-kort'
                     >
+                       
                 <WordPressFag postId={postID} />
             </div>
                 ))}

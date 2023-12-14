@@ -7,6 +7,7 @@ background: linear-gradient(36deg, rgba(125,166,176,1) 0%, rgba(178,217,226,1) 4
 border-radius: 8px;
 box-shadow: -1rem 0 3rem#161616;
 transition: .2s;
+min-height: 550px;
 }
 
 .scroll::-webkit-scrollbar {
@@ -14,24 +15,31 @@ width: 15px;
 height: 15px;
 }
 .scroll::-webkit-scrollbar-thumb {
-background: #3498db;
+background: #2e5c7a;
 border-radius: 10px;
 box-shadow: inset 2px 2px 2px hsla(0, 0%, 100%, .25), inset -2px -2px 2px rgba(255, 221, 221, 0.25);
 }
 
 .scroll {
 background-color:darkseagreen;
+align-items: center;
+justify-content: center;
 display: flex;
 border-radius: 8px;
 overflow-x: auto;
 position: relative;
 display: flex;
-height: 700px;
+min-height:800px;
+margin-top: 5%;
+margin-bottom: 5%;
 }
 
+.fag-kort:hover{
+  transform: translateX(-1rem);
+}
 
 .fag-kort:hover~.fag-kort{
-  transform: translateX(280px)
+  transform: translateX(300px)
 }
 
 .fag-kort:not(:first-child){
@@ -53,7 +61,6 @@ height: 700px;
   margin-right: 20%;
   height: 40%;
  }
-
 
 .arrow {
   background-color: #eee;
