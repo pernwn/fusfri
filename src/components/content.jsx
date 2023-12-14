@@ -11,7 +11,7 @@ import { useEffect, useState } from 'react';
 
 //TODO: Skal finde ud af bedre måde at hente individuelle – tjek acf og cpt implementering på notion TODO:!!
 
-export default function Content({ postId }) {
+export default function Content({ postId, site }) {
     /*
         return(
         
@@ -30,7 +30,7 @@ export default function Content({ postId }) {
     useEffect(() => {
         const fetchPost = async () => {
             try {
-                const response = await fetch(`https://www.wordpress.vicw.dk/wp-json/wp/v2/cp/${postId}?_embed`);
+                const response = await fetch(`https://www.wordpress.vicw.dk/wp-json/wp/v2/${site}/${postId}?_embed`);
                 if (!response.ok) {
                     throw new Error('Network response was not ok.');
                 }
@@ -42,13 +42,13 @@ export default function Content({ postId }) {
         };
 
         fetchPost();
-    }, [postId]);
+    }, [postId, site]);
 
     return (
         <Stack
         >
           {post && (
-            <Box sx={{p:"5em"}}>
+            <Box sx={{p:"2em"}}>
               <Typography variant="h2">{post.title.rendered}</Typography>
               <div dangerouslySetInnerHTML={{ __html: post.content.rendered }} />
             </Box>

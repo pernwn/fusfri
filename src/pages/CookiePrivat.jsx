@@ -17,7 +17,7 @@ import MuiAccordion from '@mui/material/Accordion';
 import MuiAccordionSummary from '@mui/material/AccordionSummary';
 import MuiAccordionDetails from '@mui/material/AccordionDetails';
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 
 const Accordion = styled((props) => (
@@ -59,11 +59,6 @@ const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
 
 export default function CookiePrivat() {
 
-    
-
-    
-
-   
     const [expanded, setExpanded] = useState('panel1');
     
     
@@ -86,11 +81,9 @@ export default function CookiePrivat() {
     }*/
 
 
-
-    
     const privat = [294]; //privatlivspolitik
     const cookie = [295]; //cookies
-    
+    const url = "cp"; 
 
 
     const handleChange = (panel) => (event, newExpanded) => {
@@ -113,7 +106,7 @@ export default function CookiePrivat() {
                     <Stack spacing={12} className="cp_content">
                             {privat.map(postID => (
                                 <Typography key={postID}>
-                                    <Content postId={postID} />
+                                    <Content site={url} postId={postID} />
                                 </Typography>
                             ))}
                         </Stack>
@@ -128,7 +121,7 @@ export default function CookiePrivat() {
                     <Stack spacing={12} className="cp_content">
                             {cookie.map(postID => (
                                 <Typography key={postID}>
-                                    <Content postId={postID} />
+                                    <Content site={url} postId={postID} />
                                 </Typography>
                             ))}
                         </Stack>

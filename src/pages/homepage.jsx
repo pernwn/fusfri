@@ -10,33 +10,28 @@ import { FilledBtn } from "../components/buttons";
 //Individuel styling som udgangspunkt – sammensætter alt til sidst
 import "../styles/vic.css";
 import SoMe from "../components/SoMe";
-import { useState } from "react";
-import { useEffect } from "react";
-import ContentScn from "../components/content-scn";
-
-
-
-
-
-
+import Content from "../components/content";
+import ContactForm from "../components/contactform";
 
 
 export default function HomePage() {
+  const kontakt = [292];
+  const url = "home-page";
 
 
-
-  const [posts, setPosts] = useState([]);
-
-  useEffect(() => {
-      async function getData() {
-          const url = "https://www.wordpress.vicw.dk/wp-json/wp/v2/home-page";
-          const response = await fetch(url);
-          const data = await response.json();
-          setPosts(data);
-
-      }
-      getData();
-  }, []);
+  /*
+    const [posts, setPosts] = useState([]);
+  
+    useEffect(() => {
+        async function getData() {
+            const url = "https://www.wordpress.vicw.dk/wp-json/wp/v2/home-page";
+            const response = await fetch(url);
+            const data = await response.json();
+            setPosts(data);
+  
+        }
+        getData();
+    }, []);*/
 
 
 
@@ -45,33 +40,31 @@ export default function HomePage() {
       <FilledBtn name="Friskole" page="/friskole" />
       <FilledBtn name="Kalender" page="/information" />
 
-      <iframe
-        width="100%"
-        height="600vh"
-        src="https://www.youtube.com/embed/JYYtjlpkpeM?si=4Y6eEt39IDBrTJQw?controls=0"
-        title="YouTube video player"
-        frameBorder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        style={{ borderRadius: "1.5em" }}
-      ></iframe>
 
+      <Stack spacing={4} >
+        <iframe //hero-video
+          width="100%"
+          height="600vh"
+          src="https://www.youtube.com/embed/JYYtjlpkpeM?si=4Y6eEt39IDBrTJQw?controls=0"
+          title="YouTube video player"
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          style={{ borderRadius: "1.5em" }}
+        ></iframe>
 
-{/*TODO: fiks
-      <Stack>
-        {postIDs.map(postID => (
-          <Paper key={postID}>
-              <Content postId={postID} />
-          </Paper>
-        ))}
-      </Stack>*/}
+        <Stack direction={"row"} spacing={4}>
 
-      <Stack spacing={4} direction={"column-reverse"}>
-        {posts.map(post => (
-          <Paper key={post.id} sx={{p:"3em", width:"50%"}}>
-            <ContentScn post={post} />
-          </Paper>
-        ))}
+            {kontakt.map(postID => (
+              <Paper key={postID}>
+                <Content site={url} postId={postID} />
+              </Paper>
+            ))}
+
+          <ContactForm />
+        </Stack>
+
       </Stack>
+
 
 
 
