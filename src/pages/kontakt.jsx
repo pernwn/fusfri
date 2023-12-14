@@ -1,4 +1,5 @@
 // Udviklet af Nor
+
 import { Container, Typography } from "@mui/material";
 import ContactForm from "../components/contactform";
 import "../App.css";
@@ -60,7 +61,6 @@ export default function Kontakt() {
 
       <div className="mediaCards">
         <MediaCard post={post1} />
-
         <MediaCard post={post2} />
       </div>
     </Container>
