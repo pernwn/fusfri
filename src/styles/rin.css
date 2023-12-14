@@ -5,9 +5,9 @@ flex-direction: column;
 background: rgb(125,166,176);
 background: linear-gradient(36deg, rgba(125,166,176,1) 0%, rgba(178,217,226,1) 49%, rgba(223,249,255,1) 100%);
 border-radius: 8px;
-box-shadow: -1rem 0 3rem#161616;
+box-shadow: -1rem 0 2rem#161616;
 transition: .2s;
-min-height: 550px;
+min-height: 600px;
 }
 
 .scroll::-webkit-scrollbar {
@@ -29,7 +29,7 @@ border-radius: 8px;
 overflow-x: auto;
 position: relative;
 display: flex;
-min-height:800px;
+min-height:1000px;
 margin-top: 5%;
 margin-bottom: 5%;
 }
@@ -43,7 +43,7 @@ margin-bottom: 5%;
 }
 
 .fag-kort:not(:first-child){
-  margin: -160px;
+  margin: -150px;
 }
 
  .dagligdag-slider{
@@ -63,12 +63,9 @@ margin-bottom: 5%;
  }
 
 .arrow {
-  background-color: #eee;
   padding: 8px;
   border-radius: 50%;
   display: flex;
-  align-items: center;
-  justify-content: center;
   cursor: pointer;
 }
 
