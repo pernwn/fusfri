@@ -10,7 +10,7 @@ export default function Friskole() {
 
     return (
         <main>
-            <Stack
+            <Stack className="friskole"
                 sx={{
                     flexDirection: 'row',
                     padding: 1,
@@ -19,7 +19,8 @@ export default function Friskole() {
 
                 }}
             >
-                <img src={gif} className="gif-skole" ></img>
+                <img src={gif} className="gif-skole"  ></img>
+
                 <Typography variant="h1"
                     sx={{
                         textAlign: 'center',
@@ -36,32 +37,17 @@ export default function Friskole() {
             
                 <Dagligdag />
             
-            <Stack
-                sx={{
-                    paddingTop: 5,
-                    paddingBottom: 5,
-                    overflowX: 'auto', // Enable horizontal scrolling
-                    display: 'flex',
-                    flexDirection: 'row', // Display items horizontally
-                }}
+            <article className="scroll"
             >
                 {postIDs.map(postID => (
-                    <Stack
+                    <div
                         key={postID}
-                        className={`post-${postID}`}
-                        sx={{
-                            borderRadius: 8,
-                            flex: '0 0 auto',
-                            p: 0.9,
-                        /*maxWidth: 400,*/
-
-
-                        }}
+                        className= 'fag-kort'
                     >
                 <WordPressFag postId={postID} />
-            </Stack>
+            </div>
                 ))}
-        </Stack>
+        </article>
           
            
         </main >

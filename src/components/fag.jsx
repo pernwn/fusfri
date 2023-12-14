@@ -1,6 +1,6 @@
 // lavet af Rina
 
-import { Card, Stack, Typography } from '@mui/material';
+import {  Typography } from '@mui/material';
 import { useState, useEffect } from 'react';
 
 const WordPressFag = ({ postId }) => {
@@ -24,25 +24,20 @@ const WordPressFag = ({ postId }) => {
   }, [postId]);
 
   return (
-    <Stack
+    <main
     >
       {post && (
-        <Card className="mui-card"
-        sx={{
-          maxWidth: 350,
-        }}
-        >
+        <div         >
           <Typography variant="h3"
           sx={{
-            alignContent: 'center',
             textAlign: 'center'
           }} >
             {post.title.rendered}
             </Typography>
           <Typography dangerouslySetInnerHTML={{ __html: post.content.rendered }} />
-        </Card>
+        </div>
       )}
-    </Stack>
+    </main>
   );
 };
 
