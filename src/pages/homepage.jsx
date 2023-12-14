@@ -2,7 +2,7 @@
 
 
 
-import { Container, Paper, Stack } from "@mui/material";
+import { Box, Container, Paper, Stack } from "@mui/material";
 import { FilledBtn } from "../components/buttons";
 
 
@@ -11,7 +11,8 @@ import { FilledBtn } from "../components/buttons";
 import "../styles/vic.css";
 import SoMe from "../components/SoMe";
 import Content from "../components/content";
-import ContactForm from "../components/contactform";
+import Form from "../components/muiForm";
+
 
 
 export default function HomePage() {
@@ -41,7 +42,7 @@ export default function HomePage() {
       <FilledBtn name="Kalender" page="/information" />
 
 
-      <Stack spacing={4} >
+      <Stack spacing={8} >
         <iframe //hero-video
           width="100%"
           height="600vh"
@@ -55,12 +56,12 @@ export default function HomePage() {
         <Stack direction={"row"} spacing={4}>
 
             {kontakt.map(postID => (
-              <Paper key={postID}>
+              <Box key={postID}>
                 <Content site={url} postId={postID} />
-              </Paper>
+              </Box>
             ))}
 
-          <ContactForm />
+              <Form/>
         </Stack>
 
       </Stack>

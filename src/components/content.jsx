@@ -49,7 +49,7 @@ export default function Content({ postId, site }) {
         >
           {post && (
             <Box sx={{p:"2em"}}>
-              <Typography variant="h2">{post.title.rendered}</Typography>
+              <Typography variant="h2" gutterBottom>{post.title.rendered}</Typography>
               <div dangerouslySetInnerHTML={{ __html: post.content.rendered }} />
             </Box>
           )}

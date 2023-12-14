@@ -4,7 +4,7 @@ import { useState } from "react";
 import styled from "styled-components";
 import emailjs from "@emailjs/browser";
 import { toast } from "react-toastify";
-import { FilledBtn } from "./buttons";
+
 
 const FormContainer = styled.div`
   width: 800px;
@@ -125,7 +125,6 @@ const ContactForm = () => {
         <Label htmlFor="besked">Besked:</Label>
         <TextArea id="besked" name="besked" value={formData.besked} onChange={handleChange} />
 
-          <FilledBtn name="Submit" type="submit" event={handleSubmit} />
         <Button type="submit">Send</Button>
       </Form>
     </FormContainer>
