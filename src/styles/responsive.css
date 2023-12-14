@@ -14,6 +14,9 @@ and (max-device-width: 480px) {
         margin: 0%;
         width: 100%;
        }
+       .gif-skole {
+        max-width: 100%;
+      }
 }
 
 /* Tablets, iPads (portrait and landscape) ----------- */

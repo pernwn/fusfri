@@ -7,7 +7,7 @@ background: linear-gradient(36deg, rgba(125,166,176,1) 0%, rgba(178,217,226,1) 4
 border-radius: 8px;
 box-shadow: -1rem 0 2rem#161616;
 transition: .2s;
-min-height: 600px;
+height: 800px;
 }
 
 .scroll::-webkit-scrollbar {
