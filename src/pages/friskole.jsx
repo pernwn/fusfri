@@ -36,9 +36,15 @@ export default function Friskole() {
             </Stack>
             
                 <Dagligdag />
-            
+                        <Typography variant="h2" 
+                        sx={{
+                            textAlign: 'center',
+                            marginTop: 5,
+                            marginBottom: 5,
+                        }}
+                        >Fag på Fusfri </Typography>
             <article className="scroll"> 
-            <Typography variant="h2" >Fag</Typography>
+
                 {postIDs.map(postID => (
                     <div
                         key={postID}
