@@ -1,15 +1,83 @@
-.mui-card {
-padding: 2%;
-overflow: hidden;
-height: 700px;
-
+.fag-kort {
+padding: 2rem;
+width: 450px;
+flex-direction: column;
+background: rgb(125,166,176);
+background: linear-gradient(36deg, rgba(125,166,176,1) 0%, rgba(178,217,226,1) 49%, rgba(223,249,255,1) 100%);
+border-radius: 8px;
+box-shadow: -1rem 0 3rem#161616;
+transition: .2s;
+min-height: 550px;
 }
 
-  .mui-card img {
-    max-width: 100%;
-    height: fit-content;
-    display: block;
+.scroll::-webkit-scrollbar {
+width: 15px;
+height: 15px;
+}
+.scroll::-webkit-scrollbar-thumb {
+background: #2e5c7a;
+border-radius: 10px;
+box-shadow: inset 2px 2px 2px hsla(0, 0%, 100%, .25), inset -2px -2px 2px rgba(255, 221, 221, 0.25);
+}
 
-  }
+.scroll {
+background-color:darkseagreen;
+align-items: center;
+justify-content: center;
+display: flex;
+border-radius: 8px;
+overflow-x: auto;
+position: relative;
+display: flex;
+min-height:800px;
+margin-top: 5%;
+margin-bottom: 5%;
+}
 
- 
+.fag-kort:hover{
+  transform: translateX(-1rem);
+}
+
+.fag-kort:hover~.fag-kort{
+  transform: translateX(300px)
+}
+
+.fag-kort:not(:first-child){
+  margin: -160px;
+}
+
+ .dagligdag-slider{
+  max-width: 100%;
+  margin: 3%;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+ }
+
+ .slide {
+  display: flex;
+  background-color: antiquewhite;
+  margin-left: 20%;
+  margin-right: 20%;
+  height: 40%;
+ }
+
+.arrow {
+  background-color: #eee;
+  padding: 8px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.content {
+  flex-grow: 1;
+  padding: 16px;
+}
+
+.gif-skole {
+  max-width: 50%;
+}
+

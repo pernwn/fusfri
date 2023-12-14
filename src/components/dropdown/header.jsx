@@ -11,6 +11,9 @@ import UpIcon from "@mui/icons-material/KeyboardArrowUp";
 import PhoneIcon from "@mui/icons-material/Phone";
 
 import "../../styles/vic.css";
+import '../../index.css'
+
+
 import { Box, Fab, Fade, Typography } from "@mui/material";
 import logo from "../../assets/logo/fusfri-logo.png";
 import Search from "../search";
@@ -29,6 +32,7 @@ creating a different look for the scrolled state. */
   const handleScroll = () => (window.scrollY > 150 ? setScrolled(true) : setScrolled(false));
   useEffect(() => {
     window.addEventListener("scroll", handleScroll, { passive: true });
+    console.log("actionbuttons")
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -59,7 +63,7 @@ creating a different look for the scrolled state. */
       </header>
 
       <Fade in={isScrolled}>
-        <Box sx={{ mr: 5 }} className={`action-btn-container ${isScrolled && "action-btn-scrolled"}`}>
+        <Box sx={{ mr: 5 }} className={`action-container ${isScrolled && "action-scrolled"}`}>
           <Link to="/kontakt">
             <Fab variant="extended" aria-label="contact">
               <PhoneIcon sx={{ mr: 1 }} color="secondary" />
@@ -77,6 +81,7 @@ creating a different look for the scrolled state. */
           </Fab>
         </Box>
       </Fade>
+      
     </Box>
   );
 };

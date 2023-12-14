@@ -8,7 +8,7 @@ import HomePage from "./pages/homepage";
 //import Nav from "./components/nav";
 import Friskole from "./pages/friskole";
 
-//import "./App.css";
+import "./App.css";
 import Kontakt from "./pages/kontakt";
 
 import Calendar from "./pages/calender";
@@ -37,7 +37,7 @@ function App() {
 
 
           <Route path="/friskole" element={<Friskole />} />
-          <Route path="/kontakt" element={<Kontakt />} />
+          <Route path="/kontakt" element={<Kontakt/>} />
           <Route path="/information" element={<Calendar />} />
 
 
