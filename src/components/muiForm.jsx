@@ -1,7 +1,7 @@
-import { Box, Button, Checkbox, FormControl, FormControlLabel, Grid, InputLabel, ListItemText, MenuItem, OutlinedInput, Select, TextField, useTheme } from "@mui/material";
+import { Box, Button, Checkbox, FormControlLabel, Grid, InputLabel, ListItemText, MenuItem, OutlinedInput, Select, TextField, useTheme } from "@mui/material";
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
+import emailjs from "@emailjs/browser";
 
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
@@ -30,16 +30,15 @@ function getStyles(insti, instiName, myTheme) {
 }
 
 
-export default function Form() {
+const Form = () => {
     const myTheme = useTheme();
     const [instiName, setInstiName] = useState([])
 
-    const [formData, setFormData] = useState({
-        Navn: "",
-        Email: "",
-        Mobilnummer: 0,
-        Besked: "",
-    })
+    const [navn, setNavn] = useState('');
+    const [email, setEmail] = useState('');
+    const [tel, setTel] = useState('');
+    const [besked, setBesked] = useState('');
+    const [valg, setValg] = useState('');
 
     const handleSelect = (event) => {
         const {
@@ -51,28 +50,34 @@ export default function Form() {
         )
     }
 
+    const handleSubmit = async (e) => {
+        e.preventDefault();
 
-    const handleChange = (event) => {
-        setFormData({
-            ...formData,
-            [event.target.name]: event.target.value,
-        })
-    }
+        // Opretter et objekt med formulardataene
+        const formData = {
+            navn, email, tel, besked, valg,
+        };
 
+        try {
+            // Sender formulardataene til backend
+            const response = await emailjs.send("service_s0rma4r", "template_tyq0pbv", formData, "Bd-JEsYHH89M9RpTm")
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
-        const data = new FormData(event.currentTarget);
+            if (response.ok) {
+                // Formularen blev sendt succesfuldt
+                console.log('Beskeden blev sendt!');
+                // Tilføj eventuelle yderligere handlinger efter succes
+            } else {
+                // Håndter fejl ved formularafsendelse
+                console.error('Fejl ved afsendelse af besked');
+            }
+        } catch (error) {
+            console.error('Der opstod en fejl:', error);
+        }
 
-        console.log({
-            email: data.get('email'),
-            password: data.get('password'),
-        });
-
-        toast.success("Emailen er sendt", {
+        toast.success("E-mailen er sendt", {
             position: "bottom-right",
             autoClose: 3000,
-            hideProgressBar: false,
+            hideProgressBar: true,
             closeOnClick: true,
             pauseOnHover: true,
             draggable: true,
@@ -85,27 +90,18 @@ export default function Form() {
 
 
     return (
-        <Box component="form" noValidate onSubmit={handleSubmit} sx={{backgroundColor: myTheme => myTheme.palette.background.paper, p:5, borderRadius: "1em" }}>
+        <Box component="form" noValidate onSubmit={handleSubmit} sx={{ backgroundColor: myTheme => myTheme.palette.background.paper, p: 4, borderRadius: "1em" }}>
             <Grid container spacing={2}>
-                <Grid item xs={12} sm={6}>
+                <Grid item xs={12}>
                     <TextField
                         autoComplete="given-name"
-                        name="firstName"
                         required
                         fullWidth
                         id="firstName"
-                        label="Fornavn"
+                        label="Navn"
                         autoFocus
-                    />
-                </Grid>
-                <Grid item xs={12} sm={6}>
-                    <TextField
-                        required
-                        fullWidth
-                        id="family-name"
-                        label="Efternavn"
-                        name="family-name"
-                        autoComplete="family-name"
+                        value={navn}
+                        onChange={(e) => setNavn(e.target.value)}
                     />
                 </Grid>
                 <Grid item xs={12}>
@@ -116,6 +112,8 @@ export default function Form() {
                         label="E-mail"
                         name="email"
                         autoComplete="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
                     />
                 </Grid>
                 <Grid item xs={12}>
@@ -127,19 +125,11 @@ export default function Form() {
                         type="phone-number"
                         id="phone-number"
                         autoComplete="phonenumber"
+                        value={tel}
+                        onChange={(e) => setTel(e.target.value)}
                     />
                 </Grid>
-                <Grid item xs={12}>
-                    <TextField
-                        fullWidth
-                        id="outlined-multiline-static"
-                        label="Besked"
-                        multiline
-                        rows={4}
-                        required
-                        placeholder="Skriv din besked her eller kontakt os for en uforpligtende snak."
-                    />
-                </Grid>
+
                 <Grid item xs={12}>
                     <InputLabel id="demo-multiple-checkbox-label">Vælg ønsket institution(er)</InputLabel>
                     <Select
@@ -152,18 +142,34 @@ export default function Form() {
                         renderValue={(selected) => selected.join(', ')}
                         MenuProps={MenuProps}
                         fullWidth
+
                     >
                         {instis.map((insti) => (
                             <MenuItem
                                 key={insti}
-                                value={insti}
+                                value={insti && valg}
                                 style={getStyles(insti, instiName, myTheme)}
+                                onChange={(e) => setValg(e.target.value)}
                             >
                                 <Checkbox checked={instiName.indexOf(insti) > -1} />
                                 <ListItemText primary={insti} />
                             </MenuItem>
                         ))}
                     </Select>
+                </Grid>
+
+                <Grid item xs={12}>
+                    <TextField
+                        fullWidth
+                        id="outlined-multiline-static"
+                        label="Besked"
+                        multiline
+                        rows={4}
+                        required
+                        placeholder="Skriv din besked her eller kontakt os for en uforpligtende snak."
+                        value={besked}
+                        onChange={(e) => setBesked(e.target.value)}
+                    />
                 </Grid>
 
                 <Grid item xs={12}>
@@ -187,3 +193,5 @@ export default function Form() {
 
     )
 }
+
+export default Form 

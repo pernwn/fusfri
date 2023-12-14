@@ -2,7 +2,7 @@
 
 
 
-import { Box, Container, Paper, Stack } from "@mui/material";
+import { Box, Container, Paper, Stack, Typography } from "@mui/material";
 import { FilledBtn } from "../components/buttons";
 
 
@@ -15,25 +15,10 @@ import Form from "../components/muiForm";
 
 
 
+
 export default function HomePage() {
   const kontakt = [292];
   const url = "home-page";
-
-
-  /*
-    const [posts, setPosts] = useState([]);
-  
-    useEffect(() => {
-        async function getData() {
-            const url = "https://www.wordpress.vicw.dk/wp-json/wp/v2/home-page";
-            const response = await fetch(url);
-            const data = await response.json();
-            setPosts(data);
-  
-        }
-        getData();
-    }, []);*/
-
 
 
   return (
@@ -66,12 +51,7 @@ export default function HomePage() {
 
       </Stack>
 
-
-
-
-
-
-      {/*<Box>
+      <Box /*Her skal være lidt om friskolen, børnehave og vuggestuen (se figma)*/>
         <Paper
           sx={{
             width: "25%",
@@ -87,7 +67,7 @@ export default function HomePage() {
             pladser, da vi gerne vil sikre, at skolen er det rette match for dit barns behov.
           </Typography>
         </Paper>
-      </Box>*/}
+      </Box>
 
 
       <SoMe />
