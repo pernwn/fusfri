@@ -193,7 +193,7 @@ img {
     display: none;
 }
 
-/* menu on mobile */
+/* menu on mobile TODO: ikke helt optimeret */
 @media screen and (max-width: 960px) {
     .nav-area {
         justify-content: space-between;

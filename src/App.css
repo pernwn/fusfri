@@ -10,6 +10,23 @@ main {
   margin-top: 10em;
 }
 
+.action-container {
+  display:none;
+
+  z-index: 6;
+}
+
+.action-scrolled {
+  display:flex;
+  justify-content: space-evenly;                      
+  align-items: center;
+
+               
+  /*margin: 60vh 80vw;*/
+
+
+
+}
 
 /* Nors styling */
 /* Calender page */

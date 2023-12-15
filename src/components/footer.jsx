@@ -30,7 +30,7 @@ export function Copyright(props) {
 export default function Footer() {
   return (
 
-    <Box
+    <Box 
       sx={{
         backgroundColor: myTheme => myTheme.palette.background.paper,
         borderRadius: "2em 2em 0 0",
@@ -39,10 +39,6 @@ export default function Footer() {
       }}
     >
       <footer>
-
-
-
-
         <Stack spacing={8} direction={'row'} sx={{width:"120%"}} >
           <Box className="footerTxt" sx={{width:"80%"}}>
             <Typography variant="h6">Adresse<ListItemIcon className="f_icon"><SchoolIcon color="primary"/></ListItemIcon></Typography>

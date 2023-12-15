@@ -61,24 +61,6 @@ export default function CookiePrivat() {
 
     const [expanded, setExpanded] = useState('panel1');
     
-    
-    /*const [posts, setPosts] = useState([]);
-
-    useEffect(() => {
-        async function getData() {
-            const url = "https://www.wordpress.vicw.dk/wp-json/wp/v2/cp";
-            const response = await fetch(url);
-            const data = await response.json();
-            setPosts(data);
-
-        }
-        getData();
-    }, []);
-
-
-    if (!posts) {
-        return <Typography variant="h5">Loading...</Typography>
-    }*/
 
 
     const privat = [294]; //privatlivspolitik

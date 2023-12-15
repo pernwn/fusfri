@@ -101,7 +101,7 @@ const Form = () => {
 
 
 return (
-    <Box component="form" noValidate onSubmit={handleSubmit} sx={{ backgroundColor: myTheme => myTheme.palette.background.paper, p: 4, borderRadius: "1em" }}>
+    <Box component="form" onSubmit={handleSubmit} sx={{ backgroundColor: myTheme => myTheme.palette.background.paper, p: 4, borderRadius: "1em" }}>
         <Grid container spacing={2}>
             <Grid item xs={12}>
                 <TextField

@@ -5,13 +5,13 @@
 import { Link } from "react-router-dom";
 import Navbar from "./navbar";
 import MobileNav from "./mobileNav";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import UpIcon from "@mui/icons-material/KeyboardArrowUp";
 import PhoneIcon from "@mui/icons-material/Phone";
 
 import "../../styles/vic.css";
-import '../../index.css'
+
 
 
 import { Box, Fab, Fade, Typography } from "@mui/material";
@@ -29,7 +29,16 @@ creating a different look for the scrolled state. */
   // Set scroll state and scroll event handler
   const [isScrolled, setScrolled] = useState(false);
 
-  const handleScroll = () => (window.scrollY > 150 ? setScrolled(true) : setScrolled(false));
+  const footerRef = useRef(false);
+
+  const handleScroll = () => {
+
+    const scrollPosition = window.scrollY;
+    const footerHeight = footerRef.current?.offsetHeight || 0;
+
+    setScrolled(scrollPosition > 100 && scrollPosition < window.innerHeight - footerHeight);
+  };
+  
   useEffect(() => {
     window.addEventListener("scroll", handleScroll, { passive: true });
     console.log("actionbuttons")
@@ -62,8 +71,9 @@ creating a different look for the scrolled state. */
         </Box>
       </header>
 
-      <Fade in={isScrolled}>
-        <Box sx={{ '& > :not(style)': { m: 1 } }} className={`action-container ${isScrolled && "action-scrolled"}`}  >
+      <Fade in={isScrolled} timeout={300}>
+        <Box sx={{ position: "fixed", bottom: 0, right: 50, '& > :not(style)': { m: 1} }} className={`action-container ${isScrolled && "action-scrolled"}`} >
+
           <Link to="/kontakt">
             <Fab variant="extended" aria-label="contact">
               <PhoneIcon sx={{ mr: 1 }} color="secondary" />
@@ -79,7 +89,9 @@ creating a different look for the scrolled state. */
           <Fab size="small" color="secondary" aria-label="up" onClick={handleClick}>
             <UpIcon />
           </Fab>
+
         </Box>
+
       </Fade>
       
     </Box>
