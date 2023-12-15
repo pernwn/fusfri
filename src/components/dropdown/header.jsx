@@ -63,7 +63,7 @@ creating a different look for the scrolled state. */
       </header>
 
       <Fade in={isScrolled}>
-        <Box sx={{ mr: 5 }} className={`action-container ${isScrolled && "action-scrolled"}`}>
+        <Box sx={{ '& > :not(style)': { m: 1 } }} className={`action-container ${isScrolled && "action-scrolled"}`}  >
           <Link to="/kontakt">
             <Fab variant="extended" aria-label="contact">
               <PhoneIcon sx={{ mr: 1 }} color="secondary" />

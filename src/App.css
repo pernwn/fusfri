@@ -2,19 +2,6 @@ main {
   margin-top: 10em;
 }
 
-.action-container {
-  display: none;
-}
-
-.action-scrolled {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-
-  float: inline-end;
-
-  width: 15em;
-}
 
 /* Nors styling */
 /* Calender page */
