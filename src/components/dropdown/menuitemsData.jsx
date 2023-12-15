@@ -85,20 +85,6 @@ export const menuItemsData = [
     {
         title: 'Kontakt',
         url: '/kontakt',
-        submenu: [
-            {
-                title: 'Kontakt info.',
-                url: 'kontakt-info',
-            },
-            {
-                title: 'Ledige Stillinger',
-                url: 'ledige-stillinger',
-            },
-            {
-                title: 'Spørgsmål?',
-                url: 'spørgsmål',
-            },
-        ],
     },
 
 ];

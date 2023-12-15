@@ -28,10 +28,10 @@ creating a different look for the scrolled state. */
 
   // Set scroll state and scroll event handler
   const [isScrolled, setScrolled] = useState(false);
-
+  /*
   const footerRef = useRef(false);
 
-  const handleScroll = () => {
+const handleScroll = () => {
     const scrollPosition = window.scrollY;
     const footerHeight = footerRef?.offsetHeight || 0;
     const triggerScroll = window.innerHeight - footerHeight - 100;
@@ -42,16 +42,35 @@ creating a different look for the scrolled state. */
 
     setScrolled(scrollPosition > 100 && scrollPosition < triggerScroll);
 
-  };
-  
+  };*/
+
+  const handleScroll = () => (window.scrollY > 150 ? setScrolled(true) : setScrolled(false));
+
   useEffect(() => {
 
     window.addEventListener("scroll", handleScroll, { passive: true });
-    console.log("actionbuttons")
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  const handleActionScroll = () => {
+    const scrollPosition = window.scrollY;
+    const whoejde = document.documentElement.scrollHeight; // hele sidens højde - også det som er uden for synsfeltet.
+    const sidefodshoejde = document.getElementById("sidefod").offsetHeight; // Sæt id = sidefod på <footer> tag i footer.jsx, førend dette kan virke.
+    const minimumscroll = 100; // kontaktskiltet vises når bruger har scrollet 500 pixels ned
+    setScrolled(scrollPosition < whoejde - (1000 + sidefodshoejde) && scrollPosition > minimumscroll);
+  }
+  
+  useEffect(() => {
+
+    window.addEventListener("scroll", handleActionScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", handleActionScroll);
+    };
+  }, []);
+
+
 
   const handleClick = () => {
     window.scrollTo(0, 0);

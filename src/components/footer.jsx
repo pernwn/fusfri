@@ -47,7 +47,7 @@ const Footer = forwardRef((props, ref) => {
         boxShadow: " 0 15px 25px grey;",
       }}
     >
-      <footer className="footer">
+      <footer id="sidefod">
         <Stack spacing={8} direction={'row'} sx={{ width: "120%" }} >
           <Box className="footerTxt" sx={{ width: "80%" }}>
             <Typography variant="h6">Adresse<ListItemIcon className="f_icon"><SchoolIcon color="primary" /></ListItemIcon></Typography>
