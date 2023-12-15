@@ -20,10 +20,11 @@ import MuiAccordionDetails from '@mui/material/AccordionDetails';
 import { useState } from "react";
 
 
+
 const Accordion = styled((props) => (
     <MuiAccordion disableGutters elevation={0} square {...props} />
-))(({ myTheme }) => ({
-    border: `1px solid ${myTheme.palette.divider}`,
+))(({ theme }) => ({
+    border: `1px solid ${theme.palette.divider}`,
     '&:not(:last-child)': {
         borderBottom: 0,
     },
@@ -37,9 +38,9 @@ const AccordionSummary = styled((props) => (
         expandIcon={<ArrowForwardIosSharpIcon sx={{ fontSize: '0.9rem' }} />}
         {...props}
     />
-))(({ myTheme }) => ({
+))(({ theme }) => ({
     backgroundColor:
-        myTheme.palette.mode === 'dark'
+        theme.palette.mode === 'dark'
             ? 'rgba(255, 255, 255, .05)'
             : 'rgba(0, 0, 0, .03)',
     flexDirection: 'row-reverse',
@@ -47,12 +48,12 @@ const AccordionSummary = styled((props) => (
         transform: 'rotate(90deg)',
     },
     '& .MuiAccordionSummary-content': {
-        marginLeft: myTheme.spacing(1),
+        marginLeft: theme.spacing(1),
     },
 }));
 
-const AccordionDetails = styled(MuiAccordionDetails)(({ myTheme }) => ({
-    padding: myTheme.spacing(2),
+const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
+    padding: theme.spacing(2),
     borderTop: '1px solid rgba(0, 0, 0, .125)',
 }));
 
@@ -121,11 +122,4 @@ export default function CookiePrivat() {
     )
 }
 
-/*        <section>
-            {posts.map( post => (
-                <Content key={post.id} post={post}/>
-            ))}
-
-        </section>
-*/
 
