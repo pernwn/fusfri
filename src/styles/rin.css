@@ -86,6 +86,23 @@ margin-bottom: 5%;
 }
 
 
+.error-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.error-content {
+  text-align: center;
+}
+
+/* Responsivt design for mindre skærme */
+@media (max-width: 768px) {
+  .error-content {
+    padding: 0 20px;
+  }
+}
 
 
 /*Responsive*/

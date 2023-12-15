@@ -19,6 +19,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Footer from "./components/footer";
 import CookiePrivat from "./pages/CookiePrivat";
 
+
 function App() {
   const outerTheme = useTheme();
 

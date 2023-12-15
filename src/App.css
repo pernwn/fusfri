@@ -71,6 +71,9 @@ main {
   .fotoinfo img {
     display: none;
   }
+  main {
+    padding: 0%;
+  }
 }
 
 .infoContainer {

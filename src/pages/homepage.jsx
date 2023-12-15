@@ -52,7 +52,8 @@ export default function HomePage() {
           title="YouTube video player"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          style={{ borderRadius: "1.5em" }}
+          style={{ borderRadius: "1.5em", 
+        }}
         ></iframe>
 
         <Stack direction={"row"} spacing={4} className="bgGraphic">
@@ -70,7 +71,9 @@ export default function HomePage() {
 
         <Stack sx={{ alignItems: "center", height: "85vh" }}>
           {institutioner.map(postID => (
-            <Box key={postID} sx={{ width: "85%" }}>
+            <Box key={postID} sx={{ width: "85%",
+            "@media (min-width:600px)": { width: "100%" }
+            }}>
               <Content site={url} postId={postID} />
             </Box>
           ))}
@@ -140,8 +143,8 @@ export default function HomePage() {
           </Stack>
         </Box>
 
-        <Box sx={{ display: "flex",  justifyContent: "center", height: "30vh", textAlign: "center"}}>
-          <Box sx={{display: "flex", justifyContent:"center", flexDirection: "column", alignItems: "center", width: "80%", height:"10em" }}>
+        <Box sx={{ display: "flex",  justifyContent: "center", height: "30vh", textAlign: "center"    }}>
+          <Box sx={{display: "flex", justifyContent:"center", flexDirection: "column", alignItems: "center", width: "80%", height:"10em"        }}>
             <Typography variant="h2" gutterBottom>Kontakt os i dag og få en uforpligtende samtale!</Typography>
             <OutlinedBtn name="Start læringsrejse" page="/kontakt" w="15em" />
           </Box>
