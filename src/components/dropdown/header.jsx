@@ -5,7 +5,7 @@
 import { Link } from "react-router-dom";
 import Navbar from "./navbar";
 import MobileNav from "./mobileNav";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 import UpIcon from "@mui/icons-material/KeyboardArrowUp";
 import PhoneIcon from "@mui/icons-material/Phone";
@@ -28,23 +28,9 @@ creating a different look for the scrolled state. */
 
   // Set scroll state and scroll event handler
   const [isScrolled, setScrolled] = useState(false);
-  /*
-  const footerRef = useRef(false);
 
-const handleScroll = () => {
-    const scrollPosition = window.scrollY;
-    const footerHeight = footerRef?.offsetHeight || 0;
-    const triggerScroll = window.innerHeight - footerHeight - 100;
 
-    console.log("Scroll Position:", scrollPosition);
-    console.log("Footer Height:", footerHeight);
-    console.log("Trigger Scroll:", triggerScroll);
-
-    setScrolled(scrollPosition > 100 && scrollPosition < triggerScroll);
-
-  };*/
-
-  const handleScroll = () => (window.scrollY > 150 ? setScrolled(true) : setScrolled(false));
+  const handleScroll = () => (window.scrollY > 50 ? setScrolled(true) : setScrolled(false));
 
   useEffect(() => {
 
@@ -59,7 +45,7 @@ const handleScroll = () => {
     const whoejde = document.documentElement.scrollHeight; // hele sidens højde - også det som er uden for synsfeltet.
     const sidefodshoejde = document.getElementById("sidefod").offsetHeight; // Sæt id = sidefod på <footer> tag i footer.jsx, førend dette kan virke.
     const minimumscroll = 100; // kontaktskiltet vises når bruger har scrollet 500 pixels ned
-    setScrolled(scrollPosition < whoejde - (1000 + sidefodshoejde) && scrollPosition > minimumscroll);
+    setScrolled(scrollPosition < whoejde - (800 + sidefodshoejde) && scrollPosition > minimumscroll);
   }
   
   useEffect(() => {

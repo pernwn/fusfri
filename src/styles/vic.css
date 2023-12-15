@@ -4,7 +4,7 @@
     --primary-main:#6E8C2E;
     --secondary-main:#3D7F8C;
     --text-main: #734434;
-
+    --background-paper: #eef6f7;
 
 }
 
@@ -60,33 +60,31 @@ a:hover{
   .laering {
     display: flex;
     flex-direction: row;
+    background-color: var(--background-paper);
+
+    box-shadow: 0 2px 15px rgb(184, 184, 184);
+
+    padding: 2em;
+    padding-bottom: 4em;
+    border-radius: 2em;
+    
   }
   
   .txt {
+    padding:2em;
     width: 50%;
-  
-    padding-inline: 4em;
-  
-    position: absolute;
-    left: 22em;
-  
-    background-color: #3d7f8c2d;
-    padding: 4em;
-    padding-left: 10em;
-    border-radius: 2em;
     z-index: 1;
   }
   
   .pic {
-    position: relative;
-    top: 3em;
+    padding:2em;
     opacity: 1;
     transition: ease 2s;
     z-index: 2;
   }
   
   .pic:hover {
-    opacity: 0.5;
+    opacity: 0.7;
   }
   
   .options {
@@ -96,3 +94,34 @@ a:hover{
   
     margin-top: 5em;
   }
+
+  .h-imgLink{
+    width:100%;
+  }
+
+  .imgContainer{
+    position: absolute;
+    top:128em;
+  }
+
+
+  /*TODO: function in homepage to display text on mouseover*/
+  .imgContainer div{
+      position:relative;
+      width:50%;
+
+      height: fit-content;
+
+      border-radius: 2em;
+      border: solid var(--background-paper) 5px;
+
+
+      transition: ease 1s;
+  }
+
+  .imgContainer div:hover{
+    width:100%;
+
+  }
+
+
