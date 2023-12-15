@@ -1,7 +1,7 @@
 //{ Lavet af Victoria }
 
 
-import { Button, Typography } from "@mui/material"
+import { Button, Card, CardActions, CardContent, CardMedia, Typography } from "@mui/material"
 import { NavLink } from "react-router-dom"
 
 
@@ -48,4 +48,26 @@ const LinkBtn = (props) => {
     )
 }
 
-export {FilledBtn, OutlinedBtn, LinkBtn}
+const CardProp = (props) => {
+    return (
+        <Card elevation={4} sx={{ minWidth: 400, height: "100%"}}>
+            <CardMedia
+                sx={{ height: 150 }}
+                image={props.img}
+                title={props.title}
+            />
+            <CardContent>
+                <Typography variant="h5" gutterBottom component="div">{props.cardTitle}</Typography>
+                <Typography variant="body2">
+                    {props.body}
+                </Typography>
+            </CardContent>
+            <CardActions>
+                <Button size="small" href={props.href}>Læs mere</Button>
+            </CardActions>
+        </Card>
+
+    )
+}
+
+export { FilledBtn, OutlinedBtn, LinkBtn, CardProp }

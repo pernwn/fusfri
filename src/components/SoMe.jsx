@@ -10,7 +10,7 @@ export default function SoMe() {
     const url = "home-page";
 
     return (
-        <main>
+        <main className='bgGraphic'>
             <Stack spacing={4} sx={{ width: "100%" }}>
                 {soMe.map(postID => (
                     <Box key={postID} sx={{width:"70%"}}>
@@ -18,7 +18,7 @@ export default function SoMe() {
                     </Box>
                 ))}
 
-                <Stack spacing={4} direction={"row"} sx={{ display: 'flex', justifyContent: 'center', height: '50em'}}>
+                <Stack spacing={4} direction={"row"} sx={{ display: 'flex', justifyContent: 'center', height: '45em'}}>
                     <Box>
                         <FacebookEmbed url='https://www.facebook.com/profile.php?id=100057440410445' width={550} height={600} />
                     </Box>
