@@ -70,3 +70,42 @@ a:hover{
 
   }
   
+  .laering {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .txt {
+    width: 50%;
+  
+    padding-inline: 4em;
+  
+    position: absolute;
+    left: 22em;
+  
+    background-color: #3d7f8c2d;
+    padding: 4em;
+    padding-left: 10em;
+    border-radius: 2em;
+    z-index: 1;
+  }
+  
+  .pic {
+    position: relative;
+    top: 3em;
+    opacity: 1;
+    transition: ease 2s;
+    z-index: 2;
+  }
+  
+  .pic:hover {
+    opacity: 0.5;
+  }
+  
+  .options {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  
+    margin-top: 5em;
+  }
