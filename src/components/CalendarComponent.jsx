@@ -20,11 +20,11 @@ const CalendarComponent = () => {
         // Make API request to get calendar events
         const response = await window.gapi.client.calendar.events.list({
           calendarId: "88bc95f476da329749546fb7eaf2e95a78178e2e0274f8fb6de6efb8e5947e31@group.calendar.google.com",
+          timeMin: new Date(`${currentYear}-01-01T00:00:00Z`).toISOString(),
           timeMax: new Date(`${currentYear}-12-31T23:59:59Z`).toISOString(),
           showDeleted: false,
           singleEvents: true,
           orderBy: "startTime",
-          maxResults: 10,
         });
 
         console.log("API response:", response);
@@ -46,6 +46,7 @@ const CalendarComponent = () => {
   const displayEvents = (events) => {
     return events.map((event) => {
       const startDate = new Date(event.start.dateTime || event.start.date);
+      const endDate = new Date(event.end.dateTime || event.end.date);
 
       const options = {
         weekday: "long",
@@ -59,12 +60,14 @@ const CalendarComponent = () => {
 
       // Formating the date and time
       const formattedDate = startDate.toLocaleString("en-UK", options);
+      const formattedEndDate = endDate.toLocaleString("en-UK", options);
 
       return (
-        <li key={event.id}>
+        <li key={event.id} className="event">
           <strong>{event.summary}</strong>
           <br />
-          <span>{formattedDate}</span>
+          <span>Starter: {formattedDate}</span> <br />
+          <span>Slutter: {formattedEndDate}</span>
         </li>
       );
     });
