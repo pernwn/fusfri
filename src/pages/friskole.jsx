@@ -15,24 +15,24 @@ export default function Friskole() {
                     flexDirection: 'row',
                     padding: 1,
                     backgroundColor: '#ffff',
-                    flexWrap: 'wrap',
 
                 }}
             >
-                <img src={gif} className="gif-skole"  ></img>
 
+                <Stack
+                    sx={{
+                        textAlign: 'center',
+                    }}>
                 <Typography variant="h1"
                     sx={{
                         textAlign: 'center',
 
                     }}
                 > Friskolen</Typography>
-                <Stack
-                    sx={{
-                        textAlign: 'center',
-                    }}>
+
                     <Typography variant='h4'>Hos os foregår tingene anderledes end på en folkeskole, prøv at se en hverdag på vores lille skole!</Typography>
-                </Stack>
+                </Stack>       
+                         <img src={gif} className="gif-skole"  ></img>
             </Stack>
             
                 <Dagligdag />

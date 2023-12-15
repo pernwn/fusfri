@@ -1,6 +1,7 @@
 .friskole {
   margin: 1rem;
   border-radius: 10px;
+  flex-wrap: nowrap,
 }
 
 .fag-kort {
@@ -84,3 +85,42 @@ margin-bottom: 5%;
   max-width: 50%;
 }
 
+
+
+
+/*Responsive*/
+
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 480px) {
+    /* Styles for screens 320px to 480px here */
+
+
+
+    .slide {
+        margin-left: 2%;
+        margin-right: 2%;
+       }
+       .scroll{
+        margin: 0%;
+        width: 100%;
+       }
+       .gif-skole {
+        max-width: 100%;
+      }
+      .fag-kort{
+        max-width: 100%;
+      }
+      .friskole {
+        flex-wrap: wrap,
+      }
+}
+
+@media only screen
+and (min-device-width: 768px)
+and (max-device-width: 1024px) {
+    .friskole {
+        flex-wrap: wrap,
+      }
+    /* Styles for screens 768px to 1024px here */
+}
