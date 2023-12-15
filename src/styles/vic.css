@@ -1,109 +1,93 @@
 /* STYLING AF FOOTER*/
 
-:root{
-    --primary-main:#6E8C2E;
-    --secondary-main:#3D7F8C;
-    --text-main: #734434;
+:root {
+  --primary-main: #6e8c2e;
+  --secondary-main: #3d7f8c;
+  --text-main: #734434;
 
-    --background-default: #D7E8ED;
+  --background-default: #d7e8ed;
 }
 
-body{
-    width: fit-content;
+body {
+  width: fit-content;
 }
 
-footer{
-    display: flex;
-    position: sticky;
-    bottom:0;
-
+footer {
+  display: flex;
+  position: sticky;
+  bottom: 0;
 }
 
-.footerTxt{
-    width:100%;
+.footerTxt {
+  width: 100%;
 }
 
-.f_icon{
-    margin-left: .5em;
+.f_icon {
+  margin-left: 0.5em;
 }
 
-a{
-    text-decoration: none;
-    color:var(--text-main);
+a {
+  text-decoration: none;
+  color: var(--text-main);
 
-    transition: ease 1s;
-
+  transition: ease 1s;
 }
 
-a:hover{
-    color:var(--primary-main);
-
+a:hover {
+  color: var(--primary-main);
 }
 
-
-
-.cp_content li{
-    list-style-position: inside;
-    text-indent: 2em;
+.cp_content li {
+  list-style-position: inside;
+  text-indent: 2em;
 }
 
-.cp_content h2{
-    color: var(--primary-main);
+.cp_content h2 {
+  color: var(--primary-main);
 }
 
-
-.bgGraphic{
-    background: linear-gradient(to right, transparent, #6e8c2e25, transparent, transparent);
-    border-radius: 2em;
-    width: 100%;
+.bgGraphic {
+  background: linear-gradient(to right, transparent, #6e8c2e25, transparent, transparent);
+  border-radius: 2em;
+  width: 100%;
 }
 
-
-
-.laering{
-    display: flex;
-    flex-direction: row;
+.laering {
+  display: flex;
+  flex-direction: row;
 }
 
+.txt {
+  width: 50%;
 
-.txt{
-    width:50%;
+  padding-inline: 4em;
 
-    padding-inline: 4em;
+  position: absolute;
+  left: 22em;
 
-    position: absolute;
-    left:22em;
-
-    background-color: #3d7f8c2d;
-    padding: 4em;
-    padding-left: 10em;
-    border-radius: 2em;
-    z-index: 1;
+  background-color: #3d7f8c2d;
+  padding: 4em;
+  padding-left: 10em;
+  border-radius: 2em;
+  z-index: 1;
 }
 
-.pic{
-    position: relative;
-    top:3em;
-    opacity: 1;
-    transition: ease 2s;
-    z-index: 2;
-
+.pic {
+  position: relative;
+  top: 3em;
+  opacity: 1;
+  transition: ease 2s;
+  z-index: 2;
 }
 
-.pic:hover{
-    opacity: .5;
+.pic:hover {
+  opacity: 0.5;
 }
 
-.options{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
+.options {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
 
-    margin-top: 5em;
-
-
+  margin-top: 5em;
 }
-
-
-
-
