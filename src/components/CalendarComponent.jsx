@@ -6,23 +6,14 @@ import "../App.css";
 const CalendarComponent = () => {
   const [events, setEvents] = useState([]);
 
+  // Opstarter Google Calender API, og fortager API kald
   const init = async () => {
     try {
-      // Load the Google API client library
       await window.gapi.load("client", async () => {
-        console.log("Google API client library loaded");
-
-        // Load the Google Calendar API
         await window.gapi.client.load("calendar", "v3");
-
-        console.log("Google Calendar API loaded");
-
-        // Initialize the Google Calendar API
         await window.gapi.client.init({
           apiKey: "AIzaSyDoh3L14VpOaZihK9kiB7vxQIicbNn-Lsg",
         });
-
-        console.log("Google API client initialized successfully");
 
         const currentYear = new Date().getFullYear();
 
