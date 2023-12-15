@@ -10,58 +10,51 @@ export default function Friskole() {
 
     return (
         <main>
-            <Stack
+            <Stack className="friskole"
                 sx={{
                     flexDirection: 'row',
                     padding: 1,
                     backgroundColor: '#ffff',
-                    flexWrap: 'wrap',
 
                 }}
             >
-                <img src={gif} className="gif-skole" ></img>
+
+                <Stack
+                    sx={{
+                        textAlign: 'center',
+                    }}>
                 <Typography variant="h1"
                     sx={{
                         textAlign: 'center',
 
                     }}
                 > Friskolen</Typography>
-                <Stack
-                    sx={{
-                        textAlign: 'center',
-                    }}>
+
                     <Typography variant='h4'>Hos os foregår tingene anderledes end på en folkeskole, prøv at se en hverdag på vores lille skole!</Typography>
-                </Stack>
+                </Stack>       
+                         <img src={gif} className="gif-skole"  ></img>
             </Stack>
-            <div>
+            
                 <Dagligdag />
-            </div>
-            <Stack
-                sx={{
-                    paddingTop: 5,
-                    paddingBottom: 5,
-                    overflowX: 'auto', // Enable horizontal scrolling
-                    display: 'flex',
-                    flexDirection: 'row', // Display items horizontally
-                }}
-            >
-                {postIDs.map(postID => (
-                    <Stack
-                        key={postID}
-                        className={`post-${postID}`}
+                        <Typography variant="h2" 
                         sx={{
-                            borderRadius: 8,
-                            flex: '0 0 auto',
-                            p: 0.9,
-                        /*maxWidth: 400,*/
-
-
+                            textAlign: 'center',
+                            marginTop: 5,
+                            marginBottom: 5,
                         }}
+                        >Fag på Fusfri </Typography>
+            <article className="scroll"> 
+
+                {postIDs.map(postID => (
+                    <div
+                        key={postID}
+                        className= 'fag-kort'
                     >
+                       
                 <WordPressFag postId={postID} />
-            </Stack>
+            </div>
                 ))}
-        </Stack>
+        </article>
           
            
         </main >

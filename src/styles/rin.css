@@ -1,15 +1,126 @@
-.mui-card {
-padding: 2%;
-overflow: hidden;
-height: 700px;
-
+.friskole {
+  margin: 1rem;
+  border-radius: 10px;
+  flex-wrap: nowrap,
 }
 
-  .mui-card img {
-    max-width: 100%;
-    height: fit-content;
-    display: block;
+.fag-kort {
+padding: 2rem;
+width: 450px;
+flex-direction: column;
+background: rgb(125,166,176);
+background: linear-gradient(36deg, rgba(125,166,176,1) 0%, rgba(178,217,226,1) 49%, rgba(223,249,255,1) 100%);
+border-radius: 8px;
+box-shadow: -1rem 0 2rem#161616;
+transition: .2s;
+height: 650px;
+}
 
-  }
+.scroll::-webkit-scrollbar {
+width: 15px;
+height: 15px;
+}
+.scroll::-webkit-scrollbar-thumb {
+background: #2e5c7a;
+border-radius: 10px;
+box-shadow: inset 2px 2px 2px hsla(0, 0%, 100%, .25), inset -2px -2px 2px rgba(255, 221, 221, 0.25);
+}
 
- 
+.scroll {
+  max-width: 100%;
+background-color:rgb(197, 224, 197);
+align-items: center;
+justify-content: center;
+display: flex;
+border-radius: 8px;
+overflow-x: auto;
+position: relative;
+display: flex;
+min-height:1000px;
+margin-top: 5%;
+margin-bottom: 5%;
+}
+
+.fag-kort:hover{
+  transform: translateX(-1rem);
+}
+
+.fag-kort:hover~.fag-kort{
+  transform: translateX(300px)
+}
+
+.fag-kort:not(:first-child){
+  margin: -150px;
+}
+
+ .dagligdag-slider{
+  max-width: 100%;
+  margin: 3%;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  transition: .2s;
+ }
+
+ .slide {
+  display: flex;
+  background-color: antiquewhite;
+  margin-left: 20%;
+  margin-right: 20%;
+ }
+
+.arrow {
+  padding: 8px;
+  border-radius: 50%;
+  display: flex;
+  cursor: pointer;
+}
+
+.content {
+  flex-grow: 1;
+  padding: 16px;
+}
+
+.gif-skole {
+  max-width: 50%;
+}
+
+
+
+
+/*Responsive*/
+
+@media only screen
+and (min-device-width: 320px)
+and (max-device-width: 480px) {
+    /* Styles for screens 320px to 480px here */
+
+
+
+    .slide {
+        margin-left: 2%;
+        margin-right: 2%;
+       }
+       .scroll{
+        margin: 0%;
+        width: 100%;
+       }
+       .gif-skole {
+        max-width: 100%;
+      }
+      .fag-kort{
+        max-width: 100%;
+      }
+      .friskole {
+        flex-wrap: wrap,
+      }
+}
+
+@media only screen
+and (min-device-width: 768px)
+and (max-device-width: 1024px) {
+    .friskole {
+        flex-wrap: wrap,
+      }
+    /* Styles for screens 768px to 1024px here */
+}

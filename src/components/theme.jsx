@@ -29,6 +29,7 @@ export const myTheme = (outerTheme) =>
             h2: {
                 fontFamily: 'Varela Round',
                 color:'#6E8C2E',
+                lineHeight:1,
             },
             h3: {
                 fontFamily: 'Varela Round',

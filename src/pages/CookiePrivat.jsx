@@ -17,13 +17,13 @@ import MuiAccordion from '@mui/material/Accordion';
 import MuiAccordionSummary from '@mui/material/AccordionSummary';
 import MuiAccordionDetails from '@mui/material/AccordionDetails';
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 
 const Accordion = styled((props) => (
     <MuiAccordion disableGutters elevation={0} square {...props} />
-))(({ theme }) => ({
-    border: `1px solid ${theme.palette.divider}`,
+))(({ myTheme }) => ({
+    border: `1px solid ${myTheme.palette.divider}`,
     '&:not(:last-child)': {
         borderBottom: 0,
     },
@@ -37,9 +37,9 @@ const AccordionSummary = styled((props) => (
         expandIcon={<ArrowForwardIosSharpIcon sx={{ fontSize: '0.9rem' }} />}
         {...props}
     />
-))(({ theme }) => ({
+))(({ myTheme }) => ({
     backgroundColor:
-        theme.palette.mode === 'dark'
+        myTheme.palette.mode === 'dark'
             ? 'rgba(255, 255, 255, .05)'
             : 'rgba(0, 0, 0, .03)',
     flexDirection: 'row-reverse',
@@ -47,24 +47,22 @@ const AccordionSummary = styled((props) => (
         transform: 'rotate(90deg)',
     },
     '& .MuiAccordionSummary-content': {
-        marginLeft: theme.spacing(1),
+        marginLeft: myTheme.spacing(1),
     },
 }));
 
-const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
-    padding: theme.spacing(2),
+const AccordionDetails = styled(MuiAccordionDetails)(({ myTheme }) => ({
+    padding: myTheme.spacing(2),
     borderTop: '1px solid rgba(0, 0, 0, .125)',
 }));
 
 
 export default function CookiePrivat() {
 
-    
-
-    
-
-    const [posts, setPosts] = useState([]);
     const [expanded, setExpanded] = useState('panel1');
+    
+    
+    /*const [posts, setPosts] = useState([]);
 
     useEffect(() => {
         async function getData() {
@@ -80,8 +78,12 @@ export default function CookiePrivat() {
 
     if (!posts) {
         return <Typography variant="h5">Loading...</Typography>
-    }
+    }*/
 
+
+    const privat = [294]; //privatlivspolitik
+    const cookie = [295]; //cookies
+    const url = "cp"; 
 
 
     const handleChange = (panel) => (event, newExpanded) => {
@@ -101,11 +103,11 @@ export default function CookiePrivat() {
                         <Typography variant="h5">Privatlivspolitik</Typography>
                     </AccordionSummary>
                     <AccordionDetails>
-                        <Stack spacing={12} className="cp_content">
-                            {posts.map(post => (
-
-                                <Content key={post.id} post={post} />
-
+                    <Stack spacing={12} className="cp_content">
+                            {privat.map(postID => (
+                                <Typography key={postID}>
+                                    <Content site={url} postId={postID} />
+                                </Typography>
                             ))}
                         </Stack>
                     </AccordionDetails>
@@ -116,9 +118,11 @@ export default function CookiePrivat() {
                         <Typography variant="h5">Cookies</Typography>
                     </AccordionSummary>
                     <AccordionDetails>
-                        <Stack spacing={12} className="cp_content">
-                            {posts.map(post => (
-                                <Content key={post.id} post={post} />
+                    <Stack spacing={12} className="cp_content">
+                            {cookie.map(postID => (
+                                <Typography key={postID}>
+                                    <Content site={url} postId={postID} />
+                                </Typography>
                             ))}
                         </Stack>
                     </AccordionDetails>

@@ -1,26 +1,33 @@
 //{ Lavet af Victoria }
 
 
-import { Box, Stack, Typography } from '@mui/material';
+import { Box, Stack } from '@mui/material';
 import { FacebookEmbed, InstagramEmbed } from 'react-social-media-embed';
+import Content from './content';
 
 export default function SoMe() {
+    const soMe = [296];
+    const url = "home-page";
+
     return (
         <main>
-            <Stack direction="column" spacing={2} sx={{ p: '0 5em', width: "100%" }}>
-                <Typography variant='h2'>Kontakt os</Typography>
-                <Typography variant='body1'>Wassup wassup sign your child over to satan</Typography> {/* jeg elsker det her, jeg synes vi skal beholde det kh Rina */}
-            </Stack>
+            <Stack spacing={4} sx={{ width: "100%" }}>
+                {soMe.map(postID => (
+                    <Box key={postID} sx={{width:"70%"}}>
+                        <Content site={url} postId={postID} />
+                    </Box>
+                ))}
 
-            <Stack spacing={4} direction={"row"} sx={{ display: 'flex', justifyContent: 'center', height: '50em', marginTop: '3em' }}>
-                <Box>
-                    <FacebookEmbed url='https://www.facebook.com/profile.php?id=100057440410445' width={500} height={600} />
-                </Box>
+                <Stack spacing={4} direction={"row"} sx={{ display: 'flex', justifyContent: 'center', height: '50em'}}>
+                    <Box>
+                        <FacebookEmbed url='https://www.facebook.com/profile.php?id=100057440410445' width={550} height={600} />
+                    </Box>
 
-                <Box>
-                    <InstagramEmbed url='https://www.instagram.com/fusfri.dk/' width={500} height={600} />
-                </Box>
+                    <Box>
+                        <InstagramEmbed url='https://www.instagram.com/fusfri.dk/' width={550} height={600} />
+                    </Box>
 
+                </Stack>
             </Stack>
         </main>
 

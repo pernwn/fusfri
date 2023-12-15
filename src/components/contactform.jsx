@@ -5,6 +5,7 @@ import styled from "styled-components";
 import emailjs from "@emailjs/browser";
 import { toast } from "react-toastify";
 
+
 const FormContainer = styled.div`
   width: 800px;
   margin: auto;
@@ -114,7 +115,7 @@ const ContactForm = () => {
           type="tel"
           id="telefonnummer"
           name="telefonnummer"
-          value={formData.telefonnummer}
+          value={formData.Telefonnummer}
           onChange={handleChange}
         />
 
