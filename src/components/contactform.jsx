@@ -5,7 +5,6 @@ import styled from "styled-components";
 import emailjs from "@emailjs/browser";
 import { toast } from "react-toastify";
 
-
 const FormContainer = styled.div`
   width: 800px;
   margin: auto;
@@ -13,7 +12,7 @@ const FormContainer = styled.div`
   padding-left: 90px;
   padding-top: 30px;
   padding-bottom: 30px;
-  background-color: #6a912d;
+  background-image: linear-gradient(to bottom right, #6a912d, #dafaa7);
   border-radius: 25px;
   @media (max-width: 768px) {
     max-width: 100%;
