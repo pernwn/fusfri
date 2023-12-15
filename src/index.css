@@ -90,19 +90,6 @@ header {
 
 
 
-.action-container {
-    visibility: hidden;
-    position: fixed;
-    z-index: 6;
-
-    margin: 42em 74em;
-
-    transition: ease 2s;
-}
-
-.action-scrolled {
-    visibility: visible;
-}
 
 .search-container {
     display: flex;
