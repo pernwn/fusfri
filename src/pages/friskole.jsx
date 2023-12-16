@@ -1,69 +1,72 @@
-import WordPressFag from "../components/fag";
-import { Stack, Typography } from '@mui/material';
-import '../styles/rin.css'
-import '../styles/responsive.css'
-import gif from '../assets/gifgif.gif'
-import Dagligdag from "../components/dagligdag";
+import WordPressFag from "../components/fag"; // Importerer WordPressFag-komponenten
+import { Stack, Typography } from '@mui/material'; // Importerer Stack og Typography fra MUI-material
+import '../styles/rin.css'; // Importerer stilark
+import '../styles/responsive.css'; // Importerer responsivt stilark
+import gif from '../assets/gifgif.gif'; // Importerer et GIF-billede
+import Dagligdag from "../components/dagligdag"; // Importerer Dagligdag-komponenten
 
 export default function Friskole() {
-    const postIDs = [28, 191, 149, 177, 179, 181, 183, 185, 187, 189];
+  // Definerer en array af postIDs
+  const postIDs = [28, 191, 149, 177, 179, 181, 183, 185, 187, 189];
 
-    return (
-        <main>
-            <Stack className="friskole" 
-                sx={{
-                    flexDirection: 'row',
-                    padding: 2,
-                    backgroundColor: '#ffff',
-                    flexWrap: 'wrap',
+  return (
+    <main>
+      {/* En Stack-komponent med klasse 'friskole' */}
+      <Stack className="friskole" 
+        sx={{
+          flexDirection: 'row',
+          padding: 2,
+          backgroundColor: '#ffff',
+          flexWrap: 'wrap',
+        }}
+      >
+        {/* En Stack-komponent med typografiske elementer */}
+        <Stack
+          sx={{
+            textAlign: 'center',
+          }}
+        >
+          <Typography variant="h1"
+            sx={{
+              textAlign: 'center',
+            }}
+          > Friskolen</Typography>
 
-                }}
-            >
+          <Typography variant='h4'>Hos os foregår tingene anderledes end på en folkeskole, prøv at se en hverdag på vores lille skole!</Typography>
+        </Stack>
+        {/* Et billede med src fra importerede gif */}
+        <img src={gif} className="gif-skole" alt="GIF-skole" />
+      </Stack>
 
-                <Stack
-                    sx={{
-                        textAlign: 'center',
-                    }}>
-                <Typography variant="h1"
-                    sx={{
-                        textAlign: 'center',
+      {/* Indsætter komponenten Dagligdag */}
+      <Dagligdag />
 
-                    }}
-                > Friskolen</Typography>
+      {/* Typografiske elementer for fag */}
+      <Typography variant="h2" 
+        sx={{
+          textAlign: 'center',
+          marginTop: 5,
+        }}
+      >Fag på Fusfri</Typography> 
 
-                    <Typography variant='h4'>Hos os foregår tingene anderledes end på en folkeskole, prøv at se en hverdag på vores lille skole!</Typography>
-                </Stack>       
-                         <img src={gif} className="gif-skole"  ></img>
-            </Stack>
-            
-                <Dagligdag />
-                        <Typography variant="h2" 
-                        sx={{
-                            textAlign: 'center',
-                            marginTop: 5,
-                        }}
-                        >Fag på Fusfri</Typography> 
-                        <Typography variant="h6" 
-                        sx={{
-                            textAlign: 'center',
+      <Typography variant="h6" 
+        sx={{
+          textAlign: 'center',
+          marginBottom: 5,
+        }}
+      >Se vores udvalg af fag her!  </Typography>
 
-                            marginBottom: 5,
-                        }}
-                        >Se vores udvalg af fag her!  </Typography>
-            <article className="scroll"> 
-
-                {postIDs.map(postID => (
-                    <div
-                        key={postID}
-                        className= 'fag-kort'
-                    >
-                       
-                <WordPressFag postId={postID} />
-            </div>
-                ))}
-        </article>
-          
-           
-        </main >
-    );
+      {/* Render WordPressFag-komponenten for hver postID i postIDs arrayet */}
+      <article className="scroll"> 
+        {postIDs.map(postID => (
+          <div
+            key={postID}
+            className='fag-kort'
+          >
+            <WordPressFag postId={postID} />
+          </div>
+        ))}
+      </article>
+    </main >
+  );
 }
