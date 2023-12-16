@@ -3,6 +3,7 @@
 // Import af React-hooks fra react-biblioteket
 import { useEffect, useState } from "react";
 import "../App.css";
+import CommentSection from "./calendarcomments";
 
 // Definition af CalendarComponent-funktionen som en funktionel komponent
 const CalendarComponent = () => {
@@ -86,6 +87,7 @@ const CalendarComponent = () => {
   return (
     <div>
       <ul id="events-list">{displayEvents(events)}</ul>
+      <CommentSection />
     </div>
   );
 };

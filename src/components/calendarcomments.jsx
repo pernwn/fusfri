@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "../styles/rin.css"
 
 const CommentSection = ({ eventId, onSaveComment }) => {
   const [comment, setComment] = useState("");
