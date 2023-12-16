@@ -7,7 +7,7 @@ import { Box, Typography } from "@mui/material";
 export default function ErrorPage() {
   return (
 
-      <Box sx={{ height: "70vh", display: "flex", justifyContent: "center", alignItems:"center", flexDirection: "column", mt:15 }}>
+      <Box className="error-content" sx={{ height: "70vh", display: "flex", justifyContent: "center", alignItems:"center", flexDirection: "column", mt:15 }}>
         <Typography variant="h3">Side ikke fundet</Typography>
         <Typography variant="body1">Beklager, den side du leder efter, kunne ikke findes.</Typography>
         <NavBtn page="/" name="Tilbage til forside" />

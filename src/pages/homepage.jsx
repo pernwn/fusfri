@@ -11,6 +11,10 @@ import Content from "../components/content";
 import Form from "../components/muiForm";
 
 
+//Lottie animations
+
+
+
 
 // Importerer billeder
 import friskole from "../assets/billeder/friskole.jpeg"
@@ -25,6 +29,8 @@ import basket from "../assets/fusfri-billeder/fus-friskolen-leg-1280-08.jpeg"
 import corn from "../assets/fusfri-billeder/fus-friskolen-leg-1280-02.jpeg"
 
 import { Link } from "react-router-dom";
+import { CloudReading } from "../components/splash";
+
 
 
 
@@ -40,7 +46,7 @@ export default function HomePage() {
     <main style={{
       marginInline: "5em",
     }}>
-      <Stack spacing={8}>
+      <Stack spacing={12}>
         {/* Hero-video fra Fusfri's YouTube-kanal */}
         <iframe
           width="100%"
@@ -57,21 +63,24 @@ export default function HomePage() {
           {kontakt.map(postID => (
             <Box key={postID}>
               <Content site={url} postId={postID} />
+
+              <Box sx={{ width: "30%", position: "absolute", zIndex: "4", right: 0, left: 300 }}>
+                <CloudReading />
+              </Box>
             </Box>
           ))}
           <Form />
         </Stack>
 
         {/* Sektion med information om institutioner og billeder */}
-        <Stack sx={{ alignItems: "center", height: "90vh" }}>
-          {institutioner.map(postID => (
-            <Box key={postID} sx={{
-              width: "90%",
-
-            }}>
-              <Content site={url} postId={postID} />
-            </Box>
-          ))}
+        <Stack sx={{alignItems: "center", height: "74vh", position: "relative"}}>
+          <Box>
+            {institutioner.map(postID => (
+              <Box key={postID} sx={{ width: "100%" }}>
+                <Content site={url} postId={postID} />
+              </Box>
+            ))}
+          </Box>
 
           {/* Billeder med links til forskellige sektioner */}
           <Stack direction={"row"} spacing={4} sx={{ width: "50%" }} className="imgContainer">
@@ -85,10 +94,10 @@ export default function HomePage() {
         <SoMe />
 
         {/* TODO: arrow button - Sektion med forskellige kort med indhold om indblik i Fusfri's dagligdag */}
-        <Box sx={{ height: "70vh", width: "100%", textAlign: "center"}}>
+        <Box sx={{ height: "70vh", width: "100%", textAlign: "center" }}>
           <Typography variant="h3">Indblik i Fusfri&apos;s dagligdag</Typography>
           {/* Kort med information om Friskolen */}
-          <Stack direction={"row"} spacing={4} sx={{ overflowX: "auto", width: "100%", p: "2% 4%", scrollbarColor: "transparent"}}>
+          <Stack direction={"row"} spacing={4} sx={{ overflowX: "auto", width: "100%", p: "2% 4%", scrollbarColor: "transparent" }}>
             {/* Komponenten CardProp bruges til at vise information om Friskolen */}
 
             <CardProp
@@ -114,7 +123,7 @@ export default function HomePage() {
               body="Følg med i en dag i livet som børnehave dreng. Oplev eventyr, leg og venskaber i denne hjertevarmende fortælling om barndommens magi."
               href="*"
             />
- 
+
 
             <CardProp
               img={gynge}
@@ -144,7 +153,7 @@ export default function HomePage() {
         </Box>
 
         {/* Sektion med kontaktinformation og knap til kontaktformular */}
-        <Box sx={{ display: "flex", justifyContent: "center", height: "40vh", textAlign: "center" }}>
+        <Box sx={{ display: "flex", justifyContent: "center", height: "30vh", textAlign: "center" }}>
           <Box sx={{ display: "flex", justifyContent: "center", flexDirection: "column", alignItems: "center", width: "80%", height: "10em" }}>
             <Typography variant="h2" gutterBottom>Kontakt os i dag og få en uforpligtende samtale!</Typography>
             <FilledBtn name="Start læringsrejse" page="/kontakt" w="15em" />

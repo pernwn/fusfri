@@ -74,13 +74,14 @@ a:hover{
   }
   
   .txt {
-    padding:2em;
-    width: 50%;
+    padding:3em;
+    width: 60%;
     z-index: 1;
   }
   
   .pic {
-    padding:2em;
+    width: 50%;
+    padding-left:2em;
     opacity: 1;
     transition: ease 2s;
     z-index: 2;
@@ -104,15 +105,13 @@ a:hover{
 
   .imgContainer{
     position: absolute;
-    top:123em;
+    bottom:0;
   }
 
 
   /*TODO: function in homepage to display text on mouseover*/
   .imgContainer div{
-      position:relative;
       width:50%;
-
       height: fit-content;
 
       border-radius: 2em;
@@ -123,7 +122,8 @@ a:hover{
   }
 
   .imgContainer div:hover{
-    width:100%;
+    width:70%;
+    cursor: pointer;
 
   }
 

@@ -1,5 +1,3 @@
-
-
 header {
     /* use flexbox layout */
     display: flex;
@@ -41,19 +39,12 @@ header {
 }
 
 .header-scrolled {
-    height: 6em !important;
-
+    height: 6em;
 }
 
 
 .nav-container {
-
     height: 5em;
-
-
-    padding-top: em;
-
-
     transition: ease 1s;
 }
 
@@ -62,7 +53,6 @@ header {
     padding-top: 0;
     height: 2em;
 }
-
 
 .logo {
     width: 20%;
@@ -78,9 +68,7 @@ header {
     align-items: center;
 
     width:max-content;
-
     height: 4.5rem;
-
     transition: ease 2s;
 }
 
@@ -89,20 +77,13 @@ header {
 }
 
 
-
-
 .search-container {
     display: flex;
-
-
     height: 3ch;
-
-
     transition: ease 2s;
 }
 
 .search-scrolled {
-
     height: 2.5ch;
 }
 
@@ -192,6 +173,8 @@ img {
 .mobile-nav {
     display: none;
 }
+
+
 
 /* menu on mobile TODO: ikke helt optimeret */
 @media screen and (max-width: 960px) {
@@ -293,14 +276,3 @@ img {
     }
 }
 
-
-
-#error-page {
-    /* center content on the page */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    gap: 20px;
-}

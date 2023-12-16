@@ -4,6 +4,7 @@
 import { Box, Stack } from '@mui/material';
 import { FacebookEmbed, InstagramEmbed } from 'react-social-media-embed';
 import Content from './content';
+import { Waving } from './splash';
 
 // SoMe-komponenten, der indeholder indhold fra sociale medier og WordPress-side.
 export default function SoMe() {
@@ -14,14 +15,17 @@ export default function SoMe() {
     // Returnerer JSX med indhold fra WordPress-siden og sociale medier.
     return (
         <main className='bgGraphic'>
-            <Stack spacing={4} sx={{ width: "100%", height:"120vh" }}>
+            <Stack spacing={4} sx={{ width: "100%", height: "120vh" }}>
                 {soMe.map(postID => (
-                    <Box key={postID} sx={{width:"70%"}}>
+                    <Stack key={postID} direction={'row'} sx={{ width: "90%" }}>
                         <Content site={url} postId={postID} />
-                    </Box>
+                        <Box sx={{ width: "40%", zIndex: "4"}}>
+                            <Waving />
+                        </Box>
+                    </Stack>
                 ))}
 
-                <Stack spacing={4} direction={"row"} sx={{ display: 'flex', justifyContent: 'center', height: '45em'}}>
+                <Stack spacing={4} direction={"row"} sx={{ display: 'flex', justifyContent: 'center', height: '45em' }}>
                     <Box>
                         {/* Indlejring af Facebook-feed med angivet URL, bredde og højde. */}
                         <FacebookEmbed url='https://www.facebook.com/profile.php?id=100057440410445' width={550} height={600} />
