@@ -1,7 +1,10 @@
+// Lavet af Victoria
+
 import { Alert, Box, Button, Checkbox, FormControlLabel, Grid, InputLabel, ListItemText, MenuItem, OutlinedInput, Select, Snackbar, TextField, useTheme } from "@mui/material";
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
 
+// Konstanter til brug i Select-komponenten.
 const ITEM_HEIGHT = 48;
 const ITEM_PADDING_TOP = 8;
 const MenuProps = {
@@ -13,11 +16,8 @@ const MenuProps = {
     },
 };
 
-const instis = [
-    'Friskole',
-    'Børnehave',
-    'Vuggestue',
-];
+// Liste over institutioner og funktion til at styles valgte elementer i Select-komponenten.
+const instis = ['Friskole', 'Børnehave', 'Vuggestue'];
 
 function getStyles(insti, instiName, myTheme) {
     return {
@@ -28,17 +28,17 @@ function getStyles(insti, instiName, myTheme) {
     };
 }
 
-
+// Form-komponenten, der håndterer formulardata og sender e-mail via emailjs.
 const Form = () => {
     const myTheme = useTheme();
-    const [instiName, setInstiName] = useState([])
+    const [instiName, setInstiName] = useState([]);
 
     const [navn, setNavn] = useState('');
     const [email, setEmail] = useState('');
     const [tel, setTel] = useState('');
     const [besked, setBesked] = useState('');
 
-
+    // Håndterer ændringer i valgte institutioner i Select-komponenten.
     const handleSelect = (event) => {
         const {
             target: { value },
@@ -46,14 +46,15 @@ const Form = () => {
 
         setInstiName(
             typeof value == 'string' ? value.split(',') : value,
-        )
+        );
     }
 
+    // Håndterer formularens indsendelse og sender e-mail via emailjs.
     const handleSubmit = (e) => {
         e.preventDefault();
 
         // Opretter et objekt med formulardataene
-        const formData = new FormData(e.target)
+        const formData = new FormData(e.target);
 
         // Definérer emailjs-template-id, user-id og eventuelt service-id
         const templateParams = {
@@ -61,7 +62,6 @@ const Form = () => {
             email: formData.get('email'),
             tel: formData.get('tel'),
             besked: formData.get('besked'),
-
         };
 
         // Kalder emailjs.send funktionen med service-id og template-id fra emailjs.com
@@ -86,12 +86,10 @@ const Form = () => {
             });
     };
 
-
-
-
     return (
         <Box component="form" onSubmit={handleSubmit} sx={{ backgroundColor: myTheme => myTheme.palette.background.paper, p: 4, borderRadius: "1em" }}>
             <Grid container spacing={2}>
+                {/* Inputfelter til navn, e-mail, telefonnummer og besked. */}
                 <Grid item xs={12}>
                     <TextField
                         autoComplete="given-name"
@@ -130,6 +128,7 @@ const Form = () => {
                     />
                 </Grid>
 
+                {/* Select-komponenten for at vælge ønskede institution(er). */}
                 <Grid item xs={12}>
                     <InputLabel id="demo-multiple-checkbox-label">Vælg ønsket institution(er)</InputLabel>
                     <Select
@@ -142,8 +141,8 @@ const Form = () => {
                         renderValue={(selected) => selected.join(', ')}
                         MenuProps={MenuProps}
                         fullWidth
-
                     >
+                        {/* Mapping over institutioner for at oprette MenuItem-komponenter. */}
                         {instis.map((insti) => (
                             <MenuItem
                                 key={insti}
@@ -157,6 +156,7 @@ const Form = () => {
                     </Select>
                 </Grid>
 
+                {/* Multilinetekstfelt til besked. */}
                 <Grid item xs={12}>
                     <TextField
                         fullWidth
@@ -171,6 +171,7 @@ const Form = () => {
                     />
                 </Grid>
 
+                {/* Checkbox til accept af opbevaring af oplysninger. */}
                 <Grid item xs={12}>
                     <FormControlLabel required
                         control={<Checkbox value="allowInformationStorage" color="secondary" />}
@@ -179,6 +180,8 @@ const Form = () => {
                 </Grid>
 
             </Grid>
+            
+            {/* Knappen til at sende formularen. */}
             <Button
                 type="submit"
                 fullWidth
@@ -187,10 +190,9 @@ const Form = () => {
             >
                 Send
             </Button>
-
         </Box>
-
-    )
+    );
 }
 
-export default Form 
+// Eksporterer Form-komponenten.
+export default Form;

@@ -1,20 +1,16 @@
 //{ Lavet af Victoria }
 
-
-
+// Importerer nødvendige komponenter og stilarter
 import { Box, Stack, Typography } from "@mui/material";
-import { CardProp, OutlinedBtn } from "../components/buttons";
+import { CardProp, FilledBtn } from "../components/buttons";
 
-
-
-//Individuel styling som udgangspunkt – sammensætter alt til sidst
+// Individuel styling som udgangspunkt – sammensætter alt til sidst
 import '../styles/vic.css'
 import SoMe from "../components/SoMe";
 import Content from "../components/content";
 import Form from "../components/muiForm";
 
-
-//Import billeder
+// Importerer billeder
 import friskole from "../assets/billeder/friskole.jpeg"
 import boernehave from "../assets/billeder/boernehave.jpeg"
 import vuggestue from "../assets/billeder/vuggestue.jpeg"
@@ -26,71 +22,66 @@ import dreng from "../assets/fusfri-billeder/fusfri-vuggestu-leg-1280px_6.jpeg"
 import basket from "../assets/fusfri-billeder/fus-friskolen-leg-1280-08.jpeg"
 import corn from "../assets/fusfri-billeder/fus-friskolen-leg-1280-02.jpeg"
 
-
 import { Link } from "react-router-dom";
 
 
 export default function HomePage() {
+  // Arrays med post-IDs
   const kontakt = [292];
   const institutioner = [321];
   const url = "home-page";
 
-
-
-
   return (
+    // Hovedcontainer med styling
     <main style={{
       marginInline: "5em",
     }}>
       <Stack spacing={8}>
-        <iframe //hero-video fra fusfris youtubekanal
+        {/* Hero-video fra Fusfri's YouTube-kanal */}
+        <iframe
           width="100%"
           height="580vh"
           src="https://www.youtube.com/embed/JYYtjlpkpeM?si=4Y6eEt39IDBrTJQw?controls=0"
           title="YouTube video player"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          style={{ borderRadius: "1em", 
-        }}
+          style={{ borderRadius: "1em", }}
         ></iframe>
 
+        {/* Stak af sektioner med kontaktformular og indhold */}
         <Stack direction={"row"} spacing={4} className="bgGraphic">
-
           {kontakt.map(postID => (
             <Box key={postID}>
               <Content site={url} postId={postID} />
             </Box>
           ))}
-
-
           <Form />
         </Stack>
 
-
+        {/* Sektion med information om institutioner og billeder */}
         <Stack sx={{ alignItems: "center", height: "90vh" }}>
           {institutioner.map(postID => (
-            <Box key={postID} sx={{ width: "85%",
-            "@media (min-width:600px)": { width: "100%" }
+            <Box key={postID} sx={{ width: "90%",
+         
             }}>
               <Content site={url} postId={postID} />
             </Box>
           ))}
-
+          {/* Billeder med links til forskellige sektioner */}
           <Stack direction={"row"} spacing={4} sx={{ width: "50%" }} className="imgContainer">
-            <div><Link to="/" ><img src={friskole} alt="Friskole billede" className="h-imgLink" /></Link></div>
-            <div><Link to="/"><img src={boernehave} alt="Børnehave billede" className="h-imgLink" /></Link></div>
-            <div><Link to="/"><img src={vuggestue} alt="Vuggestue billede" className="h-imgLink" /></Link></div>
+            <div><Link to="*" ><img src={friskole} alt="Friskole billede" className="h-imgLink" /></Link></div>
+            <div><Link to="*"><img src={boernehave} alt="Børnehave billede" className="h-imgLink" /></Link></div>
+            <div><Link to="*"><img src={vuggestue} alt="Vuggestue billede" className="h-imgLink" /></Link></div>
           </Stack>
-
         </Stack>
 
+        {/* Sektion med forskellige kort med indhold om indblik i Fusfri's dagligdag */}
         <SoMe />
-
-
-
-        <Box sx={{ height: "70vh", width: "100%", textAlign:"center" }} /* TODO: knap til scroll af kort */>
+        <Box sx={{ height: "70vh", width: "100%", textAlign:"center" }}>
           <Typography variant="h3">Indblik i Fusfri&apos;s dagligdag</Typography>
+          {/* Kort med information om Friskolen */}
           <Stack direction={"row"} spacing={4} sx={{ overflowX: "auto", width: "100%", p: "2% 4%", scrollbarColor: "transparent" }}>
+            {/* Komponenten CardProp bruges til at vise information om Friskolen */}
             <CardProp
               img={gaard}
               title="Friskolen"
@@ -141,13 +132,17 @@ export default function HomePage() {
           </Stack>
         </Box>
 
-        <Box sx={{ display: "flex",  justifyContent: "center", height: "40vh", textAlign: "center"    }}>
-          <Box sx={{display: "flex", justifyContent:"center", flexDirection: "column", alignItems: "center", width: "80%", height:"10em"        }}>
+        {/* Sektion med kontaktinformation og knap til kontaktformular */}
+        <Box sx={{ display: "flex",  justifyContent: "center", height: "40vh", textAlign: "center" }}>
+          <Box sx={{display: "flex", justifyContent:"center", flexDirection: "column", alignItems: "center", width: "80%", height:"10em" }}>
             <Typography variant="h2" gutterBottom>Kontakt os i dag og få en uforpligtende samtale!</Typography>
-            <OutlinedBtn name="Start læringsrejse" page="/kontakt" w="15em" />
+            <FilledBtn name="Start læringsrejse" page="/kontakt" w="15em" />
           </Box>
         </Box>
       </Stack>
     </main>
   );
 }
+
+
+    

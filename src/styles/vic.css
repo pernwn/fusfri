@@ -12,6 +12,8 @@ footer{
     display: flex;
     position: sticky;
     bottom:0;
+    left: 0;
+    right: 0;
 
 }
 
@@ -101,14 +103,14 @@ a:hover{
 
   .imgContainer{
     position: absolute;
-    top:125em;
+    top:123em;
   }
 
 
   /*TODO: function in homepage to display text on mouseover*/
   .imgContainer div{
       position:relative;
-      width:60%;
+      width:50%;
 
       height: fit-content;
 

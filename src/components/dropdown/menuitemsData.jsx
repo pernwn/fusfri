@@ -1,5 +1,5 @@
-//{ Lavet af Victoria }
-
+// Lavet af Victoria
+// Dette array indeholder menupunkter til navigationen på hjemmesiden.
 
 export const menuItemsData = [
     {

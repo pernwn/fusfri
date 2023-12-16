@@ -23,9 +23,6 @@ import ErrorPage from "./pages/404";
 
 function App() {
   const outerTheme = useTheme();
-
-  
-
   return (
     <>
       <ToastContainer />
