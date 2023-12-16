@@ -10,11 +10,12 @@ export default function Friskole() {
 
     return (
         <main>
-            <Stack className="friskole"
+            <Stack className="friskole" 
                 sx={{
                     flexDirection: 'row',
-                    padding: 1,
+                    padding: 2,
                     backgroundColor: '#ffff',
+                    flexWrap: 'wrap',
 
                 }}
             >
@@ -40,9 +41,15 @@ export default function Friskole() {
                         sx={{
                             textAlign: 'center',
                             marginTop: 5,
+                        }}
+                        >Fag på Fusfri</Typography> 
+                        <Typography variant="h6" 
+                        sx={{
+                            textAlign: 'center',
+
                             marginBottom: 5,
                         }}
-                        >Fag på Fusfri </Typography>
+                        >Se vores udvalg af fag her!  </Typography>
             <article className="scroll"> 
 
                 {postIDs.map(postID => (
