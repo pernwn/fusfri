@@ -76,6 +76,7 @@ const MenuItems = ({ items, depthLevel }) => {
                 <>
                     {/* NavBtn-komponent for at vise knap med pilikon eller dropdown-ikon. */}
                     <NavBtn
+                        activeClassName="active"
                         name={items.title}
                         aria-haspopup="menu"
                         aria-expanded={dropdown ? "true" : "false"}
@@ -94,6 +95,7 @@ const MenuItems = ({ items, depthLevel }) => {
                 <>
                     {/* NavBtn-komponent med ekstra styling, der vises ved klik eller hover. */}
                     <NavBtn
+                        activeClassName="active"
                         name={items.title}
                         aria-haspopup="menu"
                         aria-expanded={dropdown ? "true" : "false"}
