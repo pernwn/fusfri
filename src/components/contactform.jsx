@@ -1,10 +1,13 @@
 // Udviklet af Nor
 
 import { useState } from "react";
+// Import af styled-components-biblioteket til styling af komponenten
 import styled from "styled-components";
+// Import af emailjs og react-toastify-bibliotekerne
 import emailjs from "@emailjs/browser";
 import { toast } from "react-toastify";
 
+// Styling af contactform.jsx
 const FormContainer = styled.div`
   width: 800px;
   margin: auto;
@@ -35,6 +38,7 @@ const Input = styled.input`
   width: 600px;
   @media (max-width: 768px) {
     max-width: 170px;
+  }
 `;
 
 const TextArea = styled.textarea`
@@ -43,6 +47,7 @@ const TextArea = styled.textarea`
   width: 600px;
   @media (max-width: 768px) {
     max-width: 170px;
+  }
 `;
 
 const Button = styled.button`
@@ -52,17 +57,20 @@ const Button = styled.button`
   border-radius: 10px;
   cursor: pointer;
   width: 600px;
-  background-color: #448D9C;
-  transition: background-color 0.3s; /* Add a smooth transition effect */
+  background-color: #448d9c;
+  transition: background-color 0.3s; /* Tilføj en glidende overgangseffekt */
 
   &:active {
-    background-color: #2a6c7a; /* Darker color when clicked */
+    background-color: #2a6c7a; /* Mørkere farve ved klik */
   }
   @media (max-width: 768px) {
-    max-width: 170px; 
+    max-width: 170px;
+  }
 `;
 
+// Definition af ContactForm-funktionen som en funktionel komponent
 const ContactForm = () => {
+  // State-hook til håndtering af formdata
   const [formData, setFormData] = useState({
     navn: "",
     Telefonnummer: "",
@@ -70,6 +78,7 @@ const ContactForm = () => {
     besked: "",
   });
 
+  // Funktion til håndtering af ændringer i input-felter
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -77,9 +86,11 @@ const ContactForm = () => {
     });
   };
 
+  // Funktion til håndtering af formularindsendelse
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    // Vis en success-toast når e-mailen er sendt
     toast.success("Emailen er sendt", {
       position: "top-right",
       autoClose: 3000,
@@ -92,14 +103,9 @@ const ContactForm = () => {
     });
 
     try {
-      // Replace 'YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', and 'YOUR_USER_ID' with your emailJS credentials
       const result = await emailjs.send("service_45av0gf", "template_tyq0pbv", formData, "Bd-JEsYHH89M9RpTm");
-
-      console.log("Email sent successfully:", result);
-      // You can add additional logic here, such as showing a success message to the user.
     } catch (error) {
-      console.error("Error sending email:", error);
-      // Handle error, show error message, etc.
+      console.error("Fejl ved afsendelse af email:", error);
     }
   };
 
