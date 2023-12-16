@@ -15,9 +15,10 @@ import Header from "./components/dropdown/header";
 
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Footer from "./components/footer";
+
 import CookiePrivat from "./pages/CookiePrivat";
 import ErrorPage from "./pages/404";
+import Footer from "./components/footer.jsx"
 
 
 function App() {
@@ -28,7 +29,7 @@ function App() {
       <ThemeProvider theme={myTheme(outerTheme)}>
         <CssBaseline enableColorScheme />
 
-        <Header />
+        <Header isFooterVisible={true}/>
 
         <Routes>
           <Route index element={<HomePage />} />

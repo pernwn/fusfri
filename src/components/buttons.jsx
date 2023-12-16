@@ -8,6 +8,7 @@ import { NavLink } from "react-router-dom"
 
 // NavBtn-komponenten repræsenterer en knape, der kan indeholde en ikon i slutningen – bruges primært til nav, men kan også anvendes andre steder.
 const NavBtn = (props) => {
+    
     return (
         <Button
             endIcon={props.icon}
