@@ -1,3 +1,5 @@
+//lavet af Rina
+
 import { useState } from "react";
 import "../styles/rin.css"
 
