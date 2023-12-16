@@ -16,11 +16,12 @@ const CommentSection = ({ eventId, onSaveComment }) => {
   };
 
   return (
-    <div>
-      <textarea value={comment} onChange={handleCommentChange} />
-      <button onClick={handleSaveComment}>Add Comment</button>
+    <div className="comment-container">
+      <textarea className="comment-textbox" value={comment} onChange={handleCommentChange} />
+      <button className="comment-button" onClick={handleSaveComment}>Add Comment</button>
     </div>
   );
+  
 };
 
 export default CommentSection;

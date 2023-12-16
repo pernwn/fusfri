@@ -97,6 +97,38 @@ margin-bottom: 5%;
   text-align: center;
 }
 
+.comment-container {
+  text-align: center;
+  margin-top: 2%;
+
+}
+
+.comment-textbox {
+  width: 50%;
+  height: 100px;
+  resize: vertical;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+}
+
+.comment-button {
+  background-color: #6e8c2e;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.comment-button:hover {
+  background-color: #5c7822; /* Mørkere nuance on hover*/
+}
+
+
 /* Responsivt design for mindre skærme */
 @media (max-width: 768px) {
   .error-content {
