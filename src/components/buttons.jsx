@@ -23,7 +23,7 @@ const FilledBtn = (props) => {
 
 const OutlinedBtn = (props) => {
     return (
-        <Button variant="outlined"
+        <Button variant="contained"
             component={NavLink}
             to={props.page}
 
@@ -50,13 +50,13 @@ const LinkBtn = (props) => {
 
 const CardProp = (props) => {
     return (
-        <Card elevation={4} sx={{ minWidth: 400, height: "100%"}}>
+        <Card elevation={4} sx={{ minWidth:380, height: "100%"}}>
             <CardMedia
                 sx={{ height: 150 }}
                 image={props.img}
                 title={props.title}
             />
-            <CardContent>
+            <CardContent sx={{p:4, textAlign:"left"}}>
                 <Typography variant="h5" gutterBottom component="div">{props.cardTitle}</Typography>
                 <Typography variant="body2">
                     {props.body}

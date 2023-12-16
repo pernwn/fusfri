@@ -2,8 +2,8 @@
 
 
 
-import { Box, Card, Paper, Stack, Tabs, Typography } from "@mui/material";
-import { CardProp, FilledBtn, OutlinedBtn } from "../components/buttons";
+import { Box, Stack, Typography } from "@mui/material";
+import { CardProp, OutlinedBtn } from "../components/buttons";
 
 
 
@@ -42,17 +42,15 @@ export default function HomePage() {
     <main style={{
       marginInline: "5em",
     }}>
-      <FilledBtn name="Friskole" page="/friskole" />
-      <FilledBtn name="Kalender" page="/information" />
       <Stack spacing={8}>
         <iframe //hero-video fra fusfris youtubekanal
           width="100%"
-          height="600vh"
+          height="580vh"
           src="https://www.youtube.com/embed/JYYtjlpkpeM?si=4Y6eEt39IDBrTJQw?controls=0"
           title="YouTube video player"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          style={{ borderRadius: "1.5em", 
+          style={{ borderRadius: "1em", 
         }}
         ></iframe>
 
@@ -69,7 +67,7 @@ export default function HomePage() {
         </Stack>
 
 
-        <Stack sx={{ alignItems: "center", height: "85vh" }}>
+        <Stack sx={{ alignItems: "center", height: "90vh" }}>
           {institutioner.map(postID => (
             <Box key={postID} sx={{ width: "85%",
             "@media (min-width:600px)": { width: "100%" }
@@ -90,9 +88,9 @@ export default function HomePage() {
 
 
 
-        <Box sx={{ height: "60vh", width: "100%" }}>
+        <Box sx={{ height: "70vh", width: "100%", textAlign:"center" }} /* TODO: knap til scroll af kort */>
           <Typography variant="h3">Indblik i Fusfri&apos;s dagligdag</Typography>
-          <Stack direction={"row"} spacing={4} sx={{ overflowX: "auto", width: "100%", p: "2% 0 4% 0", scrollbarColor: "transparent" }}>
+          <Stack direction={"row"} spacing={4} sx={{ overflowX: "auto", width: "100%", p: "2% 4%", scrollbarColor: "transparent" }}>
             <CardProp
               img={gaard}
               title="Friskolen"
@@ -143,7 +141,7 @@ export default function HomePage() {
           </Stack>
         </Box>
 
-        <Box sx={{ display: "flex",  justifyContent: "center", height: "30vh", textAlign: "center"    }}>
+        <Box sx={{ display: "flex",  justifyContent: "center", height: "40vh", textAlign: "center"    }}>
           <Box sx={{display: "flex", justifyContent:"center", flexDirection: "column", alignItems: "center", width: "80%", height:"10em"        }}>
             <Typography variant="h2" gutterBottom>Kontakt os i dag og få en uforpligtende samtale!</Typography>
             <OutlinedBtn name="Start læringsrejse" page="/kontakt" w="15em" />

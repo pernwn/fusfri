@@ -2,7 +2,7 @@ import { ThemeProvider, useTheme } from "@emotion/react";
 import { CssBaseline } from "@mui/material";
 
 import { myTheme } from "./components/theme";
-import { Navigate, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 
 import HomePage from "./pages/homepage";
 //import Nav from "./components/nav";
@@ -18,6 +18,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Footer from "./components/footer";
 import CookiePrivat from "./pages/CookiePrivat";
+import ErrorPage from "./pages/404";
 
 
 function App() {
@@ -46,7 +47,7 @@ function App() {
 
           <Route path="/cookieprivat" element={<CookiePrivat />} />
 
-          <Route path="*" element={<Navigate to="/" />} /* 404 */ />
+          <Route path="*" element={<ErrorPage/> } /* 404 */ />
         </Routes>
 
         <Footer/>

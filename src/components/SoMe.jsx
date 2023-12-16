@@ -11,7 +11,7 @@ export default function SoMe() {
 
     return (
         <main className='bgGraphic'>
-            <Stack spacing={4} sx={{ width: "100%" }}>
+            <Stack spacing={4} sx={{ width: "100%", height:"120vh" }}>
                 {soMe.map(postID => (
                     <Box key={postID} sx={{width:"70%"}}>
                         <Content site={url} postId={postID} />
