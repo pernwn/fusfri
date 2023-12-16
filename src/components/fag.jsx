@@ -1,5 +1,6 @@
 // lavet af Rina
 
+import '../styles/rin.css'
 import {  Typography } from '@mui/material';
 import { useState, useEffect } from 'react';
 
@@ -27,7 +28,7 @@ const WordPressFag = ({ postId }) => {
     <main
     >
       {post && (
-        <div         >
+        <div    className='fag-style'     >
           <Typography variant="h3"
           sx={{
             textAlign: 'center'
