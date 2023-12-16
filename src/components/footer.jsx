@@ -10,7 +10,7 @@ import CallIcon from '@mui/icons-material/Call';
 import AccessTimeFilledIcon from '@mui/icons-material/AccessTimeFilled';
 
 import "../styles/vic.css";
-
+import { forwardRef, useImperativeHandle, useRef } from "react";
 
 // Copyright-funktionen er en separat komponent, der viser copyright-informationen i bunden af siden.
 export function Copyright(props) {
@@ -26,11 +26,17 @@ export function Copyright(props) {
   );
 }
 
-export default function Footer(){
+const Footer = forwardRef((props, ref) => {
+  // Opretter en ref til footer-sektionen.
+  const footerRef = useRef(null);
 
+  // Bruger useImperativeHandle-hook til at give en metode til at få højden af footer-sektionen.
+  useImperativeHandle(ref, () => ({
+    getHeight: () => footerRef.current.offsetHeight,
+  }));
 
   return (
-    <Box
+    <Box ref={footerRef}
       sx={{
         backgroundColor: myTheme => myTheme.palette.background.paper,
         borderRadius: "2em 2em 0 0",
@@ -82,6 +88,8 @@ export default function Footer(){
       </footer>
     </Box>
   )
-}
+})
 
+Footer.displayName = "Footer";
+export default Footer;
 

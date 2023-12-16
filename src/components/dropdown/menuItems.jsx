@@ -76,13 +76,13 @@ const MenuItems = ({ items, depthLevel }) => {
                 <>
                     {/* NavBtn-komponent for at vise knap med pilikon eller dropdown-ikon. */}
                     <NavBtn
-                        activeClassName="active"
                         name={items.title}
                         aria-haspopup="menu"
                         aria-expanded={dropdown ? "true" : "false"}
                         event={() => toggleDropdown()}
                         icon={depthLevel > 0 ? <ArrowRightRounded /> : <ExpandMoreRounded />}
                         page={items.url}
+                        className={`btn-container ${isScrolled && 'btn-scrolled'}`}
                     />
                     {/* Dropdown-komponenten, der vises ved klik eller hover på knappen. */}
                     <Dropdown
@@ -95,14 +95,14 @@ const MenuItems = ({ items, depthLevel }) => {
                 <>
                     {/* NavBtn-komponent med ekstra styling, der vises ved klik eller hover. */}
                     <NavBtn
-                        activeClassName="active"
+                    
                         name={items.title}
                         aria-haspopup="menu"
                         aria-expanded={dropdown ? "true" : "false"}
                         event={() => toggleDropdown()}
                         icon={depthLevel > 0 ? <ArrowRightRounded /> : <ExpandMoreRounded />}
                         page={items.url}
-                        className={`btn-container ${isScrolled && 'btn-scrolled'}`}
+
                     />
                     {/* Dropdown-komponenten, der vises ved klik eller hover på knappen. */}
                     <Dropdown
