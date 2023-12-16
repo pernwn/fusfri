@@ -1,7 +1,7 @@
 //{ Lavet af Victoria }
 
 // Importerer nødvendige komponenter og stilarter
-import { Box, Stack, Typography } from "@mui/material";
+import { Box, Button, Stack, Typography } from "@mui/material";
 import { CardProp, FilledBtn } from "../components/buttons";
 
 // Individuel styling som udgangspunkt – sammensætter alt til sidst
@@ -9,6 +9,8 @@ import '../styles/vic.css'
 import SoMe from "../components/SoMe";
 import Content from "../components/content";
 import Form from "../components/muiForm";
+
+
 
 // Importerer billeder
 import friskole from "../assets/billeder/friskole.jpeg"
@@ -23,6 +25,8 @@ import basket from "../assets/fusfri-billeder/fus-friskolen-leg-1280-08.jpeg"
 import corn from "../assets/fusfri-billeder/fus-friskolen-leg-1280-02.jpeg"
 
 import { Link } from "react-router-dom";
+import { useRef } from "react";
+import ScrollCardFunction from "../components/ScrollCards";
 
 
 export default function HomePage() {
@@ -30,6 +34,12 @@ export default function HomePage() {
   const kontakt = [292];
   const institutioner = [321];
   const url = "home-page";
+
+  const ref = useRef(null);
+
+  const scroll = (scrollOffset) => {
+    ref.current.scrollLeft += scrollOffset;
+  };
 
   return (
     // Hovedcontainer med styling
@@ -61,12 +71,14 @@ export default function HomePage() {
         {/* Sektion med information om institutioner og billeder */}
         <Stack sx={{ alignItems: "center", height: "90vh" }}>
           {institutioner.map(postID => (
-            <Box key={postID} sx={{ width: "90%",
-         
+            <Box key={postID} sx={{
+              width: "90%",
+
             }}>
               <Content site={url} postId={postID} />
             </Box>
           ))}
+
           {/* Billeder med links til forskellige sektioner */}
           <Stack direction={"row"} spacing={4} sx={{ width: "50%" }} className="imgContainer">
             <div><Link to="*" ><img src={friskole} alt="Friskole billede" className="h-imgLink" /></Link></div>
@@ -75,66 +87,15 @@ export default function HomePage() {
           </Stack>
         </Stack>
 
-        {/* Sektion med forskellige kort med indhold om indblik i Fusfri's dagligdag */}
+        {/*Import af SoMe (Social Media) komponent*/}
         <SoMe />
-        <Box sx={{ height: "70vh", width: "100%", textAlign:"center" }}>
-          <Typography variant="h3">Indblik i Fusfri&apos;s dagligdag</Typography>
-          {/* Kort med information om Friskolen */}
-          <Stack direction={"row"} spacing={4} sx={{ overflowX: "auto", width: "100%", p: "2% 4%", scrollbarColor: "transparent" }}>
-            {/* Komponenten CardProp bruges til at vise information om Friskolen */}
-            <CardProp
-              img={gaard}
-              title="Friskolen"
-              cardTitle="Det sker på friskolen..."
-              body="Fussingø-Egnens Friskole, et forældredrevet undervisningssted fra børnehaveklasse til og med 8. klasse, stræber efter at skabe et trygt bindeled mellem det lille familiære fællesskab og det større skole- og samfundsfællesskab."
-              href="/friskole"
-            />
 
-            <CardProp
-              img={leg}
-              title="Friskolen"
-              cardTitle="Det sker på friskolen..."
-              body="Fussingø-Egnens Friskole, et forældredrevet undervisningssted fra børnehaveklasse til og med 8. klasse, stræber efter at skabe et trygt bindeled mellem det lille familiære fællesskab og det større skole- og samfundsfællesskab."
-              href="/friskole"
-            />
-
-            <CardProp
-              img={dreng}
-              title="Friskolen"
-              cardTitle="Det sker på friskolen..."
-              body="Fussingø-Egnens Friskole, et forældredrevet undervisningssted fra børnehaveklasse til og med 8. klasse, stræber efter at skabe et trygt bindeled mellem det lille familiære fællesskab og det større skole- og samfundsfællesskab."
-              href="/friskole"
-            />
-
-            <CardProp
-              img={gynge}
-              title="Friskolen"
-              cardTitle="Det sker på friskolen..."
-              body="Fussingø-Egnens Friskole, et forældredrevet undervisningssted fra børnehaveklasse til og med 8. klasse, stræber efter at skabe et trygt bindeled mellem det lille familiære fællesskab og det større skole- og samfundsfællesskab."
-              href="/friskole"
-            />
-
-            <CardProp
-              img={basket}
-              title="Friskolen"
-              cardTitle="Det sker på friskolen..."
-              body="Fussingø-Egnens Friskole, et forældredrevet undervisningssted fra børnehaveklasse til og med 8. klasse, stræber efter at skabe et trygt bindeled mellem det lille familiære fællesskab og det større skole- og samfundsfællesskab."
-              href="/friskole"
-            />
-
-            <CardProp
-              img={corn}
-              title="Friskolen"
-              cardTitle="Det sker på friskolen..."
-              body="Fussingø-Egnens Friskole, et forældredrevet undervisningssted fra børnehaveklasse til og med 8. klasse, stræber efter at skabe et trygt bindeled mellem det lille familiære fællesskab og det større skole- og samfundsfællesskab."
-              href="/friskole"
-            />
-          </Stack>
-        </Box>
+        {/* TODO: arrow button - Sektion med forskellige kort med indhold om indblik i Fusfri's dagligdag */}
+        <ScrollCardFunction/>
 
         {/* Sektion med kontaktinformation og knap til kontaktformular */}
-        <Box sx={{ display: "flex",  justifyContent: "center", height: "40vh", textAlign: "center" }}>
-          <Box sx={{display: "flex", justifyContent:"center", flexDirection: "column", alignItems: "center", width: "80%", height:"10em" }}>
+        <Box sx={{ display: "flex", justifyContent: "center", height: "40vh", textAlign: "center" }}>
+          <Box sx={{ display: "flex", justifyContent: "center", flexDirection: "column", alignItems: "center", width: "80%", height: "10em" }}>
             <Typography variant="h2" gutterBottom>Kontakt os i dag og få en uforpligtende samtale!</Typography>
             <FilledBtn name="Start læringsrejse" page="/kontakt" w="15em" />
           </Box>
@@ -145,4 +106,3 @@ export default function HomePage() {
 }
 
 
-    

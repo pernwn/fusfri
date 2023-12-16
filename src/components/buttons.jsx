@@ -3,12 +3,15 @@
 
 // Dette modul indeholder flere genbrugelige React-komponenter designet til at skabe konsistente og stilfulde knapper og kort.
 
-import { Button, Card, CardActions, CardContent, CardMedia, Typography } from "@mui/material"
+import { Box, Button, Card, CardActions, CardContent, CardMedia, Typography } from "@mui/material"
 import { NavLink } from "react-router-dom"
+
+import ArrowCircleLeftRoundedIcon from '@mui/icons-material/ArrowCircleLeftRounded';
+import ArrowCircleRightRoundedIcon from '@mui/icons-material/ArrowCircleRightRounded';
 
 // NavBtn-komponenten repræsenterer en knape, der kan indeholde en ikon i slutningen – bruges primært til nav, men kan også anvendes andre steder.
 const NavBtn = (props) => {
-    
+
     return (
         <Button
             endIcon={props.icon}
@@ -56,26 +59,35 @@ const LinkBtn = (props) => {
 }
 
 // CardProp-komponenten repræsenterer et materiale designkort med en billedoverskrift, indhold og en "Læs mere" knap.
-const CardProp = (props) => {
+const CardProp = ( {item} ) => {
     return (
         <Card elevation={4} sx={{ minWidth: 380, height: "100%" }}>
             <CardMedia
                 sx={{ height: 150 }}
-                image={props.img}
-                title={props.title}
+                image={item.img}
+                title={item.title}
             />
             <CardContent sx={{ p: 4, textAlign: "left" }}>
-                <Typography variant="h5" gutterBottom component="div">{props.cardTitle}</Typography>
+                <Typography variant="h5" gutterBottom component="div">{item.cardTitle}</Typography>
                 <Typography variant="body2">
-                    {props.body}
+                    {item.body}
                 </Typography>
             </CardContent>
             <CardActions>
-                <Button size="small" href={props.href}>Læs mere</Button>
+                <Button size="small" href={item.href}>Læs mere</Button>
             </CardActions>
         </Card>
     )
 }
 
+const ScrollBtn = ({ onScroll }) => {
+    return (
+        <Box sx={{ width: "100%", display: "flex", justifyContent: "space-evenly" }}>
+            <ArrowCircleLeftRoundedIcon fontSize={20} onClick={() => onScroll(-50)} />
+            <ArrowCircleRightRoundedIcon fontSize={20} onClick={() => onScroll(50)} />
+        </Box>
+    )
+}
 
-export { NavBtn, FilledBtn, LinkBtn, CardProp }
+
+export { NavBtn, FilledBtn, LinkBtn, CardProp, ScrollBtn }
