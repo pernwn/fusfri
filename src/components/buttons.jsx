@@ -59,22 +59,22 @@ const LinkBtn = (props) => {
 }
 
 // CardProp-komponenten repræsenterer et materiale designkort med en billedoverskrift, indhold og en "Læs mere" knap.
-const CardProp = ( {item} ) => {
+const CardProp = ( itemDetails ) => {
     return (
-        <Card elevation={4} sx={{ minWidth: 380, height: "100%" }}>
+        <Card elevation={4} sx={{ minWidth: 380, minHeight: "100%" }}>
             <CardMedia
                 sx={{ height: 150 }}
-                image={item.img}
-                title={item.title}
+                image={itemDetails.img}
+                title={itemDetails.title}
             />
-            <CardContent sx={{ p: 4, textAlign: "left" }}>
-                <Typography variant="h5" gutterBottom component="div">{item.cardTitle}</Typography>
+            <CardContent sx={{ p: 2, textAlign: "left" }}>
+                <Typography variant="h5" gutterBottom component="div">{itemDetails.cardTitle}</Typography>
                 <Typography variant="body2">
-                    {item.body}
+                    {itemDetails.body}
                 </Typography>
             </CardContent>
             <CardActions>
-                <Button size="small" href={item.href}>Læs mere</Button>
+                <Button size="small" href={itemDetails.href}>Læs mere</Button>
             </CardActions>
         </Card>
     )

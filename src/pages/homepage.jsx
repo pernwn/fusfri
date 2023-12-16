@@ -1,7 +1,7 @@
 //{ Lavet af Victoria }
 
 // Importerer nødvendige komponenter og stilarter
-import { Box, Button, Stack, Typography } from "@mui/material";
+import { Box, Stack, Typography } from "@mui/material";
 import { CardProp, FilledBtn } from "../components/buttons";
 
 // Individuel styling som udgangspunkt – sammensætter alt til sidst
@@ -25,8 +25,7 @@ import basket from "../assets/fusfri-billeder/fus-friskolen-leg-1280-08.jpeg"
 import corn from "../assets/fusfri-billeder/fus-friskolen-leg-1280-02.jpeg"
 
 import { Link } from "react-router-dom";
-import { useRef } from "react";
-import ScrollCardFunction from "../components/ScrollCards";
+
 
 
 export default function HomePage() {
@@ -35,11 +34,6 @@ export default function HomePage() {
   const institutioner = [321];
   const url = "home-page";
 
-  const ref = useRef(null);
-
-  const scroll = (scrollOffset) => {
-    ref.current.scrollLeft += scrollOffset;
-  };
 
   return (
     // Hovedcontainer med styling
@@ -91,7 +85,63 @@ export default function HomePage() {
         <SoMe />
 
         {/* TODO: arrow button - Sektion med forskellige kort med indhold om indblik i Fusfri's dagligdag */}
-        <ScrollCardFunction/>
+        <Box sx={{ height: "70vh", width: "100%", textAlign: "center"}}>
+          <Typography variant="h3">Indblik i Fusfri&apos;s dagligdag</Typography>
+          {/* Kort med information om Friskolen */}
+          <Stack direction={"row"} spacing={4} sx={{ overflowX: "auto", width: "100%", p: "2% 4%", scrollbarColor: "transparent"}}>
+            {/* Komponenten CardProp bruges til at vise information om Friskolen */}
+
+            <CardProp
+              img={gaard}
+              title="Gård"
+              cardTitle="Oplev Livet i Gården"
+              body="Tag en tur til gården og oplev den naturlige skønhed, mød venlige dyr og nyd den friske luft. Gårdlivet venter på dig!"
+              href="*"
+            />
+
+            <CardProp
+              img={leg}
+              title="Friskolen"
+              cardTitle="Det sker på friskolen..."
+              body="Fussingø-Egnens Friskole, et forældredrevet undervisningssted fra børnehaveklasse til og med 8. klasse, stræber efter at skabe et trygt bindeled mellem det lille familiære fællesskab og det større skole- og samfundsfællesskab."
+              href="*"
+            />
+
+            <CardProp
+              img={dreng}
+              title="Børnehave"
+              cardTitle="Livet gennem Børnehave Drengs Øjne"
+              body="Følg med i en dag i livet som børnehave dreng. Oplev eventyr, leg og venskaber i denne hjertevarmende fortælling om barndommens magi."
+              href="*"
+            />
+ 
+
+            <CardProp
+              img={gynge}
+              title="Gynge"
+              cardTitle="Svæv i Luften på Gynge"
+              body="Føl suset i maven og svæv frit på vores gynger! Oplev glæden ved bevægelse og frihed, mens du gynger højt under himlen."
+              href="*"
+            />
+
+            <CardProp
+              img={basket}
+              title="Basketball"
+              cardTitle="Dunk og Score med Basketball"
+              body="Tag dine basketballfærdigheder til næste niveau! Udfordr dine venner, forbedr dine driblinger og oplev spændingen ved at score kurve."
+              href="*"
+            />
+
+            <CardProp
+              img={corn}
+              title="Fusfri Bordtennisbord"
+              cardTitle="Slå dig løs med Bordtennis hos Fusfri"
+              body="Saml dine venner og kast dig ud i sjove og konkurrenceprægede stunder ved Fusfri's bordtennisbord. Oplev fællesskabet, styrk din præcision, og skab uforglemmelige øjeblikke sammen."
+              href="*"
+            />
+          </Stack>
+
+        </Box>
 
         {/* Sektion med kontaktinformation og knap til kontaktformular */}
         <Box sx={{ display: "flex", justifyContent: "center", height: "40vh", textAlign: "center" }}>
