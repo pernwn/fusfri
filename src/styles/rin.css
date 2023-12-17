@@ -1,7 +1,15 @@
 .friskole {
-  margin: 1rem;
+margin-left: 5%;
+margin-right: 5%;
+  padding-top: 100px;
+  padding-bottom: 100px;
   border-radius: 10px;
-  flex-wrap: nowrap,
+  background: linear-gradient(to right, #d5f889b4, #c4eb6fa6, #a0d6fab9, #b9e45e80),
+              url('../assets/fusfri-billeder/fusfri-boernehave-lejr-2015-795px-_9.jpeg'); 
+  background-size: cover; 
+  background-position: center; 
+  justify-content: center;
+  align-items: center;
 }
 
 .fag-kort {
@@ -37,11 +45,9 @@ box-shadow: inset 2px 2px 2px hsla(0, 0%, 100%, .25), inset -2px -2px 2px rgba(2
   flex-wrap: nowrap; /* Ensure no wrapping of cards */
   overflow-x: auto;
   border-radius: 8px;
-  margin-bottom: 5%;
   margin-top: 5%;
-  padding: 50px; /* Added padding for space around cards */
-  padding-top: 50px;
-  height: 1000px;
+  padding: 50px; 
+  height: 800px;
 }
 
 /* Media query for responsiveness */
@@ -61,7 +67,6 @@ box-shadow: inset 2px 2px 2px hsla(0, 0%, 100%, .25), inset -2px -2px 2px rgba(2
 }
 
  .dagligdag-slider{
-  max-width: 100%;
   margin: 3%;
   justify-content: center;
   align-content: center;
