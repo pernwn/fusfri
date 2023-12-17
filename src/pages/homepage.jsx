@@ -27,6 +27,7 @@ import gynge from "../assets/fusfri-billeder/fus-friskolen-leg-1280-01.jpeg"
 import dreng from "../assets/fusfri-billeder/fusfri-vuggestu-leg-1280px_6.jpeg"
 import basket from "../assets/fusfri-billeder/fus-friskolen-leg-1280-08.jpeg"
 import corn from "../assets/fusfri-billeder/fus-friskolen-leg-1280-02.jpeg"
+import smil from "../assets/fusfri-billeder/fusfri-vuggestu-leg-1280px_7.jpeg"
 
 import { Link } from "react-router-dom";
 import { CloudReading } from "../components/splash";
@@ -73,21 +74,22 @@ export default function HomePage() {
         </Stack>
 
         {/* Sektion med information om institutioner og billeder */}
-        <Stack sx={{alignItems: "center", height: "74vh", position: "relative"}}>
-          <Box>
+        <Stack sx={{ display: 'flex', alignItems: "center", height: "74vh", position: "relative" }}>
+
             {institutioner.map(postID => (
-              <Box key={postID} sx={{ width: "100%" }}>
+              <Box key={postID} sx={{ width: "90%" }}>
                 <Content site={url} postId={postID} />
+                <img src={smil} alt="Pædagog og barnq" style={{position:"absolute", width:"30%", right:160, top:150}}/>
               </Box>
             ))}
-          </Box>
 
-          {/* Billeder med links til forskellige sektioner */}
-          <Stack direction={"row"} spacing={4} sx={{ width: "50%" }} className="imgContainer">
-            <div><Link to="*" ><img src={friskole} alt="Friskole billede" className="h-imgLink" /></Link></div>
-            <div><Link to="*"><img src={boernehave} alt="Børnehave billede" className="h-imgLink" /></Link></div>
-            <div><Link to="*"><img src={vuggestue} alt="Vuggestue billede" className="h-imgLink" /></Link></div>
-          </Stack>
+            {/* Billeder med links til forskellige sektioner */}
+            <Stack direction={"row"} spacing={4} sx={{ width: "50%" }} className="imgContainer">
+              <div><Link to="*"><img src={friskole} alt="Friskole billede" className="h-imgLink" /></Link></div>
+              <div><Link to="*"><img src={boernehave} alt="Børnehave billede" className="h-imgLink" /></Link></div>
+              <div><Link to="*"><img src={vuggestue} alt="Vuggestue billede" className="h-imgLink" /></Link></div>
+            </Stack>
+
         </Stack>
 
         {/*Import af SoMe (Social Media) komponent*/}
