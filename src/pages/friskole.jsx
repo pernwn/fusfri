@@ -60,6 +60,7 @@ export default function Friskole() {
           <Paper elevation={5}
             key={postID}
             className='fag-kort'
+            sx={{minWidth:"30em", height:"auto"}}
           >
             <WordPressFag postId={postID} />
           </Paper>

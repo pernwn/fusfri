@@ -1,77 +1,72 @@
 .friskole {
-margin-left: 5%;
-margin-right: 5%;
-  padding-top: 100px;
-  padding-bottom: 100px;
+  margin: 100px 5%;
   border-radius: 10px;
   background: linear-gradient(to right, #ddf0b6b4, #d3f192a6, #a0d6fab9, #b9e45e80),
-              url('../assets/fusfri-billeder/fusfri-boernehave-lejr-2015-795px-_9.jpeg'); 
-  background-size: cover; 
-  background-position: center; 
+    url('../assets/fusfri-billeder/fusfri-boernehave-lejr-2015-795px-_9.jpeg');
+  background-size: cover;
+  background-position: center;
   justify-content: center;
   align-items: center;
 }
 
 .fag-kort {
-padding: 0 2rem;
-width: 450px;
-flex-direction: column;
-background: rgb(125,166,176);
-background: linear-gradient(36deg, rgba(125,166,176,1) 0%, rgba(178,217,226,1) 49%, rgba(223,249,255,1) 100%);
-border-radius: 8px;
-box-shadow: -1rem 0 2rem#415042be;
-transition: .2s;
-min-height: 650px;
+  padding-inline: 2%;
+  padding-bottom:5%;
+  margin-bottom: 5em;
+  background: linear-gradient(36deg, rgba(125, 166, 176, 1) 0%, rgba(178, 217, 226, 1) 49%, rgba(223, 249, 255, 1) 100%);
+  
+  transition: ease 2s;
+
 }
 
 .scroll::-webkit-scrollbar {
-width: 15px;
-height: 15px;
+  width: 15px;
+  height: 15px;
 }
+
 .scroll::-webkit-scrollbar-thumb {
-background: #2e5c7a;
-border-radius: 10px;
-box-shadow: inset 2px 2px 2px hsla(0, 0%, 100%, .25), inset -2px -2px 2px rgba(255, 221, 221, 0.25);
+  background: #2e5c7a;
+  border-radius: 10px;
+  box-shadow: inset 2px 2px 2px hsla(0, 0%, 100%, .25), inset -2px -2px 2px rgba(255, 221, 221, 0.25);
 }
 
 .scroll {
   max-width: 100%;
   background-color: rgb(197, 224, 197);
   display: flex;
-  flex-wrap: nowrap; /* Ensure no wrapping of cards */
+  flex-wrap: nowrap;
+  /* Ensure no wrapping of cards */
   overflow-x: auto;
   border-radius: 8px;
   margin-top: 5%;
-  padding: 50px; 
-  height: 800px;
+  padding: 5em;
+
+
 }
 
-.fag-kort:hover{
-  transform: translateX(-1rem);
+.fag-kort:hover {
+  transform: translateX(-2rem);
 }
 
-.fag-kort:hover~.fag-kort{
-  transform: translateX(300px)
+.fag-kort:hover~.fag-kort {
+  transform: translateX(30px)
 }
 
-.fag-kort:not(:first-child){
-  margin: -150px;
-}
 
- .dagligdag-slider{
+.dagligdag-slider {
   margin: 3%;
   justify-content: center;
   align-content: center;
   text-align: center;
-  transition: .2s;
- }
+  transition: ease .2s;
+}
 
- .slide {
+.slide {
   display: flex;
   background: linear-gradient(36deg, rgba(224, 249, 255, 0.637) 0%, rgb(196, 215, 219) 49%, rgba(223, 249, 255, 0.616) 80%);
   margin-left: 20%;
   margin-right: 20%;
- }
+}
 
 .arrow {
   padding: 8px;
@@ -105,7 +100,7 @@ box-shadow: inset 2px 2px 2px hsla(0, 0%, 100%, .25), inset -2px -2px 2px rgba(2
   text-align: center;
   margin-top: 2%;
   flex-wrap: wrap;
-  display:block;
+  display: block;
   justify-content: center;
   align-items: center;
 
@@ -123,7 +118,7 @@ box-shadow: inset 2px 2px 2px hsla(0, 0%, 100%, .25), inset -2px -2px 2px rgba(2
 
 .comment-button {
   background: linear-gradient(to right, #7a9c36b4, #94b949a6, #afd857d3);
-  color:  #734434;
+  color: #734434;
   padding: 10px 20px;
   font-size: 16px;
   border: none;
@@ -133,7 +128,8 @@ box-shadow: inset 2px 2px 2px hsla(0, 0%, 100%, .25), inset -2px -2px 2px rgba(2
 }
 
 .comment-button:hover {
-  background-color: #5c7822; /* Mørkere nuance on hover*/
+  background-color: #5c7822;
+  /* Mørkere nuance on hover*/
 }
 
 
@@ -147,37 +143,38 @@ box-shadow: inset 2px 2px 2px hsla(0, 0%, 100%, .25), inset -2px -2px 2px rgba(2
 
 /*Responsive*/
 
-@media only screen
-and (min-device-width: 320px)
-and (max-device-width: 480px) {
-    /* Styles for screens 320px to 480px here */
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  /* Styles for screens 320px to 480px here */
 
 
 
-    .slide {
-        margin-left: 2%;
-        margin-right: 2%;
-       }
-       .scroll{
-        margin: 0%;
-        width: 100%;
-       }
-       .gif-skole {
-        max-width: 100%;
-      }
-      .fag-kort{
-        max-width: 100%;
-      }
-      .friskole {
-        flex-wrap: wrap,
-      }
+  .slide {
+    margin-left: 2%;
+    margin-right: 2%;
+  }
+
+  .scroll {
+    margin: 0%;
+    width: 100%;
+  }
+
+  .gif-skole {
+    max-width: 100%;
+  }
+
+  .fag-kort {
+    max-width: 100%;
+  }
+
+  .friskole {
+    flex-wrap: wrap,
+  }
 }
 
-@media only screen
-and (min-device-width: 768px)
-and (max-device-width: 1024px) {
-    .friskole {
-        flex-wrap: wrap,
-      }
-    /* Styles for screens 768px to 1024px here */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .friskole {
+    flex-wrap: wrap,
+  }
+
+  /* Styles for screens 768px to 1024px here */
 }
