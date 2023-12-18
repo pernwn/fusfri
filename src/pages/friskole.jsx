@@ -13,12 +13,7 @@ export default function Friskole() {
     <main>
       {/* En Stack-komponent med klasse 'friskole' */}
       <Stack className="friskole" 
-        sx={{
-          flexDirection: 'row',
-          padding: 2,
-          backgroundColor: '#ffff',
-          flexWrap: 'wrap',
-        }}
+       sx={{ color: (mytheme) => mytheme.palette.secondary.main, fontWeight: "bold" }}
       >
         {/* En Stack-komponent med typografiske elementer */}
         <Stack
@@ -29,17 +24,20 @@ export default function Friskole() {
           <Typography variant="h1"
             sx={{
               textAlign: 'center',
+              color: (mytheme) => mytheme.palette.secondary.main, 
+              fontWeight: "bold" 
             }}
           > Friskolen</Typography>
 
-          <Typography variant='h4'>Hos os foregår tingene anderledes end på en folkeskole, prøv at se en hverdag på vores lille skole!</Typography>
+          <Typography variant='h4'>Hos os foregår tingene anderledes end på en folkeskole, prøv at se en hverdag på vores lille skole!</Typography>     
+          {/* Indsætter komponenten Dagligdag */}
+      <Dagligdag />
         </Stack>
         {/* Et billede med src fra importerede gif */}
         <img src={gif} className="gif-skole" alt="GIF-skole" />
       </Stack>
 
-      {/* Indsætter komponenten Dagligdag */}
-      <Dagligdag />
+ 
 
       {/* Typografiske elementer for fag */}
       <Typography variant="h2" 

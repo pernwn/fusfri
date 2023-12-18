@@ -1,7 +1,15 @@
 .friskole {
-  margin: 1rem;
+margin-left: 5%;
+margin-right: 5%;
+  padding-top: 100px;
+  padding-bottom: 100px;
   border-radius: 10px;
-  flex-wrap: nowrap,
+  background: linear-gradient(to right, #ddf0b6b4, #d3f192a6, #a0d6fab9, #b9e45e80),
+              url('../assets/fusfri-billeder/fusfri-boernehave-lejr-2015-795px-_9.jpeg'); 
+  background-size: cover; 
+  background-position: center; 
+  justify-content: center;
+  align-items: center;
 }
 
 .fag-kort {
@@ -11,7 +19,7 @@ flex-direction: column;
 background: rgb(125,166,176);
 background: linear-gradient(36deg, rgba(125,166,176,1) 0%, rgba(178,217,226,1) 49%, rgba(223,249,255,1) 100%);
 border-radius: 8px;
-
+box-shadow: -1rem 0 2rem#415042be;
 transition: .2s;
 min-height: 650px;
 }
@@ -28,17 +36,14 @@ box-shadow: inset 2px 2px 2px hsla(0, 0%, 100%, .25), inset -2px -2px 2px rgba(2
 
 .scroll {
   max-width: 100%;
-background-color:rgb(197, 224, 197);
-align-items: center;
-justify-content: center;
-display: flex;
-border-radius: 8px;
-overflow-x: auto;
-position: relative;
-display: flex;
-min-height:1000px;
-margin-top: 5%;
-margin-bottom: 5%;
+  background-color: rgb(197, 224, 197);
+  display: flex;
+  flex-wrap: nowrap; /* Ensure no wrapping of cards */
+  overflow-x: auto;
+  border-radius: 8px;
+  margin-top: 5%;
+  padding: 50px; 
+  height: 800px;
 }
 
 .fag-kort:hover{
@@ -54,7 +59,6 @@ margin-bottom: 5%;
 }
 
  .dagligdag-slider{
-  max-width: 100%;
   margin: 3%;
   justify-content: center;
   align-content: center;
@@ -64,7 +68,7 @@ margin-bottom: 5%;
 
  .slide {
   display: flex;
-  background-color: antiquewhite;
+  background: linear-gradient(36deg, rgba(224, 249, 255, 0.637) 0%, rgb(196, 215, 219) 49%, rgba(223, 249, 255, 0.616) 80%);
   margin-left: 20%;
   margin-right: 20%;
  }
@@ -100,6 +104,10 @@ margin-bottom: 5%;
 .comment-container {
   text-align: center;
   margin-top: 2%;
+  flex-wrap: wrap;
+  display:block;
+  justify-content: center;
+  align-items: center;
 
 }
 
@@ -114,8 +122,8 @@ margin-bottom: 5%;
 }
 
 .comment-button {
-  background-color: #6e8c2e;
-  color: white;
+  background: linear-gradient(to right, #7a9c36b4, #94b949a6, #afd857d3);
+  color:  #734434;
   padding: 10px 20px;
   font-size: 16px;
   border: none;

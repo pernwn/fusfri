@@ -1,6 +1,8 @@
+//lavet af Rina
+
 import { useState, useEffect } from 'react';
 import axios from 'axios'; 
-import { Card, Stack, Typography, Button, IconButton } from '@mui/material';
+import { Card, Stack, Typography, IconButton } from '@mui/material';
 import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 import NavigateNextIcon from '@mui/icons-material/NavigateNext';
 
