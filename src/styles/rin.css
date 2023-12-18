@@ -5,13 +5,15 @@
 }
 
 .fag-kort {
-padding: 2rem;
+padding: 0 2rem;
+width: 450px;
+flex-direction: column;
 background: rgb(125,166,176);
 background: linear-gradient(36deg, rgba(125,166,176,1) 0%, rgba(178,217,226,1) 49%, rgba(223,249,255,1) 100%);
 border-radius: 8px;
-box-shadow: -1rem 0 2rem#161616;
+
 transition: .2s;
-height: fit-content;
+min-height: 650px;
 }
 
 .scroll::-webkit-scrollbar {
@@ -24,32 +26,23 @@ border-radius: 10px;
 box-shadow: inset 2px 2px 2px hsla(0, 0%, 100%, .25), inset -2px -2px 2px rgba(255, 221, 221, 0.25);
 }
 
-.center-text {
-  text-align: center;
-  margin-top: 5px;
-  margin-bottom: 5px;
-}
-
 .scroll {
   max-width: 100%;
-  background-color: rgb(197, 224, 197);
-  display: flex;
-  flex-wrap: nowrap; /* Ensure no wrapping of cards */
-  overflow-x: auto;
-  border-radius: 8px;
-  margin-bottom: 5%;
-  margin-top: 5%;
-  padding: 50px; /* Added padding for space around cards */
-  padding-top: 50px;
-  height: 1000px;
+background-color:rgb(197, 224, 197);
+align-items: center;
+justify-content: center;
+display: flex;
+border-radius: 8px;
+overflow-x: auto;
+position: relative;
+display: flex;
+min-height:1000px;
+margin-top: 5%;
+margin-bottom: 5%;
 }
 
-/* Media query for responsiveness */
-@media screen and (min-width: 768px) {
-  .fag-kort {
-    width: 45%; /* Adjusted width for larger screens */
-    margin: 10px 1%; /* Adjusted margin for larger screens */
-  }
+.fag-kort:hover{
+  transform: translateX(-1rem);
 }
 
 .fag-kort:hover~.fag-kort{
@@ -135,11 +128,6 @@ box-shadow: inset 2px 2px 2px hsla(0, 0%, 100%, .25), inset -2px -2px 2px rgba(2
   background-color: #5c7822; /* Mørkere nuance on hover*/
 }
 
-.fag-style{
-
-  width: 450px;
-  height: 400px;
-}
 
 /* Responsivt design for mindre skærme */
 @media (max-width: 768px) {
@@ -174,23 +162,6 @@ and (max-device-width: 480px) {
       }
       .friskole {
         flex-wrap: wrap,
-      }
-      .fag-kort {
-        width: 450px;
-        height: fit-content;
-        padding: 1%;
-      }
-
-      .fag-kort:hover{
-        transform: translateX(0rem);
-      }
-      
-      .fag-kort:hover~.fag-kort{
-        transform: translateX(0px)
-      }
-      
-      .fag-kort:not(:first-child){
-        margin: 0px;
       }
 }
 

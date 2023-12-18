@@ -2,9 +2,8 @@
 
 import MenuItems from "./menuitems";
 
-// Importerer MenuItems-komponenten fra "./menuitems".
-// Dette er en komponent til at vise menuelementer.
 
+// Dette er en komponent til at vise menuelementer.
 const Dropdown = ({ submenus, dropdown, depthLevel }) => {
     // Øger dybdeniveauet med 1 for hver rekursive kald af Dropdown-komponenten.
     // Det hjælper med at styre, hvor mange niveauer dybt dropdown-menuet skal vises.

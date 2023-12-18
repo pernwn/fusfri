@@ -1,5 +1,5 @@
 import WordPressFag from "../components/fag"; // Importerer WordPressFag-komponenten
-import { Stack, Typography } from '@mui/material'; // Importerer Stack og Typography fra MUI-material
+import { Paper, Stack, Typography } from '@mui/material'; // Importerer Stack og Typography fra MUI-material
 import '../styles/rin.css'; // Importerer stilark
 import '../styles/responsive.css'; // Importerer responsivt stilark
 import gif from '../assets/gifgif.gif'; // Importerer et GIF-billede
@@ -59,12 +59,12 @@ export default function Friskole() {
       {/* Render WordPressFag-komponenten for hver postID i postIDs arrayet */}
       <article className="scroll"> 
         {postIDs.map(postID => (
-          <div
+          <Paper elevation={5}
             key={postID}
             className='fag-kort'
           >
             <WordPressFag postId={postID} />
-          </div>
+          </Paper>
         ))}
       </article>
     </main >
